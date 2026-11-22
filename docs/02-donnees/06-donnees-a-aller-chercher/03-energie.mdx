@@ -1,0 +1,117 @@
+---
+title: 'Énergie : consommation, production locale, rénovation : données à aller chercher'
+sidebar_label: 'Énergie'
+description: 'Producteurs et jeux de données territoriaux ouverts sur le thème énergie : consommation, production locale, rénovation, absents du portefeuille actuel, avec un défi type et les convergences.'
+---
+
+| Producteur                                                                                                                                                                         | Type                                                                                                                                      | Pilier | Jeux vérifiés |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | :----: | ------------: |
+| [Enedis](https://www.data.gouv.fr/organizations/electricite-reseau-distribution-france)                                                                                            | entreprise publique (gestionnaire du réseau de distribution d'électricité)                                                                |   3    |             3 |
+| [Open Data Réseaux Énergies (ODRÉ)](https://www.data.gouv.fr/organizations/open-data-reseaux-energies-1)                                                                           | plateforme commune d'opérateurs de réseaux énergétiques (RTE, gestionnaires de transport de gaz), entreprises à mission de service public |   1    |             3 |
+| [ADEME (Agence de la transition écologique)](https://www.data.gouv.fr/organizations/ademe)                                                                                         | établissement public (EPIC, opérateur de l'État)                                                                                          |   3    |             2 |
+| [Agence nationale de l'habitat (Anah)](https://www.data.gouv.fr/organizations/agence-nationale-de-lhabitat)                                                                        | établissement public administratif (opérateur de l'État, MaPrimeRénov')                                                                   |   3    |             3 |
+| [France Chaleur Urbaine (service public numérique beta.gouv)](https://www.data.gouv.fr/organizations/france-chaleur-urbaine)                                                       | service numérique de l'État (incubateur beta.gouv, ministère de la Transition écologique)                                                 |   1    |             1 |
+| [Service des données et études statistiques (SDES, ministère de la Transition écologique)](https://www.data.gouv.fr/organizations/service-des-donnees-et-etudes-statistiques-sdes) | service statistique ministériel (administration centrale de l'État)                                                                       |   3    |             2 |
+
+## Enedis
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/electricite-reseau-distribution-france) · 139 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Repérer, adresse par adresse sur l'agglomération Paris-Saclay, les immeubles dont la consommation électrique par logement et la thermosensibilité de leur IRIS signalent un chauffage électrique énergivore, pour cibler en priorité les campagnes de rénovation.
+
+**Pourquoi c'est intéressant :** Seule consommation réelle (et non estimée) publiée à l'adresse, avec un historique IRIS depuis 2011 et un indicateur de thermosensibilité qui révèle le poids du chauffage électrique ; les postes HTA/BT permettent de raisonner sur la capacité du réseau local face à l'électrification (pompes à chaleur, recharge).
+
+**Convergences :** DGALN-DHUP (rénovation du parc), Ville de Paris (piste bâti), Communauté d'agglomération Paris-Saclay (PCAET), IGN (BD TOPO pour géolocaliser), BDNB et agrégats DPE déjà inventoriés.
+
+| Jeu de données                                                                                                                                                                                                                                     | Maille                                                                                      | Couverture Paris-Saclay                                                     | Licence · mise à jour            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------- |
+| [Consommation d'électricité annuelle résidentielle par adresse (jusqu'à 2025)](https://www.data.gouv.fr/datasets/consommation-delectricite-annuelle-residentielle-par-adresse-jusqua-2025)                                                         | adresse (immeubles de 10 logements ou plus), granularité déclarée IRIS, annuel              | national (France métropolitaine desservie par Enedis, donc Essonne incluse) | Licence Ouverte 2.0 · 2026-10-13 |
+| [Consommation et thermosensibilité d'électricité à la maille IRIS de 2011 à 2025 (par secteur d'activité)](https://www.data.gouv.fr/datasets/consommation-et-thermosensibilite-delectricite-a-la-maille-iris-de-2011-a-2025-par-secteur-dactivite) | IRIS, annuel, par secteur d'activité (part thermosensible et gradient de thermosensibilité) | national (France métropolitaine, Essonne incluse)                           | Licence Ouverte 2.0 · 2026-10-12 |
+| [Postes électriques (postes HTA/BT)](https://www.data.gouv.fr/datasets/postes-electriques-postes-hta-bt)                                                                                                                                           | point (poste de distribution), mise à jour semestrielle                                     | national (réseau exploité par Enedis, Essonne incluse)                      | Licence Ouverte 2.0 · 2026-07-03 |
+
+## Open Data Réseaux Énergies (ODRÉ)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/open-data-reseaux-energies-1) · 184 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Mesurer le taux d'autonomie électrique de chaque commune de l'Essonne (production locale par filière du registre rapportée à la consommation) et simuler l'effet d'un plan solaire sur les toitures publiques sur la dépendance de l'Île-de-France aux imports, visible dans éCO2mix.
+
+**Pourquoi c'est intéressant :** L'Île-de-France produit très peu de l'électricité qu'elle consomme : le registre officiel tenu par RTE, mis à jour chaque mois, quantifie la production locale commune par commune, et éCO2mix donne le déséquilibre régional au quart d'heure. Matériau idéal pour un défi de souveraineté énergétique.
+
+**Convergences :** Communauté d'agglomération Paris-Saclay (objectifs EnR du PCAET), Station F x Ville de demain (production décentralisée), CNRS - Campus Cyber et Cybermalveillance (résilience des infrastructures critiques), IGN (bâti pour le potentiel en toiture).
+
+| Jeu de données                                                                                                                                                                                                                                                                            | Maille                                                                                     | Couverture Paris-Saclay                                                   | Licence · mise à jour            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- | -------------------------------- |
+| [Registre national des installations de production et de stockage d'électricité (au 31/08/2026)](https://www.data.gouv.fr/datasets/registre-national-des-installations-de-production-et-de-stockage-delectricite-au-31-08-2026)                                                           | installation, localisée à la commune (petites installations agrégées), fréquence mensuelle | national (métropole et ZNI, Essonne incluse)                              | Licence Ouverte 2.0 · 2026-10-13 |
+| [Données éCO2mix régionales temps réel](https://www.data.gouv.fr/datasets/donnees-eco2mix-regionales-temps-reel-1)                                                                                                                                                                        | région, pas de 15 minutes (consommation, production par filière, échanges)                 | oui (région Île-de-France, vérifié via l'API ODRÉ)                        | Licence Ouverte 2.0 · 2026-01-21 |
+| [Consommation annuelle définitive d'électricité et de gaz par IRIS des sites industriels raccordés aux réseaux de transport](https://www.data.gouv.fr/datasets/consommation-annuelle-definitive-delectricite-et-de-gaz-par-iris-des-sites-industriels-raccordes-aux-reseaux-de-transport) | IRIS (référentiel 2023), sites industriels raccordés à NaTran, Teréga et RTE               | national (Essonne incluse, présence de sites sur Paris-Saclay à vérifier) | Licence Ouverte 2.0 · 2024-12-06 |
+
+## ADEME (Agence de la transition écologique)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/ademe) · 114 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Mettre en regard, commune par commune sur Paris-Saclay, le nombre de logements classés F et G (DPE à l'adresse) et l'offre d'artisans RGE à proximité, pour repérer les zones où le calendrier d'interdiction de location des passoires est intenable faute de capacité de travaux.
+
+**Pourquoi c'est intéressant :** Le DPE brut à l'adresse, mis à jour chaque semaine, décrit finement l'état du parc ; l'annuaire RGE ajoute la dimension offre de travaux, rarement croisée, ce qui ouvre un vrai angle d'évaluation de politique publique.
+
+**Convergences :** DGALN-DHUP (DPE, décence énergétique), Assemblée nationale / LexImpact (évaluation de la loi Climat et résilience), Ville de Paris (piste bâti), Communauté d'agglomération Paris-Saclay ; descend à la maille logement par rapport aux agrégats DPE communaux et à la BDNB déjà inventoriés.
+
+| Jeu de données                                                                                                                 | Maille                                                         | Couverture Paris-Saclay    | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- | -------------------------- | -------------------------------- |
+| [DPE Logements existants (depuis juillet 2021)](https://www.data.gouv.fr/datasets/dpe-logements-existants-depuis-juillet-2021) | logement / adresse géocodée, mise à jour hebdomadaire          | national (Essonne incluse) | Licence Ouverte 2.0 · 2026-10-25 |
+| [Liste des entreprises RGE](https://www.data.gouv.fr/datasets/liste-des-entreprises-rge)                                       | établissement, par domaine de travaux, mise à jour quotidienne | national (Essonne incluse) | Licence Ouverte 2.0 · 2026-10-25 |
+
+## Agence nationale de l'habitat (Anah)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/agence-nationale-de-lhabitat) · 9 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Construire une carte de la précarité énergétique cachée sur Paris-Saclay en croisant les carreaux du parc privé à occupation modeste, les copropriétés immatriculées et le périmètre des OPAH en cours de l'agglomération, pour signaler les secteurs fragiles laissés hors dispositif.
+
+**Pourquoi c'est intéressant :** L'agglomération Paris-Saclay porte elle-même plusieurs opérations Anah visibles dans le jeu : le défi peut évaluer directement une politique locale avec un porteur déjà engagé. Faire venir l'Anah pourrait aussi débloquer des données de dossiers MaPrimeRénov' agrégées.
+
+**Convergences :** DGALN-DHUP (habitat privé, copropriétés dégradées), Assemblée nationale / LexImpact (évaluation de MaPrimeRénov'), Communauté d'agglomération Paris-Saclay (maître d'ouvrage des OPAH présentes dans le jeu), revenus carroyés Filosofi déjà inventoriés, DPE ADEME.
+
+| Jeu de données                                                                                                                                                          | Maille                                                                                       | Couverture Paris-Saclay                                                                                                                    | Licence · mise à jour            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+| [Liste des opérations programmées de l'Anah (en cours et terminées)](https://www.data.gouv.fr/datasets/liste-des-operations-programmees-de-lanah-en-cours-et-terminees) | opération (OPAH, PIG, OPAH-D...) avec périmètre géographique, mise à jour quotidienne        | oui (vérifié dans le CSV : OPAH 2 et OPAH 3 copropriétés dégradées de la CA Paris-Saclay, Pacte territorial CA Paris-Saclay PIG 2025-2028) | Licence Ouverte 2.0 · 2026-10-24 |
+| [Indicateurs du Parc Privé à Occupation Modeste (PPOM)](https://www.data.gouv.fr/datasets/indicateurs-du-parc-prive-a-occupation-modeste-ppom)                          | carreaux (CSV et GeoPackage) et agrégats commune, EPCI, département, région ; millésime 2019 | national (fichiers France métropolitaine, Essonne incluse)                                                                                 | Licence Ouverte 2.0 · 2026-03-16 |
+| [Registre national d'Immatriculation des Copropriétés](https://www.data.gouv.fr/datasets/registre-national-dimmatriculation-des-coproprietes)                           | copropriété (adresse), granularité déclarée commune, mise à jour quotidienne                 | national (Essonne incluse)                                                                                                                 | Licence Ouverte 2.0 · 2026-10-24 |
+
+## France Chaleur Urbaine (service public numérique beta.gouv)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/france-chaleur-urbaine) · 1 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Identifier les bâtiments chauffés au gaz ou au fioul situés à moins de 100 m d'un réseau de chaleur existant sur Paris-Saclay et estimer les tonnes de CO2 évitées par leur raccordement, en s'appuyant aussi sur les zones d'opportunité EnRezo du Cerema (https://www.data.gouv.fr/datasets/enrezo-zones-dopportunite-pour-le-developpement-des-reseaux-de-chaleur-et-de-froid, lov2, mis à jour le 2026-01-09).
+
+**Pourquoi c'est intéressant :** Le plateau de Saclay dispose d'un réseau de chaleur et de froid présent dans la référence nationale mise à jour chaque mois ; les équipes beta.gouv sont des porteurs naturels de défis orientés produit.
+
+**Convergences :** Communauté d'agglomération Paris-Saclay (réseau d'échange de chaleur et de froid du campus), Station F x Ville de demain, Ville de Paris (piste bâti), IGN (BD TOPO bâtiments), DPE ADEME pour le mode de chauffage.
+
+| Jeu de données                                                                                                           | Maille                                                                                                                                     | Couverture Paris-Saclay                                                                                                                                                                                                 | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Tracés des réseaux de chaleur et de froid](https://www.data.gouv.fr/datasets/traces-des-reseaux-de-chaleur-et-de-froid) | tracé linéaire des réseaux de chaleur et de froid, réseaux en construction, périmètres de développement prioritaire, mise à jour mensuelle | oui (vérifié dans l'archive du 16/10/2026 : réseau de chaleur 9123C et de froid 9101F « BET Paris Saclay » sur Gif-sur-Yvette, Orsay, Palaiseau ; réseau du CEA Paris-Saclay ; écoquartier Camille Claudel à Palaiseau) | Licence Ouverte 2.0 · 2026-10-16 |
+
+## Service des données et études statistiques (SDES, ministère de la Transition écologique)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/service-des-donnees-et-etudes-statistiques-sdes) · 41 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Établir pour chaque IRIS de Paris-Saclay un bilan multi-énergies (électricité, gaz, chaleur), repérer les gros consommateurs tertiaires concernés par le décret tertiaire et suivre leur trajectoire depuis 2018.
+
+**Pourquoi c'est intéressant :** Seule source publique consolidant tous les gestionnaires de réseau et les trois énergies à l'adresse et à l'IRIS : un bilan complet sans réconciliation multi-producteurs, précieux en 48 h.
+
+**Convergences :** DGALN-DHUP (décret tertiaire), Communauté d'agglomération Paris-Saclay (bilan du PCAET), CNRS - Campus Cyber et établissements de recherche du plateau, complément à la consommation communale déjà inventoriée.
+
+| Jeu de données                                                                                                                                                                                                                                                                | Maille                                                                                    | Couverture Paris-Saclay    | Licence · mise à jour            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------- | -------------------------------- |
+| [Données locales de consommation d'électricité et de gaz naturel et de chaleur et de froid - adresse (à partir de 2018)](https://www.data.gouv.fr/datasets/donnees-locales-de-consommation-delectricite-et-de-gaz-naturel-et-de-chaleur-et-de-froid-adresse-a-partir-de-2018) | adresse (point), bâtiments professionnels et résidentiels d'au moins 10 logements, annuel | national (Essonne incluse) | Licence Ouverte 1.0 · 2026-10-25 |
+| [Données locales de consommation d'électricité, de gaz naturel et de chaleur et de froid - IRIS (à partir de 2018)](https://www.data.gouv.fr/datasets/donnees-locales-de-consommation-delectricite-de-gaz-naturel-et-de-chaleur-et-de-froid-iris-a-partir-de-2018)            | IRIS, cinq secteurs ou NAF à 2 niveaux, annuel                                            | national (Essonne incluse) | Licence Ouverte 1.0 · 2026-10-25 |
+
+<details>
+<summary>Propositions examinées et écartées</summary>
+
+- **ADEME - DPE Tertiaire (depuis juillet 2021) https://www.data.gouv.fr/datasets/dpe-tertiaire-depuis-juillet-2021** : Licence « notspecified » dans l'API data.gouv.fr et aucune licence renseignée dans l'API data-fair de data.ademe.fr (dpe01tertiaire) : caractère ouvert non vérifiable. À réintégrer si l'ADEME confirme la Licence Ouverte.
+
+</details>
+
+---
+
+Retour aux [priorités](/02-donnees/06-donnees-a-aller-chercher/00-priorites).

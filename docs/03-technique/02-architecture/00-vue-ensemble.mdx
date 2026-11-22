@@ -1,0 +1,61 @@
+---
+title: "Vue d'ensemble de l'architecture"
+sidebar_label: "Vue d'ensemble"
+description: 'Organisation du code du site statique : pages, vues, contenu en fichiers et configuration.'
+---
+
+Le site est généré **une fois, au build**. Les pages lisent le contenu dans des fichiers du dépôt, et le résultat est un dossier de fichiers statiques. À l'exécution, il ne reste que du HTML et du JavaScript côté navigateur.
+
+<Mermaid
+	title="Du dépôt au navigateur"
+	chart={`flowchart TD
+    Defis["content/defis/*.md"] --> Content["src/lib/content : lecture au build"]
+    Photos["public/photos-evenement/"] --> Content
+    Config["src/lib/config : dates, lieu, liens"] --> App
+    Content --> App["src/app : une page par route"]
+    App --> Feat["src/features : une vue par page"]
+    Feat --> Comp["src/components : en-tête, pied de page"]
+    App -- pnpm build --> Out["out/ : fichiers statiques"]`}
+/>
+
+## Arborescence
+
+| Dossier             | Contenu                                                                                   |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| `content/defis/`    | Un fichier Markdown par porteur de défi                                                   |
+| `public/`           | Logos, images des porteurs (`defis/`), photos de l'événement (`photos-evenement/`)        |
+| `src/app/`          | Pages Next.js : accueil, défis, conférences, galerie, infos pratiques, mentions légales, minuteur |
+| `src/features/`     | Une vue par page : `home`, `challenges`, `conferences`, `gallery`, `practical-info`, `legal`, `timer` |
+| `src/components/`   | `layout/` (en-tête, pied de page) et `ui/`                                                |
+| `src/lib/config/`   | `hackathon.ts` (dates, lieu, libellés) et `links.ts` (liens externes)                     |
+| `src/lib/content/`  | Lecture des défis, des conférences, des photos ; textes d'interface (`texts.ts`)          |
+| `src/lib/types/`    | Types `Challenge` et `Conference`                                                         |
+| `src/lib/utils/`    | Rendu Markdown, motifs de repli des cartes, mise en forme de texte                        |
+| `src/theme/`        | Thème Mantine                                                                             |
+| `tests/lib/`        | Tests unitaires                                                                           |
+| `docs/`             | Ce portail de documentation                                                               |
+
+## Ce que le site ne fait pas
+
+| Besoin                              | Réponse                                                              |
+| ----------------------------------- | -------------------------------------------------------------------- |
+| Inscription des participants        | Formulaire Tally, lien dans `links.ts`                               |
+| Proposition d'idée ou de défi       | Formulaires Tally, liens dans `links.ts`                             |
+| Comptes et connexion                | Aucun                                                                |
+| Dépôt des rendus des équipes        | Une branche par équipe sur un git partagé                            |
+| Stockage de données personnelles    | Aucun : le site ne collecte rien et ne pose aucun cookie             |
+
+Le détail est dans [Formulaires et rendus](/03-technique/03-fonctionnalites/01-formulaires-et-rendus).
+
+## Services externes
+
+| Service                  | Rôle                                         | Si absent                                  |
+| ------------------------ | -------------------------------------------- | ------------------------------------------ |
+| **Tally**                | Inscriptions, idées, propositions de défis   | Le bouton correspondant n'est pas affiché  |
+| **Git partagé**          | Rendus des équipes                           | Le lien n'est pas affiché                  |
+| **Iconify**              | Icônes de l'interface                        | Les icônes ne s'affichent pas              |
+
+## Pour aller plus loin
+
+- [Contenu du site](/03-technique/02-architecture/01-contenu-du-site)
+- [Pages du site](/03-technique/03-fonctionnalites/00-routes)

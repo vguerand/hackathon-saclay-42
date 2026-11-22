@@ -1,0 +1,73 @@
+---
+title: 'Hackathon Saclay × 42'
+sidebar_label: 'Accueil'
+description: 'Documentation du hackathon Université Paris-Saclay × 42 Paris de mars 2027 : organisation, données et open data, documentation technique de la plateforme.'
+---
+
+**Hackathon Saclay × 42 — Innovation & Data Publique.** Un co-portage Université Paris-Saclay × École 42, les 18 et 19 mars 2027 au campus 42 Paris, autour de défis proposés par des organisations publiques et d'un fil conducteur : **la donnée territoriale**.
+
+## Vue d'ensemble
+
+<Mermaid
+	title="Les trois dossiers et leurs liens"
+	chart={`flowchart TB
+    subgraph O["1. Organisation du hackathon"]
+        direction LR
+        D[Défis] --> E[Événement]
+    end
+    subgraph DO["2. Données et open data"]
+        direction LR
+        I[Inventaires] --> PUB[(data.gouv.fr)] --> K[Kit de données]
+    end
+    subgraph TE["3. Documentation technique"]
+        direction LR
+        F[(Fichiers de contenu)] --> S[Site statique]
+    end
+    D --> I
+    K --> E
+    D --> F
+    S --> E`}
+/>
+
+| Dossier                                                              | Pour qui                                      | Contenu                                                                                                                     |
+| -------------------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **[1. Organisation du hackathon](/01-organisation/00-vue-ensemble)** | Co-porteurs, équipe projet                    | Feuille de route et jalons, collecte et sélection des défis, programme de l'événement                                       |
+| **[2. Données et open data](/02-donnees/00-vue-ensemble)**           | Porteurs de défis, accompagnateurs, étudiants | Cadre juridique, tutoriel de publication sur data.gouv.fr, accompagnement, inventaire par porteur, données à aller chercher |
+| **[3. Documentation technique](/03-technique/index)**                | Développeurs et exploitation de ce dépôt      | Prise en main, design system et style, architecture, fonctionnalités, skills agents                                         |
+
+## Calendrier
+
+<Mermaid
+	title="Du montage à l'événement"
+	chart={`timeline
+    title Du montage à l'événement
+    2026, été : Montage du projet
+    Oct.-nov. 2026 : Proposition des défis : Call 42 Paris
+    Nov.-déc. 2026 : Comité scientifique : Diagnostics données
+    Janv.-févr. 2027 : Plateforme ouverte : Sélection des défis
+    Mars 2027 : Hackathon : Réutilisations`}
+/>
+
+| Jalon                                | Date                         | État        |
+| ------------------------------------ | ---------------------------- | ----------- |
+| Montage du projet                    | Août à septembre 2026        | ✅ Fait     |
+| Proposition des défis                | Octobre à novembre 2026      | 🔄 En cours |
+| Call de cadrage avec 42 Paris        | 27/10/2026                   | ✅ Tenu     |
+| Comité scientifique                  | Novembre 2026                | ⏳ À venir  |
+| Ouverture de la plateforme           | Novembre 2026 à janvier 2027 | ⏳ À venir  |
+| Sélection des porteurs               | Janvier à février 2027       | ⏳ À venir  |
+| Hackathon                            | 18 et 19 mars 2027           | ⏳ À venir  |
+
+Détail, prochaines étapes et risques : [Feuille de route](/01-organisation/01-feuille-de-route).
+
+## Accès rapides
+
+| Besoin                                              | Page                                                                             |
+| --------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Voir les défis présentés                            | [Deck et défis](/01-organisation/04-defis/00-deck-et-defis)                      |
+| Savoir quelles données existent pour chaque défi    | [Open data par porteur](/02-donnees/05-donnees-par-defi/00-synthese)             |
+| Repérer les données et producteurs à aller chercher | [Données à aller chercher](/02-donnees/06-donnees-a-aller-chercher/00-priorites) |
+| Accompagner un porteur vers data.gouv.fr            | [Accompagner les porteurs](/02-donnees/03-accompagner-les-porteurs)              |
+| Transmettre le tutoriel de publication              | [Tutoriel de publication](/02-donnees/02-tutoriel-publication)                   |
+| Lancer le projet en local                           | [Installation](/03-technique/00-prise-en-main/00-installation)                   |
+| Comprendre le code                                  | [Architecture](/03-technique/02-architecture/00-vue-ensemble)                    |

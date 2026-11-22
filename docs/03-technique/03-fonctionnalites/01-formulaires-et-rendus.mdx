@@ -1,0 +1,49 @@
+---
+title: 'Formulaires et rendus des équipes'
+sidebar_label: 'Formulaires et rendus'
+description: 'Inscriptions et propositions par formulaires Tally, rendus des équipes par branches sur un git partagé.'
+---
+
+Le site ne reçoit aucune donnée. Tout ce qui demande une saisie est délégué à des outils extérieurs, reliés au site par de simples liens.
+
+<Mermaid
+	title="Qui fait quoi"
+	chart={`flowchart LR
+    V[Visiteur] --> SITE[Site statique]
+    SITE -- lien --> T1[Tally : inscription]
+    SITE -- lien --> T2[Tally : idée de projet]
+    SITE -- lien --> T3[Tally : proposer un défi]
+    SITE -- lien --> GIT[Git partagé]
+    T1 & T2 & T3 --> ORG[42 Paris : suivi des réponses]
+    EQ[Équipes] -- une branche par équipe --> GIT`}
+/>
+
+## Liens
+
+Tous les liens sont dans `src/lib/config/links.ts` :
+
+| Clé                | Rôle                                           | État                    |
+| ------------------ | ---------------------------------------------- | ----------------------- |
+| `registration`     | Formulaire d'inscription au hackathon          | À fournir par 42 Paris  |
+| `submitChallenge`  | Formulaire pour proposer un défi               | À fournir par 42 Paris  |
+| `submitIdea`       | Formulaire pour proposer une idée de projet    | Renseigné               |
+| `sharedRepository` | Git partagé où les équipes déposent leur code  | À fournir par 42 Paris  |
+| `sourceCode`       | Dépôt du site                                  | Renseigné               |
+
+Un lien vide masque le bouton correspondant : rien à modifier ailleurs dans le code. Quand `registration` est renseigné, le bandeau et les boutons d'inscription apparaissent et le statut de l'accueil passe à « inscriptions ouvertes ».
+
+## Formulaires Tally
+
+Les formulaires sont créés et administrés par **42 Paris**. Les réponses, et donc les données personnelles saisies, restent dans Tally : le site n'y a pas accès. Les mentions légales le précisent.
+
+L'inscription est réservée aux étudiants de l'Université Paris-Saclay et de 42 Paris ; il n'y a pas d'inscription de visiteurs.
+
+## Rendus des équipes
+
+Pendant le hackathon, chaque équipe dépose son travail sur le **git partagé** :
+
+1. L'équipe crée **une branche** à son nom dans le dépôt partagé.
+2. Elle y pousse le code produit pendant l'événement.
+3. Si une partie du travail vit ailleurs, elle ajoute dans sa branche les **liens vers ses dépôts externes**.
+
+Pour faire apparaître un rendu sur la page d'un porteur, renseigner dans son fichier `content/defis/` les clés `depot`, `branche`, `demo` et `presentation` (voir [Contenu du site](/03-technique/02-architecture/01-contenu-du-site)).

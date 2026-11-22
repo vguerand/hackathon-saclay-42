@@ -1,0 +1,68 @@
+---
+title: "Programme et format de l'événement"
+sidebar_label: 'Programme et format'
+description: 'Format des 48 heures, contributions au programme, comité scientifique, accompagnement des équipes, outils de la plateforme pour le jour J et questions encore ouvertes.'
+---
+
+Le hackathon se tient les **18 et 19 mars 2027**, au **campus 42 Paris**, sur **deux jours**. Les équipes disposent de **48 heures pour imaginer, prototyper et présenter** une solution à un défi retenu.
+
+> **Statut :** le format détaillé reste à construire. Cette page rassemble ce qui est acquis, ce que la plateforme sait déjà faire, et les questions à trancher.
+
+## Ce qui est acquis
+
+| Élément               | Contenu                                                                                                                                                                                        | Source                                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Période               | 18 et 19 mars 2027, campus 42 Paris                                                                                                                                                            | Deck, rétroplanning                                         |
+| Co-portage            | Université Paris-Saclay × École 42                                                                                                                                                             | Deck                                                        |
+| Défis                 | Proposés par des organisations publiques, rattachés à trois piliers                                                                                                                            | [Deck et défis](/01-organisation/04-defis/00-deck-et-defis) |
+| Fil conducteur        | La donnée territoriale                                                                                                                                                                         | Deck                                                        |
+| Conférences proposées | Information du public sur les problématiques cyber (Cybermalveillance) ; vigilance épistémique, en contrepoint du cadre de lutte contre la manipulation de l'information (Institut Jean Nicod) | Échanges avec les porteurs                                  |
+| Accompagnement amont  | Bureaux ouverts de janvier à février 2027                                                                                                                                                      | Rétroplanning                                               |
+
+## Parcours d'une équipe
+
+<Mermaid
+	title="De l'inscription à la restitution"
+	chart={`flowchart LR
+    A[Inscription par formulaire Tally] --> B[Choix d'un défi]
+    B --> C[Bureaux ouverts janvier-février]
+    C --> D[Jour 1 : présentation des défis]
+    D --> E[48 h de prototypage avec experts et porteurs]
+    E --> F[Jour 2 : restitution devant le jury]
+    F --> G[Publication des réutilisations sur data.gouv.fr]`}
+/>
+
+## Acteurs du jour J
+
+| Acteur                                          | Rôle                                                      | À organiser                                               |
+| ----------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| **Équipes** (étudiants 42, chercheurs, experts) | Prototyper et présenter                                   | Constitution des équipes, nombre par défi                 |
+| **Porteurs de défis**                           | Présenter le défi, répondre aux questions sur les données | Présence sur place ou à distance (question du formulaire) |
+| **Experts référents**                           | Un par pilier, conseil aux équipes                        | Désignation en novembre-décembre 2026                     |
+| **Comité scientifique**                         | Programmation, sélection, éventuellement jury             | Constitution début novembre 2026                          |
+| **Conférenciers**                               | Deux interventions au programme                           | Créneaux et format (table ronde ou controverse assumée)   |
+| **Parrainages institutionnels**                 | Ouverture, visibilité                                     | Engagements écrits en décembre 2026                       |
+
+## Ce que le site fournit
+
+Le site est une vitrine statique (voir [Pages du site](/03-technique/03-fonctionnalites/00-routes)).
+
+| Besoin                              | Outil                                  | Remarque                                       |
+| ----------------------------------- | -------------------------------------- | ---------------------------------------------- |
+| Présenter les porteurs de défis     | `/defis`                               | Un fichier par porteur dans `content/defis/`   |
+| Inscription                         | Formulaire Tally                       | Lien à fournir par 42 Paris                    |
+| Programme                           | `/conferences`                         | `src/lib/content/conferences.ts`               |
+| Minuteur                            | `/timer`                               | Plein écran                                    |
+| Rendus des équipes                  | Git partagé, une branche par équipe    | Dépôt à créer par 42 Paris                     |
+| Présentations et restitutions       | Aucun outil dédié                      | À organiser avec le minuteur et les supports des équipes |
+
+## Questions ouvertes
+
+| Question                                                                  | Instance             | Échéance                           |
+| ------------------------------------------------------------------------- | -------------------- | ---------------------------------- |
+| Nombre de défis retenus et d'équipes par défi                             | Comité scientifique  | Janvier 2027                       |
+| Composition et critères du jury                                           | Comité scientifique  | Février 2027                       |
+| Durées des présentations et restitutions 2027                             | Co-portage           | Février 2027                       |
+| Format de la controverse sur la vigilance épistémique                     | Comité scientifique  | Mi-novembre 2026                   |
+| Propriété intellectuelle des prototypes                                   | Co-portage, porteurs | Avant l'ouverture des inscriptions |
+| Suite donnée aux prototypes (réutilisations, cycle LMI 2 du Campus Cyber) | Porteurs             | Après l'événement                  |

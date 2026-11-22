@@ -1,0 +1,110 @@
+---
+title: 'Cybermalveillance.gouv.fr (GIP ACYMA) : données mobilisables'
+sidebar_label: 'Cybermalveillance.gouv.fr (GIP ACYMA)'
+description: 'Jeux de données ouverts sur data.gouv.fr, données à ouvrir et points de vigilance pour les défis portés par Cybermalveillance.gouv.fr (GIP ACYMA).'
+---
+
+**Présence sur data.gouv.fr :** Aucune organisation sur data.gouv.fr : à créer avant toute publication.
+
+| Défi                                                                          | Cas | Jeux recensés |
+| ----------------------------------------------------------------------------- | :-: | ------------: |
+| 1. Exploiter les données de Cybermalveillance pour mieux prévenir les menaces |  1  |             4 |
+| 2. Crowdsourcer la cybersécurité                                              |  3  |             4 |
+| 3. Informer le public sur les problématiques cyber (conférence)               |  2  |             5 |
+
+## 1. Exploiter les données de Cybermalveillance pour mieux prévenir les menaces
+
+**Cas 1 — Données à ouvrir par le porteur.**
+
+| Jeu de données                                                                                                                                                                                                                                                                                            | Producteur                                                            | Maille · pivot                                               | Licence · mise à jour            | Usage pour le défi                                                                                                                                                                                                                              |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------ | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Bases statistiques communale, départementale et régionale de la délinquance enregistrée par la police et la gendarmerie nationales](https://www.data.gouv.fr/datasets/bases-statistiques-communale-departementale-et-regionale-de-la-delinquance-enregistree-par-la-police-et-la-gendarmerie-nationales) | Ministère de l'intérieur                                              | commune · code INSEE commune                                 | Licence Ouverte 2.0 · 2026-07-09 | Seule source territoriale ouverte sur la délinquance : l'indicateur « escroqueries » existe à l'échelle de la commune depuis mars 2025. On peut le croiser avec les demandes d'assistance pour estimer la part de victimes qui portent plainte. |
+| [Notifications à la CNIL de violations de données à caractère personnel](https://www.data.gouv.fr/datasets/notifications-a-la-cnil-de-violations-de-donnees-a-caractere-personnel)                                                                                                                        | CNIL                                                                  | national · aucun                                             | Licence Ouverte 2.0 · 2026-10-06 | Série nationale des violations de données (piratages, rançongiciels…) par secteur et par origine : elle sert de référence pour comparer avec les incidents que signalent les organisations à ACYMA.                                             |
+| [Indicateurs annuels de la victimation et du sentiment d’insécurité issus des enquêtes Cadre de Vie et Sécurité](https://www.data.gouv.fr/datasets/indicateurs-annuels-de-la-victimation-et-du-sentiment-dinsecurite-issus-des-enquetes-cadre-de-vie-et-securite)                                         | Ministère de l'intérieur                                              | national · aucun                                             | Licence Ouverte 2.0 · 2025-06-26 | Victimation déclarée par les ménages (dont les escroqueries bancaires), à comparer avec les faits enregistrés pour estimer la part de victimes qui ne signalent rien. C'est le dénominateur national de référence.                              |
+| [Base Sirene des entreprises et de leurs établissements (SIREN, SIRET)](https://www.data.gouv.fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret)                                                                                                                             | Institut national de la statistique et des études économiques (Insee) | établissement (adresse, commune) · SIRET, code INSEE commune | Licence Ouverte 2.0 · 2026-10-01 | Référentiel qui sert de dénominateur : nombre d'entreprises par secteur NAF, par taille et par commune, pour calculer des taux de victimisation des TPE/PME et des collectivités à partir des demandes d'assistance.                            |
+
+### À ouvrir ou à obtenir
+
+Le porteur n'ouvre rien aujourd'hui, et c'est justement le cœur du défi. ACYMA devrait publier un extrait agrégé et anonymisé des parcours d'assistance avec :
+
+- la date, au mois ou à la semaine ;
+- le type de menace selon la nomenclature du diagnostic : hameçonnage, rançongiciel, piratage de compte, faux support technique, arnaque au faux conseiller, sextorsion… ;
+- le type de victime (particulier, entreprise ou association, collectivité), sa tranche de taille et son secteur NAF agrégé ;
+- le département, ou le code INSEE pour les zones les plus peuplées ;
+- l'orientation donnée (plainte, prestataire, 17Cyber).
+  Il faudrait y ajouter l'annuaire des prestataires labellisés ExpertCyber (SIRET, commune), les statistiques de consultation des fiches réflexes et le dictionnaire des variables de la nomenclature des menaces. Publication sous Licence Ouverte 2.0, en CSV ou Parquet, dans une organisation data.gouv.fr à créer, car il n'en existe aucune aujourd'hui.
+
+### Points de vigilance
+
+- Données personnelles : les déclarations de victimes contiennent des données personnelles et sensibles (texte libre, adresses e-mail ou IBAN des escrocs comme des victimes, sextorsion). Aucun texte libre ne doit être diffusé.
+- Secret statistique : les données doivent être agrégées avec un seuil, par exemple en masquant les cellules de moins de 5 ou 11 cas. C'est surtout nécessaire pour les petites communes et pour les entreprises qu'on peut reconnaître en croisant secteur, taille et commune.
+- Indicateurs de compromission bruts (URL, numéros, domaines) : ils peuvent aider les attaquants ou désigner à tort des tiers. Il faut les filtrer et les diffuser en différé.
+- Biais de déclaration : seules les victimes qui se déclarent apparaissent, ce qui dépend de la notoriété de la plateforme. Ce biais doit être documenté.
+- Méthode : ne pas mélanger délinquance enregistrée, victimation déclarée et demandes d'assistance sans précaution méthodologique.
+
+## 2. Crowdsourcer la cybersécurité
+
+**Cas 3 — Données à obtenir ou inexistantes en open data.**
+
+| Jeu de données                                                                                                                                                                                             | Producteur                                                            | Maille · pivot                                                                                                                                                      | Licence · mise à jour            | Usage pour le défi                                                                                                                                                                                                                                                                         |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Recensement de l'offre en cybersécurité](https://www.data.gouv.fr/datasets/recensement-de-loffre-en-cybersecurite)                                                                                        | Ministères économiques et financiers                                  | entreprise (lieux d'implantation déclarés en texte, pas de géocodage) · aucun (pas de SIRET : le nom de l'entreprise est la seule clé de rapprochement avec Sirene) | Licence Ouverte 2.0 · 2026-01-14 | Liste des entreprises de cybersécurité qui ont répondu à l'appel à manifestation d'intérêt lié au dispositif Cyber PME, avec leurs activités, marchés et secteurs ciblés, labels et lieux d'implantation. C'est une base pour orienter contributeurs et victimes vers des acteurs proches. |
+| [Lieux de médiation numérique sur le territoire National fournis par Coop numérique](https://www.data.gouv.fr/datasets/lieux-de-mediation-numerique-sur-le-territoire-national-fournis-par-coop-numerique) | Cartographie Nationale des lieux de médiation numérique               | point (lieu) · coordonnées, code INSEE                                                                                                                              | Licence Ouverte 2.0 · 2026-10-23 | Réseau de relais de proximité, décrit selon le schéma national « Lieux de médiation numérique ». Ces lieux peuvent recueillir des signalements ou animer une veille participative au plus près des publics fragiles.                                                                       |
+| [Challenge Cyber "Passe ton hack d'abord"](https://www.data.gouv.fr/datasets/challenge-cyber-passe-ton-hack-dabord)                                                                                        | Ministères de l'Éducation nationale                                   | établissement (point) · UAI, code département, coordonnées                                                                                                          | Non précisée · 2026-10-24        | Participation des lycées à un CTF national organisé avec le COMCYBER (élèves et équipes inscrits, filles et garçons, commune, département, coordonnées) : mesure la mobilisation collective et repère un vivier de contributeurs sur le territoire.                                        |
+| [Base Sirene des entreprises et de leurs établissements (SIREN, SIRET)](https://www.data.gouv.fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret)                              | Institut national de la statistique et des études économiques (Insee) | établissement · SIRET, code INSEE commune                                                                                                                           | Licence Ouverte 2.0 · 2026-10-01 | Référentiel pour géolocaliser et qualifier les prestataires et les contributeurs (code NAF, effectif) et pour rapprocher une offre participative des TPE/PME qui en ont besoin.                                                                                                            |
+
+### À ouvrir ou à obtenir
+
+Aucune donnée de signalement collaboratif (sites frauduleux, numéros, campagnes d'hameçonnage) n'est ouverte sur data.gouv.fr, ni par ACYMA ni par l'ANSSI. ACYMA pourrait ouvrir :
+
+- un flux agrégé de tendances (types d'arnaques et campagnes en cours, par semaine) ;
+- l'annuaire des prestataires référencés ou labellisés ExpertCyber (SIRET, commune, spécialités), ce qui compenserait l'absence de SIRET dans le recensement Cyber PME.
+  À défaut, les participants devront concevoir eux-mêmes le dispositif de collecte (schéma de signalement, modération, score de confiance) en s'appuyant sur des données synthétiques. Il faut donc prévoir avant mars 2027 un jeu d'exemple de signalements, anonymisé ou synthétique.
+
+### Points de vigilance
+
+- Données personnelles : une plateforme participative recueille des données sur le contributeur, la victime et les tiers mis en cause. Il faut une base légale RGPD et collecter le minimum de données.
+- Fausses accusations : des sites ou des numéros signalés à tort exposent à la diffamation. Il faut modérer et vérifier les signalements.
+- Empoisonnement : des attaquants peuvent polluer volontairement les signalements.
+- Indicateurs malveillants : les diffuser peut aider les attaquants.
+- Licence : celle du jeu Éducation nationale n'est pas précisée et doit être confirmée.
+- Recensement Cyber PME : le jeu contient des adresses e-mail de contact, à ne pas réexposer inutilement.
+
+## 3. Informer le public sur les problématiques cyber (conférence)
+
+**Cas 2 — Données déjà ouvertes.**
+
+| Jeu de données                                                                                                                                                                                                                                                                                            | Producteur                                                                                                     | Maille · pivot                            | Licence · mise à jour            | Usage pour le défi                                                                                                                                                                                                                                                                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Enjeux Cyber Opération Cactus](https://www.data.gouv.fr/datasets/enjeux-cyber-operation-cactus)                                                                                                                                                                                                          | Ministères de l'Éducation nationale                                                                            | établissement · UAI, commune, département | Non précisée · 2026-10-19        | Pour chaque établissement inscrit à Cactus, l'opération nationale d'hameçonnage pédagogique auprès des élèves, le jeu indique les actions de sensibilisation menées : journée hackathon, sensibilisation ponctuelle ou de longue durée, partage sur le territoire, demande d'appui. C'est un exemple concret et localisable pour une conférence. Le jeu ne contient pas de taux de clic. |
+| [Baromètre du Numérique](https://www.data.gouv.fr/datasets/barometre-du-numerique)                                                                                                                                                                                                                        | Autorité de régulation des communications électroniques, des postes et de la distribution de la presse (ARCEP) | national · aucun                          | ODbL · 2026-02-09                | Équipements, usages et freins au numérique de la population française selon l'âge et la catégorie sociale, pour cibler les publics les plus exposés.                                                                                                                                                                                                                                     |
+| [Lieux de médiation numérique sur le territoire National fournis par Coop numérique](https://www.data.gouv.fr/datasets/lieux-de-mediation-numerique-sur-le-territoire-national-fournis-par-coop-numerique)                                                                                                | Cartographie Nationale des lieux de médiation numérique                                                        | point (lieu) · coordonnées, code INSEE    | Licence Ouverte 2.0 · 2026-10-23 | Lieux où organiser ou relayer des actions de sensibilisation, à croiser avec les communes où les escroqueries enregistrées sont nombreuses.                                                                                                                                                                                                                                              |
+| [Notifications à la CNIL de violations de données à caractère personnel](https://www.data.gouv.fr/datasets/notifications-a-la-cnil-de-violations-de-donnees-a-caractere-personnel)                                                                                                                        | CNIL                                                                                                           | national · aucun                          | Licence Ouverte 2.0 · 2026-10-06 | Chiffres officiels récents sur les fuites de données, faciles à mettre en graphique pour illustrer l'ampleur de la menace.                                                                                                                                                                                                                                                               |
+| [Bases statistiques communale, départementale et régionale de la délinquance enregistrée par la police et la gendarmerie nationales](https://www.data.gouv.fr/datasets/bases-statistiques-communale-departementale-et-regionale-de-la-delinquance-enregistree-par-la-police-et-la-gendarmerie-nationales) | Ministère de l'intérieur                                                                                       | commune · code INSEE commune              | Licence Ouverte 2.0 · 2026-07-09 | Cartes locales des escroqueries enregistrées (indicateur communal disponible depuis 2025) pour rendre la conférence concrète à l'échelle du territoire (Essonne, Paris-Saclay).                                                                                                                                                                                                          |
+
+### À ouvrir ou à obtenir
+
+Les données de contexte suffisent pour une conférence. ACYMA gagnerait à ouvrir :
+
+- les chiffres de son rapport d'activité annuel (principales menaces par public, évolution sur plusieurs années) en CSV plutôt qu'en PDF ;
+- l'audience de ses contenus de sensibilisation (fiches, kits, campagnes) par thème et par mois, pour mesurer quels messages touchent le public.
+
+### Points de vigilance
+
+- Données personnelles : risque faible si l'on se limite aux agrégats.
+- Licence de Cactus : le jeu Éducation nationale n'a pas de licence précisée (« notspecified »). Il faut la faire confirmer avant de le réutiliser.
+- Licence ODbL du Baromètre ARCEP : elle impose le partage à l'identique.
+- Contresens possibles entre faits enregistrés, victimation déclarée et demandes d'assistance.
+- Petites communes : les chiffres de délinquance n'y sont pas diffusés quand les effectifs sont trop faibles (secret statistique).
+
+<details>
+<summary>Jeux examinés et écartés</summary>
+
+- `/datasets/plaintes-recues-par-la-cnil` : Le jeu existe (CNIL, licence fr-lo, mis à jour le 2026-05-19), mais il ne donne que des volumes nationaux annuels de plaintes RGPD, surtout sur la prospection et l'exercice des droits. Le lien avec la cybermalveillance est faible, et le jeu des notifications de violations, déjà retenu, couvre mieux le sujet.
+- `/datasets/pix-resultats-par-palier-des-parcours-de-rentree-pour-les-eleves-des-colleges-et-lycees` : Le jeu existe et il est détaillé par établissement (UAI, code commune), contrairement à ce qu'indiquait la proposition. Mais il ne donne qu'un palier global de compétences numériques (0 à 3), sans isoler le domaine « protection et sécurité » : il est trop indirect pour une conférence de sensibilisation cyber. Sa licence n'est pas spécifiée.
+
+</details>
+
+---
+
+Retour à la [synthèse](/02-donnees/05-donnees-par-defi/00-synthese) · Référentiels communs : voir la synthèse.

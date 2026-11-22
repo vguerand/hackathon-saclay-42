@@ -1,0 +1,40 @@
+---
+title: 'Conventions de code et de documentation'
+sidebar_label: 'Conventions'
+description: 'Règles de code, contraintes du site statique, usage du thème et règles de rédaction de cette documentation.'
+---
+
+## Règles de code
+
+- **Site statique :** aucun code serveur. Pas de route API, de Server Action, de middleware, de cookie ni de lecture de session. `next/headers` et `next/server` sont interdits par le lint.
+- **Pages minces :** un fichier de `src/app/` charge les données et rend une vue de `src/features/`. La mise en page n'y vit pas.
+- **Lecture de fichiers au build uniquement :** `src/lib/content/` lit le disque (`content/defis/`, `public/photos-evenement/`). Ces modules ne s'importent que depuis les pages de `src/app/`, jamais depuis un composant `'use client'`.
+- **`'use client'`** en tête de tout composant utilisant des hooks React.
+- **Mantine uniquement :** pas de Tailwind, pas de bibliothèque de primitives tierce (Radix, Base UI, Headless UI), pas de `clsx`. Le lint refuse ces imports.
+- **Liens externes :** jamais d'adresse Tally ou de dépôt écrite dans un composant ; passer par `src/lib/config/links.ts`.
+- **Français uniquement :** le site n'est pas traduit. Les textes d'interface sont dans `src/lib/content/texts.ts`.
+- **Accents :** les textes lisibles conservent leurs accents ; seuls les identifiants techniques (noms de fichiers, variables) en sont dépourvus.
+- **Nom de l'école :** toujours « 42 Paris ». Le logo 42 n'existe qu'en noir ou en blanc.
+
+## Outillage
+
+| Outil      | Rôle                                   | Configuration     |
+| ---------- | -------------------------------------- | ----------------- |
+| Biome      | Lint (le formatage Biome est désactivé) | `biome.jsonc`     |
+| oxfmt      | Formatage                              | `.oxfmtrc.json`   |
+| TypeScript | Vérification des types                 | `tsconfig.json`   |
+| Vitest     | Tests unitaires                        | `vitest.config.ts` |
+| lefthook   | Hooks git                              | `lefthook.yml`    |
+
+Les alias d'import sont `$lib/*` (`src/lib/*`) et `@/*` (`src/*`).
+
+## Design system
+
+Couleurs, typographie, contrastes et accessibilité sont décrits dans [Thème et jetons](/03-technique/01-design-system/00-theme-et-jetons). Passer par le thème Mantine (`src/theme/index.ts`) plutôt que d'écrire une couleur ou une police en dur.
+
+## Documentation
+
+- Une page = un fichier `.mdx` avec un en-tête `title`, `sidebar_label` et `description`.
+- Trois dossiers principaux : `01-organisation/` (organisation du hackathon), `02-donnees/` (données et open data) et `03-technique/` (ce dépôt). Dossiers et fichiers sont numérotés (`01-…`) ; la navigation est générée par `pnpm docs:nav`.
+- Les diagrammes utilisent le composant `<Mermaid chart={…} />` (les blocs de code `mermaid` ne sont pas rendus).
+- Le dossier `docs/` est exclu du lint et du formatage du site.

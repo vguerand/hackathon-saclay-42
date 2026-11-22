@@ -1,0 +1,118 @@
+---
+title: 'Logement, urbanisme et foncier : données à aller chercher'
+sidebar_label: 'Logement et foncier'
+description: 'Producteurs et jeux de données territoriaux ouverts sur le thème logement, urbanisme et foncier, absents du portefeuille actuel, avec un défi type et les convergences.'
+---
+
+| Producteur                                                                                                                                       | Type                                                                                 | Pilier | Jeux vérifiés |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | :----: | ------------: |
+| [Agence nationale de l'habitat (Anah)](https://www.data.gouv.fr/organizations/agence-nationale-de-lhabitat)                                      | établissement public (opérateur État)                                                |   3    |             3 |
+| [Service des données et études statistiques (SDES)](https://www.data.gouv.fr/organizations/service-des-donnees-et-etudes-statistiques-sdes)      | service statistique ministériel (État, ministère de la Transition écologique)        |   1    |             2 |
+| [Cerema](https://www.data.gouv.fr/organizations/cerema)                                                                                          | établissement public (expertise aménagement, opérateur État)                         |   1    |             2 |
+| [Agence nationale de la cohésion des territoires (ANCT)](https://www.data.gouv.fr/organizations/agence-nationale-de-la-cohesion-des-territoires) | établissement public (opérateur État)                                                |   3    |             2 |
+| [Région Île-de-France](https://www.data.gouv.fr/organizations/region-ile-de-france)                                                              | collectivité territoriale (région)                                                   |   1    |             3 |
+| [Observatoires locaux des loyers](https://www.data.gouv.fr/organizations/observatoires-locaux-des-loyers)                                        | réseau d'observatoires (associations, agences d'urbanisme, ADIL), soutenu par l'État |   3    |             2 |
+
+## Agence nationale de l'habitat (Anah)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/agence-nationale-de-lhabitat) · 9 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Construire en 48 h un radar des copropriétés fragiles de l'agglomération Paris-Saclay en croisant le RNIC (impayés, taille, période de construction), les carreaux PPOM et les DPE, puis vérifier si les opérations programmées Anah couvrent les poches détectées.
+
+**Pourquoi c'est intéressant :** Le RNIC est publié au niveau de chaque copropriété et mis à jour chaque jour : on peut le croiser directement avec d'autres données. Il permet d'évaluer une politique publique, en comparant le ciblage des aides aux besoins réels, et d'agir sur la rénovation énergétique du parc privé. Le PPOM est un outil de pré-repérage de l'habitat indigne, mais ses carreaux datent de 2019.
+
+**Convergences :** DGALN-DHUP (politique du logement, LOVAC), Communauté d'agglomération Paris-Saclay (PLH, OPAH), Ville de Paris (piste bâti), IGN (BD TOPO pour géolocaliser). Se croise avec la BDNB et l'Observatoire DPE déjà inventoriés.
+
+| Jeu de données                                                                                                                                                          | Maille                                                                                          | Couverture Paris-Saclay                   | Licence · mise à jour            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------- | -------------------------------- |
+| [Registre national d'Immatriculation des Copropriétés](https://www.data.gouv.fr/datasets/registre-national-dimmatriculation-des-coproprietes)                           | copropriété (granularité déclarée : commune)                                                    | national (inclut Essonne et Paris-Saclay) | Licence Ouverte 2.0 · 2026-10-24 |
+| [Indicateurs du Parc Privé à Occupation Modeste (PPOM)](https://www.data.gouv.fr/datasets/indicateurs-du-parc-prive-a-occupation-modeste-ppom)                          | carreaux (fichiers « Carreaux PPOM France métropolitaine 2019 ») et données agrégées de cadrage | national (France métropolitaine et DROM)  | Licence Ouverte 2.0 · 2026-03-16 |
+| [Liste des opérations programmées de l'Anah (en cours et terminées)](https://www.data.gouv.fr/datasets/liste-des-operations-programmees-de-lanah-en-cours-et-terminees) | opération (OPAH, PIG...) rattachée aux communes couvertes                                       | national                                  | Licence Ouverte 2.0 · 2026-10-24 |
+
+## Service des données et études statistiques (SDES)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/service-des-donnees-et-etudes-statistiques-sdes) · 41 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Cartographier le parc social de l'Essonne logement par logement (RPLS : DPE, loyer, ancienneté) et le croiser avec l'exposition aux argiles et les îlots de chaleur pour classer les résidences à rénover et à adapter en priorité.
+
+**Pourquoi c'est intéressant :** RPLS est la seule source ouverte qui décrit le parc social logement par logement. Le jeu RGA ajoute un risque climatique majeur pour l'Essonne, aux sols argileux, chiffré par EPCI selon la période de construction.
+
+**Convergences :** DGALN-DHUP (loi SRU, rénovation du parc social), Communauté d'agglomération Paris-Saclay (PLH), Ville de Paris (piste bâti), Assemblée nationale / LexImpact (effets de la loi SRU). Complète Sitadel et la liste des permis de construire déjà inventoriés, qui viennent du même producteur.
+
+| Jeu de données                                                                                                                                                                                                                       | Maille                                            | Couverture Paris-Saclay                     | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- | ------------------------------------------- | -------------------------------- |
+| [Données détaillées au logement du répertoire des logements locatifs des bailleurs sociaux (RPLS)](https://www.data.gouv.fr/datasets/donnees-detaillees-au-logement-du-repertoire-des-logements-locatifs-des-bailleurs-sociaux-rpls) | logement (granularité déclarée : point d'intérêt) | national (inclut Essonne)                   | Licence Ouverte 1.0 · 2026-10-23 |
+| [Exposition des maisons individuelles au phénomène de retrait-gonflement des argiles (RGA)](https://www.data.gouv.fr/datasets/exposition-des-maisons-individuelles-au-phenomene-de-retrait-gonflement-des-argiles-rga)               | EPCI                                              | national, par EPCI (inclut CA Paris-Saclay) | Licence Ouverte 1.0 · 2026-10-25 |
+
+## Cerema
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/cerema) · 206 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Mesurer le foncier mobilisable sans artificialiser sur le plateau de Saclay en croisant FUSAC (fonciers d'activité), DVF+ (dynamique des prix) et Cartofriches, puis proposer une trajectoire ZAN crédible pour l'agglomération.
+
+**Pourquoi c'est intéressant :** Le Cerema est le producteur central du foncier (DVF+, FUSAC, Cartofriches, consommation d'espaces), mais il n'est pas encore porteur. Le faire venir permettrait un défi ZAN bien outillé, avec des experts capables d'expliquer les biais des données.
+
+**Convergences :** DGALN-DHUP (co-producteur de DVF+, ZAN), Communauté d'agglomération Paris-Saclay (SCoT, zones d'activités), Station F x Ville de demain, IGN (OCS GE). Prolonge Cartofriches et la consommation d'ENAF du Cerema, déjà inventoriées. DVF+ est une restructuration distincte de DVF géolocalisé, qui est déjà dans la liste.
+
+| Jeu de données                                                                                                                                    | Maille                                                    | Couverture Paris-Saclay                  | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ---------------------------------------- | -------------------------------- |
+| [DVF+ open-data](https://www.data.gouv.fr/datasets/dvf-open-data)                                                                                 | mutation / parcelle géolocalisée (base PostGIS, CSV, SHP) | national (inclut Essonne)                | Licence Ouverte 2.0 · 2026-10-25 |
+| [FUSAC - Base nationale des fonciers à usage d'activités](https://www.data.gouv.fr/datasets/fusac-base-nationale-des-fonciers-a-usage-dactivites) | foncier d'activité (gpkg / sql / xlsx)                    | national (France métropolitaine et DROM) | Licence Ouverte 2.0 · 2026-10-25 |
+
+## Agence nationale de la cohésion des territoires (ANCT)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/agence-nationale-de-la-cohesion-des-territoires) · 51 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Évaluer en 48 h si les quartiers prioritaires de l'Essonne profitent réellement du renouvellement urbain : comparer les QPV en NPNRU (Grigny, Évry, Corbeil, Longjumeau...) aux autres sur les revenus carroyés, les DPE, la part de logement social et l'accès aux équipements.
+
+**Pourquoi c'est intéressant :** Les périmètres QPV 2024 servent de clé de jointure à toute évaluation de la politique de la ville. La table de correspondance entre 2015 et 2024 permet de suivre les quartiers dans le temps. La liste NPNRU n'a pas bougé depuis 2022 (moins de 4 ans) et reste utile comme marqueur de traitement.
+
+**Convergences :** Communauté d'agglomération Paris-Saclay (QPV des Ulis, de Massy, de Longjumeau et de Chilly-Mazarin), DGALN-DHUP, Assemblée nationale / LexImpact, Ville de Paris. Se croise avec Filosofi carroyé et la BPE, déjà inventoriés.
+
+| Jeu de données                                                                                                                                       | Maille                              | Couverture Paris-Saclay                                                                                                  | Licence · mise à jour            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+| [Quartiers prioritaires de la politique de la ville (QPV)](https://www.data.gouv.fr/datasets/quartiers-prioritaires-de-la-politique-de-la-ville-qpv) | périmètre infra-communal (polygone) | oui : 6 QPV 2024 dans la CA Paris-Saclay (Les Ulis x2, Massy x2, Longjumeau, Chilly-Mazarin) ; Palaiseau n'en compte pas | Licence Ouverte 1.0 · 2026-10-06 |
+| [Le Nouveau programe national de renouvellement urbain](https://www.data.gouv.fr/datasets/le-nouveau-programe-national-de-renouvellement-urbain)     | quartier / commune                  | oui : 12 communes de l'Essonne, dont une seule dans la CA Paris-Saclay (Longjumeau, Bel Air - Rocade, intérêt régional)  | Licence Ouverte 2.0 · 2022-11-25 |
+
+## Région Île-de-France
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/region-ile-de-france) · 1103 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Retracer l'artificialisation du plateau de Saclay avec le MOS, la confronter aux PRIF de l'Agence des espaces verts, puis repérer les friches et bâtiments candidats à l'urbanisme transitoire (logement étudiant, tiers-lieux), en s'appuyant sur les projets déjà soutenus à Corbeville et à Massy.
+
+**Pourquoi c'est intéressant :** Le MOS est la série longue d'occupation du sol propre à l'Île-de-France, suivie depuis 1982 et outil régional de suivi du ZAN, mais data.gouv.fr ne publie que le millésime 2017. Les données d'urbanisme transitoire contiennent des projets concrets sur le campus. Faire venir la Région apporterait un acteur qui planifie en Essonne.
+
+**Convergences :** Communauté d'agglomération Paris-Saclay (aménagement du campus), PatriNat / Programme-R (biodiversité, SRCE déjà inventorié), IGN (OCS GE, forêt), Station F x Ville de demain (urbanisme transitoire). L'EPA Paris-Saclay, porteur de plusieurs projets transitoires, est un autre producteur à envisager.
+
+| Jeu de données                                                                                                                                                            | Maille                                               | Couverture Paris-Saclay                                                                              | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Mode d'occupation du sol (MOS) en 11 postes en 2017](https://www.data.gouv.fr/datasets/mode-doccupation-du-sol-mos-en-11-postes-en-2017)                                 | polygone d'occupation du sol, 11 postes, pas de 25 m | oui (Île-de-France entière)                                                                          | ODbL · 2025-03-12                |
+| [Périmètres régionaux d'intervention foncière Région Île-de-France](https://www.data.gouv.fr/datasets/perimetres-regionaux-dintervention-fonciere-region-ile-de-france-1) | périmètre (polygone), 56 PRIF                        | oui (Île-de-France ; 2 PRIF répondent à la recherche « Saclay » sur data.iledefrance.fr)             | Licence Ouverte 2.0 · 2022-12-02 |
+| [Initiatives d’urbanisme transitoire](https://www.data.gouv.fr/datasets/initiatives-durbanisme-transitoire)                                                               | point (projet soutenu par la Région)                 | oui : projets à Orsay (ZAC de Corbeville), Palaiseau, Massy, portés notamment par l'EPA Paris-Saclay | Licence Ouverte 2.0 · 2024-11-29 |
+
+## Observatoires locaux des loyers
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/observatoires-locaux-des-loyers) · 2 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Mesurer la tension locative pour les étudiants et jeunes chercheurs autour du campus Paris-Saclay : comparer les loyers observés (OLL, zones de l'agglomération parisienne hors Paris) aux loyers d'annonce de la « Carte des loyers » et à la vacance LOVAC, puis simuler l'effet d'un encadrement des loyers.
+
+**Pourquoi c'est intéressant :** C'est la seule source ouverte de loyers réellement observés, et non d'annonce, détaillés par type de logement, époque de construction et ancienneté d'occupation. Elle est indispensable pour évaluer l'encadrement des loyers et le logement des étudiants et chercheurs du cluster.
+
+**Convergences :** DGALN-DHUP (la « Carte des loyers » par commune 2025 et LOVAC 2020-2026 sont publiés sous l'organisation Ministère de la Transition écologique ; ces deux jeux ont été vérifiés : https://www.data.gouv.fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025 et https://www.data.gouv.fr/datasets/logements-vacants-du-parc-prive-par-commune-departement-region-france-de-2020-a-2026, licence lov2), Ville de Paris (encadrement des loyers), Assemblée nationale / LexImpact, Communauté d'agglomération Paris-Saclay.
+
+| Jeu de données                                                                                                                                                       | Maille                                                             | Couverture Paris-Saclay                                                                                                         | Licence · mise à jour            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Résultats des observatoires locaux des loyers par agglomération](https://www.data.gouv.fr/datasets/resultats-des-observatoires-locaux-des-loyers-par-agglomeration) | agglomération, ville centre, zones de calcul et zones élémentaires | oui : agglomération parisienne couverte (fichiers L7500, L7501 Paris, L7502 hors Paris) ; découpage fin de l'Essonne à vérifier | Licence Ouverte 2.0 · 2026-10-15 |
+| [Résultats nationaux des observatoires locaux des loyers](https://www.data.gouv.fr/datasets/resultats-nationaux-des-observatoires-locaux-des-loyers)                 | agglomération et ville centre                                      | national (agglomération parisienne)                                                                                             | Licence Ouverte 2.0 · 2026-10-15 |
+
+<details>
+<summary>Propositions examinées et écartées</summary>
+
+- **Quartiers prioritaires de la politique de la ville - Habitat ancien dégradé (ANCT) https://www.data.gouv.fr/datasets/quartiers-prioritaires-de-la-politique-de-la-ville-habitat-ancien-degrade** : Non mis à jour depuis le 2018-06-18, soit plus de 8 ans, avec une seule ressource. Il repose sur un arrêté de 2018 et sur la géographie QPV 2015, remplacée par les QPV 2024.
+- **Données détaillées du prix des terrains et du bâti (EPTB, SDES) https://www.data.gouv.fr/datasets/donnees-detaillees-du-prix-des-terrains-et-du-bati** : Le jeu existe (fr-lo, mis à jour le 2026-10-25), mais sa granularité déclarée est la région : il ne permet pas d'analyse à l'échelle de l'Essonne ou de Paris-Saclay. DVF+ couvre le même besoin au niveau de la parcelle.
+
+</details>
+
+---
+
+Retour aux [priorités](/02-donnees/06-donnees-a-aller-chercher/00-priorites).

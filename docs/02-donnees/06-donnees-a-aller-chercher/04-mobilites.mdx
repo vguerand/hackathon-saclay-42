@@ -1,0 +1,115 @@
+---
+title: 'Mobilités et transports : données à aller chercher'
+sidebar_label: 'Mobilités'
+description: 'Producteurs et jeux de données territoriaux ouverts sur le thème mobilités et transports, absents du portefeuille actuel, avec un défi type et les convergences.'
+---
+
+| Producteur                                                                                                            | Type                                                                    | Pilier | Jeux vérifiés |
+| --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | :----: | ------------: |
+| [Île-de-France Mobilités](https://www.data.gouv.fr/organizations/ile-de-france-mobilites)                             | établissement public (autorité organisatrice des mobilités régionale)   |   3    |             3 |
+| [Point d'Accès National transport.data.gouv.fr](https://www.data.gouv.fr/organizations/equipe-transport-data-gouv-fr) | service de l'État (DGITM / beta.gouv)                                   |   1    |             3 |
+| [SNCF](https://www.data.gouv.fr/organizations/sncf)                                                                   | entreprise publique                                                     |   3    |             2 |
+| [Registre de Preuve de Covoiturage](https://www.data.gouv.fr/organizations/registre-de-preuve-de-covoiturage)         | service de l'État (startup d'État, ministère chargé des transports)     |   3    |             1 |
+| [Geovelo](https://www.data.gouv.fr/organizations/geovelo)                                                             | entreprise (opérateur de services vélo, données issues d'OpenStreetMap) |   1    |             1 |
+| [Région Île-de-France](https://www.data.gouv.fr/organizations/region-ile-de-france)                                   | collectivité territoriale (région)                                      |   1    |             2 |
+
+## Île-de-France Mobilités
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/ile-de-france-mobilites) · 95 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Mesurer, à l'IRIS, l'accessibilité en transports en commun au campus Paris-Saclay aujourd'hui et après l'ouverture de la ligne 18, et croiser avec la fréquentation réelle des gares (validations) pour repérer les zones sous-desservies.
+
+**Pourquoi c'est intéressant :** Producteur de référence pour l'Île-de-France, non engagé : demande réelle (validations quotidiennes par arrêt), offre (GTFS) et projets de gares géolocalisés, ce qui permet une évaluation avant/après ligne 18 très concrète pour le territoire hôte. Point d'attention : la licence du GTFS n'est pas renseignée sur data.gouv.fr (Licence Mobilités sur la source).
+
+**Convergences :** Communauté d'agglomération Paris-Saclay (desserte du plateau, ligne 18) ; Station F x Ville de demain (mobilité urbaine) ; IGN (BD TOPO, Panoramax pour qualifier les abords des gares) ; DGALN-DHUP (densification autour des gares).
+
+| Jeu de données                                                                                                                                                                                                 | Maille                                                                               | Couverture Paris-Saclay                                                                                           | Licence · mise à jour            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Validations sur le réseau ferré : Nombre de validations par jour (2ème trimestre 2026)](https://www.data.gouv.fr/datasets/validations-sur-le-reseau-ferre-nombre-de-validations-par-jour-2eme-trimestre-2026) | point (arrêt ferré, par jour et par catégorie de titre)                              | oui (toute l'Île-de-France ; arrêts essonniens présents, ex. Lozère sur le RER B, vérifié sur le portail source)  | Licence Ouverte 2.0 · 2026-09-14 |
+| [Horaires prévus sur les lignes de transport en commun d'Ile-de-France (GTFS Datahub)](https://www.data.gouv.fr/datasets/horaires-prevus-sur-les-lignes-de-transport-en-commun-dile-de-france-gtfs-datahub)    | point (arrêt) et ligne, horaires théoriques sur 30 jours, mis à jour 3 fois par jour | oui (zone région 11, toutes lignes OPTILE, RATP, SNCF)                                                            | Non précisée · 2026-10-24        |
+| [Gares, stations et pôles d'échanges multimodaux en projet en Ile-de-France](https://www.data.gouv.fr/datasets/gares-stations-et-poles-dechanges-multimodaux-en-projet-en-ile-de-france)                       | point (arrêt ou pôle projeté, avec statut et phase)                                  | oui (arrêts « Université Paris-Saclay » et « Christ de Saclay » de la ligne 18 phase 1, statut Travaux, vérifiés) | Licence Ouverte 2.0 · 2026-08-31 |
+
+## Point d'Accès National transport.data.gouv.fr
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/equipe-transport-data-gouv-fr) · 11 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Construire en 48 h un indicateur communal de « résilience mobilité » en Essonne (accès à une borne IRVE, à une aire de covoiturage, à un arrêt TC) pour identifier les communes dépendantes de la voiture thermique.
+
+**Pourquoi c'est intéressant :** Agrégateur national des données de mobilité aux schémas standardisés (IRVE, covoiturage, arrêts) : couverture homogène et mises à jour fréquentes, idéal pour comparer Paris-Saclay à d'autres territoires.
+
+**Convergences :** Base ZFE déjà inventoriée (même producteur) ; DGALN-DHUP (aménagement) ; Communauté d'agglomération Paris-Saclay ; consommation électricité par commune déjà inventoriée (impact réseau des IRVE).
+
+| Jeu de données                                                                                                                                                                                                         | Maille                                                                              | Couverture Paris-Saclay | Licence · mise à jour            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------- | -------------------------------- |
+| [[BETA] Bases Nationales des Points de Recharge pour Véhicules Électriques en France (IRVE)](https://www.data.gouv.fr/datasets/beta-bases-nationales-des-points-de-recharge-pour-vehicules-electriques-en-france-irve) | point (point de recharge), données statiques et dynamiques, mise à jour quotidienne | national                | Licence Ouverte 2.0 · 2026-10-25 |
+| [Base Nationale des Lieux de Covoiturage](https://www.data.gouv.fr/datasets/base-nationale-des-lieux-de-covoiturage)                                                                                                   | point (lieu de covoiturage), mise à jour mensuelle                                  | national                | ODbL · 2026-10-23                |
+| [Arrêts de transport en France](https://www.data.gouv.fr/datasets/arrets-de-transport-en-france)                                                                                                                       | point (arrêt, extrait de tous les GTFS du PAN, publication expérimentale)           | national                | Licence Ouverte 2.0 · 2026-01-13 |
+
+## SNCF
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/sncf) · 180 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Évaluer la fiabilité du service ferré vue depuis l'Essonne : croiser régularité mensuelle des lignes RER, fréquentation des gares et population desservie pour classer les gares où un retard pèse sur le plus d'usagers.
+
+**Pourquoi c'est intéressant :** Séries longues de qualité de service (ponctualité depuis 2013) : rare matière pour évaluer une politique publique de transport avec des indicateurs de performance réels.
+
+**Convergences :** Île-de-France Mobilités (validations) ; Région Île-de-France (fréquentation des gares franciliennes) ; Communauté d'agglomération Paris-Saclay ; IGN (géolocalisation des gares) ; Assemblée nationale / LexImpact (évaluation de la qualité de service public).
+
+| Jeu de données                                                                                       | Maille                                             | Couverture Paris-Saclay                        | Licence · mise à jour |
+| ---------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------------------------------------------- | --------------------- |
+| [Régularité mensuelle Transilien](https://www.data.gouv.fr/datasets/regularite-mensuelle-transilien) | ligne (mensuel, ponctualité voyageurs depuis 2013) | oui (lignes Transilien et RER d'Île-de-France) | ODbL · 2026-10-08     |
+| [Gares de voyageurs](https://www.data.gouv.fr/datasets/gares-de-voyageurs-1)                         | point (gare), mise à jour quotidienne              | national                                       | ODbL · 2026-10-24     |
+
+## Registre de Preuve de Covoiturage
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/registre-de-preuve-de-covoiturage) · 1 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Évaluer l'effet des incitations au covoiturage domicile-travail vers le plateau de Saclay : cartographier les flux de covoiturage effectifs entrants et les comparer à l'offre TC et aux aires de covoiturage.
+
+**Pourquoi c'est intéressant :** Seule source publique de trajets de covoiturage réellement effectués (preuves certifiées par les opérateurs), adossée à des politiques de subvention : support direct d'évaluation de politique publique.
+
+**Convergences :** Point d'Accès National (lieux de covoiturage) ; Communauté d'agglomération Paris-Saclay (flux domicile-campus) ; LexImpact (évaluation d'une incitation financière publique).
+
+| Jeu de données                                                                                                                                                             | Maille                                                                                                                              | Couverture Paris-Saclay                                                                  | Licence · mise à jour            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------- |
+| [Trajets réalisés en covoiturage - Registre de Preuve de Covoiturage](https://www.data.gouv.fr/datasets/trajets-realises-en-covoiturage-registre-de-preuve-de-covoiturage) | trajet (commune INSEE de départ et d'arrivée, coordonnées tronquées à environ 70 m, communes rares supprimées), un fichier par mois | national (France métropolitaine ; codes INSEE essonniens présents dans la documentation) | Licence Ouverte 1.0 · 2026-10-06 |
+
+## Geovelo
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/geovelo) · 2 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Détecter les discontinuités du réseau cyclable entre les gares RER de la vallée et le plateau de Saclay, et proposer les tronçons prioritaires à aménager selon la population et les emplois desservis.
+
+**Pourquoi c'est intéressant :** Base nationale homogène des aménagements cyclables au schéma national, mise à jour mensuellement : permet de travailler les ruptures de continuité, enjeu fort pour l'accès au plateau. Attention : le producteur signale un changement de format à partir d'octobre 2026.
+
+**Convergences :** Ville de Paris (comptages vélo déjà inventoriés) ; IGN (BD TOPO, Panoramax pour vérifier sur le terrain) ; Région Île-de-France (stationnement vélo) ; Communauté d'agglomération Paris-Saclay.
+
+| Jeu de données                                                                                                                 | Maille                                                                   | Couverture Paris-Saclay          | Licence · mise à jour |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ | -------------------------------- | --------------------- |
+| [Aménagements cyclables France Métropolitaine](https://www.data.gouv.fr/datasets/amenagements-cyclables-france-metropolitaine) | tronçon de voie (linéaire), rattaché à la commune, mise à jour mensuelle | national (France métropolitaine) | ODbL · 2026-10-01     |
+
+## Région Île-de-France
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/region-ile-de-france) · 1103 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Rapprocher la capacité de stationnement vélo autour de chaque gare francilienne de sa fréquentation pour identifier, en Essonne, les gares où l'intermodalité vélo-train est sous-dimensionnée.
+
+**Pourquoi c'est intéressant :** Collectivité qui consolide des données régionales de mobilité et finance les infrastructures (plan vélo régional, pôles gares). La fréquentation est l'extraction francilienne du jeu SNCF national (données 2015-2024).
+
+**Convergences :** Île-de-France Mobilités et SNCF (mêmes gares) ; Geovelo (accès cyclable aux gares) ; Communauté d'agglomération Paris-Saclay.
+
+| Jeu de données                                                                                                                                  | Maille                                                                 | Couverture Paris-Saclay                                                       | Licence · mise à jour     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------- |
+| [Fréquentation annuelle des gares SNCF d’Île-de-France](https://www.data.gouv.fr/datasets/frequentation-annuelle-des-gares-sncf-dile-de-france) | point (gare, annuel 2015-2024 ; 401 gares franciliennes)               | oui (Île-de-France, dont gares de l'Essonne, ex. Massy)                       | ODbL · 2026-10-25         |
+| [Stationnement vélo en Île-de-France](https://www.data.gouv.fr/datasets/stationnement-velo-en-ile-de-france-2)                                  | point (emplacement de stationnement : arceaux, Véligo...), trimestriel | oui (Île-de-France ; 133 emplacements à Orsay, vérifié sur le portail source) | Non précisée · 2026-07-17 |
+
+<details>
+<summary>Propositions examinées et écartées</summary>
+
+- **SNCF — Fréquentation en gares (https://www.data.gouv.fr/datasets/frequentation-en-gares)** : Doublon : même source et même description que « Fréquentation annuelle des gares SNCF d'Île-de-France » (Région), qui en est l'extraction francilienne (401 gares). Le jeu national n'a pas été mis à jour depuis le 2024-09-06. On garde la version régionale.
+
+</details>
+
+---
+
+Retour aux [priorités](/02-donnees/06-donnees-a-aller-chercher/00-priorites).

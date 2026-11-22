@@ -1,0 +1,54 @@
+---
+title: 'Thème, jetons et accessibilité'
+sidebar_label: 'Thème et jetons'
+description: "Palette Mantine Paris-Saclay × 42, typographie, formes, contrastes mesurés et règles d'usage des couleurs."
+---
+
+Le thème est centralisé dans `src/theme/index.ts` (Mantine v7, `createTheme`). **Toute couleur, police ou forme doit passer par ce thème** : c'est ce qui permet de changer l'identité en une ligne plutôt qu'en dizaines de fichiers.
+
+## Palettes
+
+| Palette          | Nuance de référence  | Usage                                   |
+| ---------------- | -------------------- | --------------------------------------- |
+| `saclay-plum`    | `#63003C` (nuance 6) | Couleur primaire (`primaryColor`)       |
+| `saclay-magenta` | `#CA007A` (nuance 6) | Accent, mises en avant                  |
+| `saclay-navy`    | `#202955` (nuance 6) | Titres et fonds sombres                 |
+| `saclay-slate`   | `#313E48` (nuance 6) | Textes secondaires, bordures            |
+| `saclay-cyan`    | `#00babc` (nuance 5) | Accent 42, **aplat de fond uniquement** |
+
+> **Héritage :** les palettes `an-blue`, `an-red`, `an-emerald` et `an-navy` existent encore pour compatibilité et pointent vers les couleurs Paris-Saclay. Ne pas les utiliser dans du nouveau code.
+
+> **Arbitrage en attente :** le site de référence universite-paris-saclay.fr rend un prune `#8b1b59`, plus clair que `#63003C`. Les deux passent le contraste AA ; le choix doit être fait avant tout autre travail de couleur.
+
+## Typographie et formes
+
+| Élément | Valeur actuelle                 | Remarque                                                   |
+| ------- | ------------------------------- | ---------------------------------------------------------- |
+| Texte   | Lato                            |                                                            |
+| Titres  | Lora (serif)                    | Le site de référence n'emploie aucune serif : voir l'audit |
+| Angles  | `radius: 0` sur toute l'échelle | Conforme à la référence                                    |
+| Ombres  | Aucune                          | Conforme à la référence                                    |
+| Boutons | Capitales, graisse forte        |                                                            |
+
+## Contrastes sur fond blanc
+
+Mesures WCAG 2.1 :
+
+| Couleur                   | Ratio      | Verdict                       |
+| ------------------------- | ---------- | ----------------------------- |
+| `#63003C` prune           | 13,16:1    | ✅ AA                         |
+| `#313E48` ardoise         | 10,98:1    | ✅ AA                         |
+| `#475569` gris texte      | 7,58:1     | ✅ AA                         |
+| `#CA007A` magenta         | 5,54:1     | ✅ AA                         |
+| `#64748b` gris secondaire | 4,76:1     | ✅ AA, sans marge             |
+| `#00BABC` cyan 42         | **2,40:1** | ❌ Échec, même en grand texte |
+
+**Règle :** le cyan 42 ne porte jamais de texte et ne sert jamais d'unique indicateur d'état. L'utiliser en aplat de fond avec un texte sombre, ou passer à `#007a7b` (nuance 7).
+
+## Accessibilité
+
+Cible **RGAA 4.1 niveau AA** : navigation clavier complète, focus visible et piégé dans les modales, contrastes d'au moins 4,5:1 pour le texte courant, respect de `prefers-reduced-motion`. La procédure d'audit est décrite dans le skill [Revue RGAA](/03-technique/04-skills/rgaa-review).
+
+## Documentation
+
+Ce portail Zudoku reprend la même prune (`zudoku.config.tsx`, clé `theme`) ; la typographie éditoriale est dans `docs/zudoku.theme.css`.

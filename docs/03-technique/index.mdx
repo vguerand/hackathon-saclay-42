@@ -1,0 +1,40 @@
+---
+title: 'Documentation technique'
+sidebar_label: "Vue d'ensemble"
+description: "Vue d'ensemble de ce dépôt : site statique Next.js, contenu en fichiers, formulaires Tally, documentation Zudoku et plan de la documentation technique."
+---
+
+Ce dépôt contient **le site du hackathon** (Next.js 16 en export statique, React 19, Mantine v7) et **cette documentation** (Zudoku, dossier `docs/`).
+
+Le site n'a **ni serveur applicatif, ni base de données, ni compte utilisateur**. Tout le contenu est dans le dépôt, et tout ce qui demande une saisie passe par des formulaires Tally gérés par 42 Paris.
+
+<Mermaid
+	title="Le dépôt et ce qui l'entoure"
+	chart={`flowchart LR
+    MD["content/defis/*.md"] --> BUILD[pnpm build]
+    CFG["src/lib/config et src/lib/content"] --> BUILD
+    BUILD --> OUT["out/ : HTML, CSS, JS"]
+    OUT --> HOST[Hébergement 42 Paris]
+    HOST --> NAV[Navigateur]
+    NAV -- liens --> TALLY[Formulaires Tally]
+    NAV -- liens --> GIT[Git partagé des rendus]
+    DOCS["docs/*.mdx"] -- pnpm docs:build --> DOC[Portail Zudoku]`}
+/>
+
+## Sections
+
+| Section                    | Contenu                                                                 | Commencer par                                                        |
+| -------------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **Prise en main**          | Installation, commandes, déploiement, conventions                       | [Installation](/03-technique/00-prise-en-main/00-installation)       |
+| **Design system et style** | Palette, typographie, contrastes                                        | [Thème et jetons](/03-technique/01-design-system/00-theme-et-jetons) |
+| **Architecture**           | Organisation du code, contenu en fichiers                               | [Vue d'ensemble](/03-technique/02-architecture/00-vue-ensemble)      |
+| **Fonctionnalités**        | Pages du site, formulaires Tally, rendus des équipes                    | [Pages du site](/03-technique/03-fonctionnalites/00-routes)          |
+| **Skills agents**          | Procédures pour les assistants IA (revue de code, RGAA, rédaction…)     | [Skills](/03-technique/04-skills/index)                              |
+
+## Chantiers ouverts
+
+| Chantier                                    | Où                              | Détail                                                                        |
+| ------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------------- |
+| Liens Tally et git partagé à renseigner     | `src/lib/config/links.ts`       | [Formulaires et rendus](/03-technique/03-fonctionnalites/01-formulaires-et-rendus) |
+| Hébergement définitif chez 42 Paris         | Serveur web de 42 Paris         | [Déploiement](/03-technique/00-prise-en-main/01-deploiement)                  |
+| Programme des conférences et photos         | `src/lib/content/`, `public/`   | [Contenu du site](/03-technique/02-architecture/01-contenu-du-site)           |

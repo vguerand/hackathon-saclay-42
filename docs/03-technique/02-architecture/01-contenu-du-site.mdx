@@ -1,0 +1,74 @@
+---
+title: 'Contenu du site'
+sidebar_label: 'Contenu du site'
+description: 'Où modifier chaque contenu : porteurs de défis, problématiques, logos, conférences, photos, textes, dates et liens.'
+---
+
+Tout le contenu est dans le dépôt. Une modification = un fichier modifié, puis un nouveau build.
+
+| Pour…                                    | Modifier                                              |
+| ---------------------------------------- | ----------------------------------------------------- |
+| Ajouter ou modifier un porteur de défi   | Un fichier dans `content/defis/`                      |
+| Ajouter le logo d'un porteur             | Une image dans `public/defis/`, puis la clé `image:`  |
+| Renseigner un lien Tally ou le git partagé | `src/lib/config/links.ts`                           |
+| Changer les dates ou le lieu             | `src/lib/config/hackathon.ts`                         |
+| Ajouter une conférence                   | `src/lib/content/conferences.ts`                      |
+| Ajouter des photos à la galerie          | Déposer les images dans `public/photos-evenement/`    |
+| Modifier un texte d'interface            | `src/lib/content/texts.ts`                            |
+| Modifier les mentions légales            | `src/features/legal/LegalNoticeView.tsx`              |
+
+## Porteurs de défis
+
+Chaque porteur a **un fichier Markdown** dans `content/defis/`. Le nom du fichier donne l'adresse de la page : `content/defis/patrinat.md` devient `/defis/patrinat/`. Les fichiers dont le nom commence par `_` sont ignorés ; `_modele.md` sert de modèle.
+
+```md
+---
+titre: Nom du porteur de défi
+image: /defis/mon-porteur.png
+themes: [Donnée territoriale, Climat]
+---
+
+### Première problématique
+
+Une ou deux phrases qui décrivent la question à résoudre.
+
+### Deuxième problématique
+
+Chaque titre de niveau 3 devient une problématique affichée sur la carte.
+```
+
+### En-tête
+
+| Clé            | Obligatoire | Rôle                                                                     |
+| -------------- | :---------: | ------------------------------------------------------------------------ |
+| `titre`        |     Oui     | Nom du porteur                                                           |
+| `image`        |     Non     | Logo affiché sur la carte ; sans image, un motif de repli est affiché    |
+| `resume`       |     Non     | Phrase affichée sur la carte à la place de la liste des problématiques   |
+| `themes`       |     Non     | Étiquettes, sur une ligne : `[Climat, Mobilité]`                         |
+| `depot`        |     Non     | Adresse du dépôt de code                                                 |
+| `branche`      |     Non     | Nom de la branche dans le git partagé                                    |
+| `demo`         |     Non     | Adresse d'une démonstration                                              |
+| `presentation` |     Non     | Adresse du support de présentation                                       |
+
+L'en-tête est lu par un analyseur minimal : une `clé: valeur` par ligne, et les listes sur une seule ligne.
+
+### Corps
+
+Le corps est du Markdown. Chaque titre `###` est une **problématique** : son intitulé est repris sur la carte du porteur, et le texte qui suit est affiché sur la page du porteur. Le HTML écrit dans le fichier est échappé, jamais interprété.
+
+### Logos
+
+Les logos sont dans `public/defis/`, un fichier par porteur, sur fond blanc. La carte les affiche entiers, sans recadrage. L'usage de chaque logo doit être validé par le porteur concerné.
+
+## Conférences
+
+Le programme est un tableau dans `src/lib/content/conferences.ts`, affiché dans l'ordre du fichier. Tant qu'il est vide, la page `/conferences` affiche un message d'attente.
+
+## Photos
+
+La galerie affiche toutes les images déposées dans `public/photos-evenement/`, triées par nom de fichier. Sans image, la page affiche un message d'attente.
+
+## Dates, lieu et liens
+
+- `src/lib/config/hackathon.ts` : dates (18 et 19 mars 2027), lieu, titre et libellés dérivés. Toutes les pages lisent ces valeurs.
+- `src/lib/config/links.ts` : liens vers l'extérieur. Un lien laissé vide masque le bouton correspondant sur tout le site.

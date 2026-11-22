@@ -1,0 +1,84 @@
+---
+title: 'Open data : accompagner les porteurs de défis'
+sidebar_label: "Vue d'ensemble"
+description: 'Pourquoi et comment faire publier en open data, sur data.gouv.fr et avec Etalab, les données mobilisées par les défis du Data Challenge 2027 consacré aux données territoriales.'
+---
+
+Chaque défi du Data Challenge 2027 repose sur des données. L'objectif de cette section est double : **donner aux étudiants des données réellement exploitables** pendant les 48 heures, et **faire de l'événement un levier de publication durable** sur [data.gouv.fr](https://www.data.gouv.fr/), en lien avec Etalab.
+
+> **Thématique du défi : « Données territoriales ».** Les jeux de données recherchés décrivent un territoire (commune, intercommunalité, quartier, parcelle, bâtiment, réseau) et peuvent se croiser grâce aux référentiels géographiques publics. Voir [Données territoriales](/02-donnees/04-donnees-territoriales).
+
+## Écosystème de la donnée
+
+<Mermaid
+	title="Des producteurs aux équipes, et retour"
+	chart={`flowchart LR
+    subgraph SRC[Producteurs]
+        PO[Porteurs de défis]
+        PN[Producteurs à aller chercher]
+        RF[Référentiels nationaux IGN, INSEE]
+    end
+    PO -- cas 1, ouverture --> DG[(data.gouv.fr)]
+    PN --> DG
+    RF --> DG
+    DG --> KIT[Kit commun Paris-Saclay]
+    DG --> RES[Liens dans la fiche du porteur]
+    RES --> SITE[Pages des porteurs sur le site]
+    KIT --> EQ[Équipes du hackathon]
+    SITE --> EQ
+    EQ -- réutilisations --> DG`}
+/>
+
+Les porteurs ouvrent leurs données (cas 1), les producteurs à aller chercher et les référentiels nationaux complètent le portefeuille. Tout transite par data.gouv.fr, puis alimente le kit commun et les fiches défis du site ; les équipes publient en retour leurs réutilisations.
+
+## Qui fait quoi
+
+| Acteur                                                            | Rôle                                                                                       | Point d'entrée                                                                                               |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| **Etalab** (département de la DINUM)                              | Coordonne la politique d'ouverture et de partage des données publiques, opère data.gouv.fr | [Organisation Etalab sur data.gouv.fr](https://www.data.gouv.fr/organizations/etalab/datasets)               |
+| **Équipe data.gouv.fr**                                           | Support des producteurs, certification des organisations, validation des moissonneurs      | [Support data.gouv.fr](https://www.data.gouv.fr/support)                                                     |
+| **Porteur de défi** (administration, collectivité, établissement) | Producteur : prépare, documente et publie les données sous son organisation                | [Guide « Publier un jeu de données »](https://guides.data.gouv.fr/jeux-de-donnees/publier-un-jeu-de-donnees) |
+| **Organisation du Data Challenge**                                | Diagnostique, accompagne et relie chaque jeu de données à son défi                         | [Accompagner les porteurs](/02-donnees/03-accompagner-les-porteurs)                                          |
+| **Étudiants**                                                     | Réutilisateurs : exploitent les données, publient leurs réutilisations                     | [Publier une réutilisation](https://guides.data.gouv.fr/reutilisations/publier-une-reutilisation)            |
+
+## Les trois situations rencontrées chez les porteurs
+
+| Cas                                   | Situation                                                                    | Parcours proposé                                                                            |
+| ------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **1. Données à ouvrir**               | Le porteur accepte d'ouvrir des jeux pour l'occasion                         | Parcours complet : diagnostic, préparation, publication sur data.gouv.fr                    |
+| **2. Données déjà ouvertes ailleurs** | Les données existent chez un tiers (IGN, INSEE, opérateur, portail régional) | Identifier et citer les jeux existants, compléter si besoin par une ressource communautaire |
+| **3. Données annoncées avec délai**   | L'ouverture est prévue mais pas avant l'événement                            | Jeu d'échantillon ou de test, calendrier de publication écrit, défi conditionné à J-15      |
+
+## Le workflow en un coup d'œil
+
+<Mermaid
+	title="Du défi au jeu de données publié"
+	chart={`flowchart TD
+    A[1. Diagnostic] --> B[2. Cadre juridique]
+    B --> C[3. Préparation]
+    C --> D[4. Schéma et documentation]
+    D --> E[5. Publication data.gouv.fr]
+    E --> F[6. Lien avec le défi]
+    F --> G[7. Réutilisations et suivi]`}
+/>
+
+| Étape                             | Question à trancher                                                 | Page                                                                |
+| --------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| 1. Diagnostic                     | Quelles données, détenues par qui, dans quel cas ?                  | [Accompagner les porteurs](/02-donnees/03-accompagner-les-porteurs) |
+| 2. Cadre juridique                | Peut-on publier ? Faut-il anonymiser ou occulter ? Quelle licence ? | [Cadre et sources officielles](/02-donnees/01-cadre-et-sources)     |
+| 3 à 5. Préparation et publication | Comment structurer, documenter et mettre en ligne ?                 | [Tutoriel de publication](/02-donnees/02-tutoriel-publication)      |
+| 6. Lien avec le défi              | Comment les étudiants trouvent-ils les données ?                    | [Tutoriel, étape 7](/02-donnees/02-tutoriel-publication)            |
+| 7. Réutilisations                 | Comment valoriser les prototypes après l'événement ?                | [Tutoriel, étape 8](/02-donnees/02-tutoriel-publication)            |
+
+## Inventaires
+
+| Inventaire                                                                       | Contenu                                                                                          |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [Open data par porteur](/02-donnees/05-donnees-par-defi/00-synthese)             | Pour chacun des 21 défis du deck : jeux ouverts existants, données à ouvrir, points de vigilance |
+| [Données à aller chercher](/02-donnees/06-donnees-a-aller-chercher/00-priorites) | Producteurs et jeux territoriaux absents du portefeuille, classés par priorité et par thème      |
+
+## Pourquoi c'est le bon moment
+
+- La **circulaire du Premier ministre du 27 avril 2021** a demandé à chaque ministère une feuille de route sur la donnée, les algorithmes et les codes sources ; les 15 feuilles de route sont publiées par Etalab ([jeu de données](https://www.data.gouv.fr/datasets/feuilles-de-route-ministerielles-sur-la-politique-de-la-donnee-des-algorithmes-et-des-codes-sources), avec la [liste des actions](https://www.data.gouv.fr/datasets/liste-des-actions-prises-par-les-ministeres-dans-le-cadre-des-feuilles-de-routes-ministerielles)).
+- Les ministères et préfectures de région disposent de **référents données, algorithmes et codes sources** ([liste en préfecture de région](https://www.data.gouv.fr/datasets/liste-des-referents-donnees-algorithmes-et-codes-sources-en-prefecture-de-region)) : ce sont des interlocuteurs naturels pour débloquer une ouverture.
+- Un défi de hackathon donne à un producteur **un premier cas de réutilisation concret**, argument souvent décisif pour prioriser une ouverture.

@@ -1,0 +1,173 @@
+---
+title: 'Deck de présentation et défis potentiels'
+sidebar_label: 'Deck et défis'
+description: 'Contenu du deck présenté aux partenaires : positionnement, trois piliers thématiques, défis en construction par porteur, calendrier et fil conducteur de la donnée territoriale.'
+---
+
+Cette page reprend le **deck présenté aux partenaires** (état au 26/10/2026) pour disposer d'une version texte, versionnée et reliée au reste de la documentation. Les jeux de données mobilisables pour chaque défi sont recensés dans [Open data par défi](/02-donnees/05-donnees-par-defi/00-synthese).
+
+## Positionnement
+
+**Hackathon Saclay × 42 — Innovation & Data Publique.** Un co-portage Université Paris-Saclay × École 42.
+
+Le Hackathon Paris-Saclay × 42 est centré sur **la création d'outils d'analyse à partir de données ouvertes, au service de l'innovation publique**. Il est conçu comme un terrain de jeu interdisciplinaire où se conjuguent l'innovation technique de l'École 42 et les expertises scientifiques du territoire Paris-Saclay.
+
+**Qui propose et participe ?** Les organisations publiques proposent des défis. Chercheurs, étudiants, experts des administrations d'État et des territoires travaillent ensemble à des POC et à des outils directement réutilisables par les organisations.
+
+> **Fil conducteur commun : la donnée territoriale.** Les défis partagent une même ambition : mobiliser les données pour mieux comprendre les territoires, éclairer les décisions et agir.
+
+## Les trois piliers thématiques
+
+|   # | Pilier                                              | Périmètre                                                                                    |
+| --: | --------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+|   1 | **Souveraineté, résilience et adaptation**          | Sécurité et résilience territoriale, intelligence économique et technologique, cybersécurité |
+|   2 | **Recherche, deeptech et innovation**               | Innovation scientifique et technologique, valorisation de la recherche                       |
+|   3 | **Contrôle et évaluation des politiques publiques** | Mesurer, analyser, piloter et évaluer l'impact de l'action publique                          |
+
+## Défis en construction
+
+| Porteur                                     | Défi                                                                                         | Pilier pressenti |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------- |
+| **Cybermalveillance.gouv.fr** (GIP ACYMA)   | Exploiter les données de Cybermalveillance pour mieux prévenir les menaces                   | 1                |
+|                                             | Crowdsourcer la cybersécurité                                                                | 1                |
+|                                             | Informer le public sur les problématiques cyber _(conférence)_                               | Programme        |
+| **Assemblée nationale** (LexImpact)         | Garantir une consolidation complète et fiable de la loi                                      | 3                |
+|                                             | Cartographier le droit applicable dans chaque territoire                                     | 3                |
+|                                             | Relier automatiquement la loi aux règles de calcul d'OpenFisca                               | 3                |
+| **DGALN – DHUP**                            | Les bâtiments neufs sont-ils suffisamment adaptés aux îlots de chaleur urbains ?             | 1                |
+|                                             | Mesurer le véritable coût de la construction bas carbone                                     | 3                |
+|                                             | Concilier construction, ressources naturelles et biodiversité                                | 1                |
+| **PatriNat (Programme-R)**                  | Construire un cadastre bioclimatique des territoires                                         | 2                |
+|                                             | Identifier les zones prioritaires pour l'adaptation climatique                               | 1                |
+|                                             | Transformer la cartographie en outil d'aide à la décision                                    | 3                |
+| **Station F × Ville de demain**             | Accélérer le passage de l'innovation urbaine au terrain                                      | 2                |
+|                                             | Construire un démonstrateur reproductible à l'échelle d'un territoire (DataCirco, LexImpact) | 2                |
+|                                             | Mesurer l'impact réel des solutions pour la ville de demain                                  | 3                |
+| **Communauté d'agglomération Paris-Saclay** | Cartographier le potentiel du territoire                                                     | 2                |
+|                                             | Anticiper les besoins d'adaptation au changement climatique du territoire Paris-Saclay       | 1                |
+|                                             | Prioriser les projets à fort impact territorial                                              | 3                |
+| **CNRS – Campus Cyber**                     | Crowdsourcer la lutte contre la manipulation de l'information                                | 1                |
+|                                             | Développer les outils de détection de la manipulation de l'information                       | 1                |
+|                                             | Transformer la détection en capacité de réaction                                             | 1                |
+
+_Le pilier pressenti est une proposition de rattachement, à valider par le comité scientifique._
+
+<Mermaid
+	title="Nombre de défis par porteur et par pilier pressenti"
+	chart={`flowchart LR
+    subgraph G0["Pilier 1 : souveraineté et résilience · 9 défis"]
+        direction TB
+        G0N0["Cybermalveillance · 2"]
+        G0N1["DGALN – DHUP · 2"]
+        G0N2["PatriNat – Programme-R · 1"]
+        G0N3["CA Paris-Saclay · 1"]
+        G0N4["CNRS – Campus Cyber · 3"]
+        G0N0 ~~~ G0N1 ~~~ G0N2 ~~~ G0N3 ~~~ G0N4
+    end
+    subgraph G1["Pilier 2 : recherche et deeptech · 4 défis"]
+        direction TB
+        G1N0["PatriNat – Programme-R · 1"]
+        G1N1["Station F – Ville de demain · 2"]
+        G1N2["CA Paris-Saclay · 1"]
+        G1N0 ~~~ G1N1 ~~~ G1N2
+    end
+    subgraph G2["Pilier 3 : évaluation des politiques publiques · 7 défis"]
+        direction TB
+        G2N0["Assemblée nationale · 3"]
+        G2N1["DGALN – DHUP · 1"]
+        G2N2["PatriNat – Programme-R · 1"]
+        G2N3["Station F – Ville de demain · 1"]
+        G2N4["CA Paris-Saclay · 1"]
+        G2N0 ~~~ G2N1 ~~~ G2N2 ~~~ G2N3 ~~~ G2N4
+    end
+    G0 ~~~ G1 ~~~ G2`}
+/>
+
+<details>
+<summary>Détail des défis tel que formulé dans le deck</summary>
+
+**Cybermalveillance.gouv.fr**
+
+- _Exploiter les données de Cybermalveillance pour mieux prévenir les menaces_ : identifier les usages possibles des données disponibles sur la plateforme.
+- _Crowdsourcer la cybersécurité_ : explorer comment mobiliser des contributions collectives au service de la cybersécurité.
+- _Informer le public sur les problématiques cyber_ : proposer une conférence consacrée à l'information et à la sensibilisation du public.
+
+**Assemblée nationale**
+
+- _Garantir une consolidation complète et fiable de la loi_ : comparer automatiquement les textes publiés au Journal officiel avec leurs versions consolidées afin d'identifier les écarts et les dispositions manquantes.
+- _Cartographier le droit applicable dans chaque territoire_ : structurer les actes des communes, intercommunalités et administrations pour permettre à chacun de connaître les règles locales qui le concernent.
+- _Relier automatiquement la loi aux règles de calcul de OpenFisca_ : expérimenter le rattachement des articles de loi aux paramètres socio-fiscaux afin de faciliter, à terme, la mise à jour automatique des modèles.
+
+**DGALN – DHUP**
+
+- _Les bâtiments neufs sont-ils suffisamment adaptés aux îlots de chaleur urbains ?_ Évaluer leur exposition future aux îlots de chaleur et déterminer où le recours au refroidissement risque de devenir incontournable.
+- _Mesurer le véritable coût de la construction bas carbone_ : objectiver les écarts de coûts entre la RT2012 et la RE2020, en distinguant les effets réglementaires, techniques, géographiques et économiques.
+- _Concilier construction, ressources naturelles et biodiversité_ : cartographier les tensions entre développement de la construction bois, capacité des forêts françaises et préservation des écosystèmes.
+
+**PatriNat (Programme-R)**
+
+- _Construire un cadastre bioclimatique des territoires_ : croiser les caractéristiques du bâti, du sol, de la végétation et du climat pour révéler les vulnérabilités et les capacités d'adaptation locales.
+- _Identifier les zones prioritaires pour l'adaptation climatique_ : faire émerger les secteurs les plus exposés aux îlots de chaleur, au manque de végétation ou à l'inconfort thermique.
+- _Transformer la cartographie en outil d'aide à la décision_ : permettre aux collectivités de comparer différents scénarios d'aménagement et de prioriser leurs investissements.
+
+**Station F × Ville de demain**
+
+- _Accélérer le passage de l'innovation urbaine au terrain_ : identifier les conditions permettant de tester plus rapidement une solution deeptech dans un environnement urbain réel.
+- _Construire un démonstrateur reproductible à l'échelle d'un territoire_ : transformer le projet DataCirco de la cellule LexImpact en outil réplicable aux échelles territoriales.
+- _Mesurer l'impact réel des solutions pour la ville de demain_ : définir des indicateurs communs pour évaluer les bénéfices environnementaux, sociaux, opérationnels et économiques d'une innovation.
+
+**Communauté d'agglomération Paris-Saclay**
+
+- _Cartographier le potentiel du territoire_ : réunir les données économiques, foncières, scientifiques et environnementales pour révéler les ressources et complémentarités locales.
+- _Anticiper les besoins d'adaptation au changement climatique du territoire Paris-Saclay_ : identifier les espaces exposés aux fortes chaleurs, au ruissellement, à la sécheresse ou à la perte de biodiversité.
+- _Prioriser les projets à fort impact territorial_ : construire un outil d'aide à la décision permettant de comparer les projets selon leur faisabilité, leur impact et leur contribution à l'adaptation climatique.
+
+**CNRS – Campus Cyber**
+
+- _Crowdsourcer la lutte contre la manipulation de l'information_ : explorer une approche participative de la lutte contre la manipulation de l'information.
+- _Développer les outils de détection de la manipulation de l'information_ : travailler sur la détection de la manipulation de l'information sur les réseaux sociaux.
+- _Transformer la détection en capacité de réaction_ : concevoir des indicateurs et des interfaces permettant aux chercheurs, journalistes et acteurs publics de comprendre rapidement une campagne et d'en mesurer l'ampleur.
+
+</details>
+
+## Calendrier présenté
+
+| Période                      | Étape                                     |
+| ---------------------------- | ----------------------------------------- |
+| Août à septembre 2026        | Montage du projet                         |
+| Octobre à novembre 2026      | Prise de contact et proposition des défis |
+| Novembre 2026 à janvier 2027 | Ouverture de la plateforme du hackathon   |
+| Janvier à février 2027       | Sélection des porteurs de défis           |
+| Début mars 2027              | Hackathon                                 |
+
+## Contacts
+
+| Rôle                               | Structure               |
+| ---------------------------------- | ----------------------- |
+| Cheffe de cabinet de la Présidence | Université Paris-Saclay |
+| Vice-président                     | Université Paris-Saclay |
+| Chargé de projet                   | Université Paris-Saclay |
+| Directeur                          | 42 Paris                |
+| Ambassadeur                        | École 42                |
+
+_Les noms et adresses figurent dans le deck ; ils ne sont pas repris ici car cette documentation peut être publiée._
+
+---
+
+## Points à harmoniser avant diffusion
+
+Écarts relevés entre le deck et le [formulaire de demande](/01-organisation/04-defis/01-formulaire-de-demande) :
+
+|   # | Écart                                                                                                                                | Proposition                                                                    |
+| --: | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+|   1 | Le calendrier du deck indique « Janv. **2026** à févr. 2027 » pour la sélection des porteurs                                         | Corriger en janvier 2027                                                       |
+|   2 | Le deck s'adresse aux **organisations publiques**, le formulaire Tally aux **entreprises** (« Votre entreprise / structure »)        | Choisir un public cible et aligner les deux textes                             |
+|   3 | Le deck s'intitule « Hackathon Saclay × 42 », le formulaire « Data Challenge 2027 »                                                  | Retenir un seul nom d'événement                                                |
+|   4 | Le fil conducteur « donnée territoriale » n'apparaît pas dans le formulaire                                                          | L'ajouter en tête du formulaire                                                |
+|   5 | « PatriNat (Programme-R) » regroupe deux acteurs distincts, dont l'un n'a pas encore été rencontré                                   | Vérifier l'attribution et l'accord de chaque structure avant diffusion         |
+|   6 | Les défis DGALN – DHUP sont **en attente de validation hiérarchique**                                                                | Ne pas diffuser publiquement avant l'accord                                    |
+|   7 | Les défis de la Communauté Paris-Saclay et de Station F × Ville de demain sont annoncés mais pas encore reçus                        | Faire valider la formulation par les porteurs                                  |
+|   8 | La **Ville de Paris**, premier porteur engagé sur l'ouverture de données (environnement, données géolocalisées), est absente du deck | L'ajouter : c'est le meilleur exemple du fil conducteur territorial            |
+|   9 | Le défi validé de l'**Institut Jean Nicod** (usage des émoji et manipulation de l'information) est absent du deck                    | L'ajouter au pilier 1 ou le fusionner avec les défis CNRS – Campus Cyber       |
+|  10 | « Informer le public sur les problématiques cyber » est une **conférence**, pas un défi                                              | La présenter comme contribution au programme                                   |
+|  11 | Les défis cyber et manipulation de l'information reposent peu sur des données territoriales ouvertes                                 | Préciser leur lien avec le fil conducteur ou assumer un pilier hors thématique |

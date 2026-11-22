@@ -1,0 +1,59 @@
+---
+title: 'Déployer et exploiter'
+sidebar_label: 'Déploiement'
+description: 'Construire le site statique, le déposer sur un serveur web et le mettre à jour.'
+---
+
+Le site est un **export statique** : `pnpm build` produit un dossier `out/` de fichiers HTML, CSS et JS. Il n'y a ni processus Node à faire tourner, ni tâche planifiée, ni cache à vider.
+
+```bash
+pnpm install
+pnpm build      # génère out/
+pnpm preview    # vérification locale
+```
+
+## Hébergement
+
+L'hébergement est assuré par **42 Paris**. Le dossier `out/` se dépose tel quel sur n'importe quel serveur web (nginx, Apache, GitHub Pages, GitLab Pages, Vercel…).
+
+| Réglage             | Valeur                                                                 |
+| ------------------- | ---------------------------------------------------------------------- |
+| Commande de build   | `pnpm build`                                                           |
+| Dossier à publier   | `out`                                                                  |
+| Version de Node     | 24                                                                     |
+| Adresses            | Chaque page est un dossier avec un `index.html` (`trailingSlash: true`) |
+| Page introuvable    | `out/404.html`, à déclarer comme page d'erreur 404 du serveur          |
+
+Ces réglages viennent de `next.config.ts` (`output: 'export'`, `trailingSlash: true`, `images.unoptimized: true`).
+
+## Mettre à jour le site
+
+Toute modification de contenu est une modification de fichier dans le dépôt, suivie d'un nouveau build :
+
+1. Modifier le fichier concerné (voir [Contenu du site](/03-technique/02-architecture/01-contenu-du-site)).
+2. `pnpm check && pnpm test && pnpm build`.
+3. Pousser sur `main` ; l'hébergeur reconstruit et publie.
+
+## Documentation
+
+Le portail de documentation se construit séparément :
+
+```bash
+pnpm docs:build   # génère docs/dist/
+```
+
+Il se publie comme un second site statique, à partir de `docs/dist/`.
+
+## Ressources chargées depuis l'extérieur
+
+| Ressource          | Origine                | Remarque                                             |
+| ------------------ | ---------------------- | ---------------------------------------------------- |
+| Icônes             | `code.iconify.design`  | Script et icônes chargés à l'affichage de la page    |
+| Polices Lato, Lora | Paquets `@fontsource`  | Incluses dans le build, aucun appel externe          |
+
+## Avant une mise en production
+
+- [ ] Liens à jour dans `src/lib/config/links.ts`
+- [ ] Dates et lieu à jour dans `src/lib/config/hackathon.ts`
+- [ ] Mentions légales relues (`src/features/legal/LegalNoticeView.tsx`)
+- [ ] `pnpm check`, `pnpm test`, `pnpm build` et `pnpm docs:build` passent

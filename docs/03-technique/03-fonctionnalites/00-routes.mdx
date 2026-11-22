@@ -1,0 +1,30 @@
+---
+title: 'Pages du site'
+sidebar_label: 'Pages du site'
+description: 'Liste des pages du site statique et de ce qui alimente chacune.'
+---
+
+Le site ne contient que des pages. Il n'a **aucune route API**.
+
+| Adresse              | Rôle                                                   | Alimentée par                                   |
+| -------------------- | ------------------------------------------------------ | ----------------------------------------------- |
+| `/`                  | Accueil : présentation, partenaires, porteurs de défis | `texts.ts`, `content/defis/`                    |
+| `/defis/`            | Liste des porteurs de défis et de leurs problématiques | `content/defis/`                                |
+| `/defis/[id]/`       | Page d'un porteur : problématiques détaillées, liens   | Un fichier de `content/defis/`                  |
+| `/conferences/`      | Programme des conférences                              | `src/lib/content/conferences.ts`                |
+| `/galerie-photos/`   | Photos de l'événement                                  | `public/photos-evenement/`                      |
+| `/infos-pratiques/`  | Accès au campus 42 Paris                               | `src/features/practical-info/`                  |
+| `/mentions-legales/` | Éditeurs, hébergement, données personnelles            | `src/features/legal/`                           |
+| `/timer/`            | Minuteur plein écran pour les présentations            | Aucune donnée                                   |
+
+## Pages des porteurs
+
+Les pages `/defis/[id]/` sont générées au build, une par fichier de `content/defis/` (`generateStaticParams`). Une adresse qui ne correspond à aucun fichier renvoie la page 404.
+
+## Minuteur
+
+`/timer/` est un compte à rebours autonome, sans lien avec le reste du site : il sert à tenir le temps pendant les présentations. Il n'est pas dans le menu.
+
+## Boutons conditionnels
+
+Les boutons qui mènent vers l'extérieur (inscription, proposition d'idée, proposition de défi, git partagé) ne s'affichent que si le lien correspondant est renseigné dans `src/lib/config/links.ts`. Voir [Formulaires et rendus](/03-technique/03-fonctionnalites/01-formulaires-et-rendus).

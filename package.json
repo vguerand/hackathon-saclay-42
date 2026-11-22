@@ -1,0 +1,52 @@
+{
+	"name": "hackathon-saclay-42",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"preview": "pnpm dlx serve out",
+		"docs:nav": "node scripts/docs/generate-navigation.mjs",
+		"docs:dev": "node scripts/docs/generate-navigation.mjs && cd docs && ZUDOKU_DISABLE_UPDATE_CHECK=1 zudoku dev --port 3001",
+		"docs:build": "node scripts/docs/generate-navigation.mjs && cd docs && ZUDOKU_DISABLE_UPDATE_CHECK=1 zudoku build",
+		"docs:preview": "cd docs && ZUDOKU_DISABLE_UPDATE_CHECK=1 zudoku preview --port 3001",
+		"test": "vitest run",
+		"typecheck": "tsc --noEmit",
+		"lint": "biome lint",
+		"fmt": "oxfmt",
+		"fmt:check": "oxfmt --check",
+		"check": "biome lint && oxfmt --check && tsc --noEmit",
+		"fix": "biome lint --write && oxfmt",
+		"prepare": "lefthook install"
+	},
+	"dependencies": {
+		"@fontsource/lato": "^5.2.7",
+		"@fontsource/lora": "^5.2.8",
+		"@mantine/core": "^7.17.0",
+		"@mantine/hooks": "^7.17.0",
+		"next": "^16.4.6",
+		"react": "^19.2.7",
+		"react-dom": "^19.2.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.15",
+		"@types/node": "^26.1.1",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
+		"lefthook": "2.2.2",
+		"mermaid": "^11.17.2",
+		"oxfmt": "0.74.0",
+		"postcss": "^8.5.3",
+		"postcss-preset-mantine": "^1.17.0",
+		"postcss-simple-vars": "^7.0.1",
+		"typescript": "^6.0.3",
+		"vite": "^8.3.4",
+		"vitest": "^4.1.12",
+		"zudoku": "^0.86.0"
+	},
+	"engines": {
+		"node": ">=22",
+		"pnpm": ">=10"
+	}
+}

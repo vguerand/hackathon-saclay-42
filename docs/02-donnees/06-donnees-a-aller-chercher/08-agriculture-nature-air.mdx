@@ -1,0 +1,118 @@
+---
+title: 'Agriculture, alimentation, biodiversité, air et bruit : données à aller chercher'
+sidebar_label: 'Agriculture, nature, air'
+description: 'Producteurs et jeux de données territoriaux ouverts sur le thème agriculture, alimentation, biodiversité, air et bruit, absents du portefeuille actuel, avec un défi type et les convergences.'
+---
+
+| Producteur                                                                                                                                                                                                                                                                       | Type                                                                                                  | Pilier | Jeux vérifiés |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | :----: | ------------: |
+| [Airparif](https://www.data.gouv.fr/organizations/airparif-1)                                                                                                                                                                                                                    | association agréée de surveillance de la qualité de l'air (AASQA Île-de-France)                       |   3    |             1 |
+| [Agence Bio](https://www.data.gouv.fr/organizations/agence-bio)                                                                                                                                                                                                                  | groupement d'intérêt public (opérateur de l'État, ministère de l'Agriculture)                         |   1    |             3 |
+| [Système d'Information sur l'Eau (Eaufrance)](https://www.data.gouv.fr/organizations/systeme-d-information-sur-l-eau)                                                                                                                                                            | service public d'information sur l'eau (piloté par l'OFB et le ministère de la Transition écologique) |   3    |             3 |
+| [Office Français de la Biodiversité (OFB)](https://www.data.gouv.fr/organizations/office-francais-de-la-biodiversite)                                                                                                                                                            | établissement public de l'État                                                                        |   2    |             1 |
+| [DRIEAT Île-de-France (Direction régionale et interdépartementale de l'environnement, de l'aménagement et des transports)](https://www.data.gouv.fr/organizations/direction-regionale-et-interdepartementale-de-lenvironnement-de-lamenagement-et-des-transports-dile-de-france) | service déconcentré de l'État                                                                         |   3    |             2 |
+| [Direction Départementale des Territoires de l'Essonne](https://www.data.gouv.fr/organizations/direction-departementale-des-territoires-de-lessonne)                                                                                                                             | service déconcentré de l'État (département)                                                           |   1    |             2 |
+
+## Airparif
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/airparif-1) · 14 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Croiser les cartes annuelles de concentration NO2 et PM2.5 avec la population carroyée (Filosofi) et le périmètre de la ZFE pour repérer, sur la CA Paris-Saclay, les écoles et crèches les plus exposées et suivre leur évolution d'une année à l'autre.
+
+**Pourquoi c'est intéressant :** Airparif est le seul producteur de référence pour l'air en Île-de-France. Ses cartes modélisées couvrent finement tout le territoire et permettent d'évaluer une politique publique (ZFE, plans climat-air-énergie). Attention : sur data.gouv.fr, le jeu « exposition des populations » et l'indice Atmo renvoient à des flux figés (voir les rejets). Il faut passer par le portail Airparif, et la venue du producteur est donc d'autant plus utile.
+
+**Convergences :** CA Paris-Saclay (mobilités), Ville de Paris (bâti, espaces verts), Station F x Ville de demain ; se croise avec la base ZFE, les données carroyées Filosofi et les LCZ déjà inventoriées
+
+| Jeu de données                                                                                                                                                                                 | Maille                                                                                                                                                                             | Couverture Paris-Saclay                       | Licence · mise à jour |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | --------------------- |
+| [Concentrations moyennes annuelles des polluants réglementés en Île-de-France](https://www.data.gouv.fr/datasets/concentrations-moyennes-annuelles-des-polluants-reglementes-en-ile-de-france) | cartes modélisées régionales (NO2, PM10 depuis 2014) ; la ressource renvoie au portail open data Airparif, où les cartes annuelles NO2, PM10 et PM2.5 ont été mises à jour en 2026 | oui (toute l'Île-de-France, Essonne comprise) | ODbL · 2026-10-26     |
+
+## Agence Bio
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/agence-bio) · 7 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Cartographier à la parcelle le potentiel d'approvisionnement bio local du plateau de Saclay pour la restauration collective (objectifs EGalim), en croisant les parcelles AB, les producteurs et transformateurs bio et les cantines du territoire.
+
+**Pourquoi c'est intéressant :** Ces données descendent à la parcelle et à la commune, avec une série longue (2008-2025) et une liste d'opérateurs mise à jour chaque jour. Elles permettent de traiter la souveraineté alimentaire sur un territoire agricole périurbain emblématique. Les parcelles s'arrêtent à la campagne PAC 2023.
+
+**Convergences :** IGN (RPG, convergence directe à la parcelle), CA Paris-Saclay (zone de protection naturelle, agricole et forestière du plateau), PatriNat (biodiversité des milieux agricoles)
+
+| Jeu de données                                                                                                                                                                                 | Maille                                         | Couverture Paris-Saclay                        | Licence · mise à jour            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | -------------------------------- |
+| [Parcelles en Agriculture Biologique (AB) déclarées à la PAC](https://www.data.gouv.fr/datasets/parcelles-en-agriculture-biologique-ab-declarees-a-la-pac)                                     | parcelle                                       | national (métropole et DROM, Essonne comprise) | Licence Ouverte 2.0 · 2026-10-25 |
+| [Historique détaillé des surfaces, cheptels et nombre d'opérateurs par commune](https://www.data.gouv.fr/datasets/historique-detaille-des-surfaces-cheptels-et-nombre-doperateurs-par-commune) | commune (rattachée au siège de l'exploitation) | national                                       | Licence Ouverte 2.0 · 2026-09-16 |
+| [Professionnels engagés en BIO](https://www.data.gouv.fr/datasets/professionnels-engages-en-bio)                                                                                               | opérateur (SIRET, code postal du siège)        | national                                       | Licence Ouverte 2.0 · 2026-10-25 |
+
+## Système d'Information sur l'Eau (Eaufrance)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/systeme-d-information-sur-l-eau) · 719 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Évaluer Ecophyto 2030 sur les bassins de l'Yvette, de l'Orge et de la Bièvre en reliant les achats de pesticides par code postal, les cultures du RPG et les dépassements de seuils aux stations des cours d'eau, pour prioriser les zones d'action.
+
+**Pourquoi c'est intéressant :** C'est le seul accès ouvert et fin (code postal, station) à la pression phytosanitaire et à son effet sur l'eau. Le fichier Île-de-France permet d'évaluer une politique nationale (Ecophyto 2030) à l'échelle d'un territoire.
+
+**Convergences :** Ville de Paris (piste eau), IGN (RPG), PatriNat, CA Paris-Saclay ; complète l'étude ruissellement déjà inventoriée
+
+| Jeu de données                                                                                                                                                                                                                                                                            | Maille                                     | Couverture Paris-Saclay                                                                                    | Licence · mise à jour            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Achats de pesticides par code postal](https://www.data.gouv.fr/datasets/achats-de-pesticides-par-code-postal-1)                                                                                                                                                                          | code postal de l'acheteur                  | national                                                                                                   | Licence Ouverte 2.0 · 2026-06-24 |
+| [Dépassements de seuils règlementaires en pesticides dans les cours d'eau (diagnostics territoriaux stratégie Ecophyto 2030)](https://www.data.gouv.fr/datasets/depassements-de-seuils-reglementaires-en-pesticides-dans-les-cours-deau-diagnostics-territoriaux-strategie-ecophyto-2030) | station de mesure, paramètre et année      | oui (fichiers régionaux Île-de-France 2019-2023 : resume_sta_param_annee_reg_11_IDF.csv.gz et rapport PDF) | Licence Ouverte 2.0 · 2025-11-03 |
+| [Ventes de pesticides par département](https://www.data.gouv.fr/datasets/ventes-de-pesticides-par-departement)                                                                                                                                                                            | département (par produit et par substance) | national                                                                                                   | Licence Ouverte 2.0 · 2026-06-24 |
+
+## Office Français de la Biodiversité (OFB)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/office-francais-de-la-biodiversite) · 1777 jeux publiés · Pilier 2 : Recherche, deeptech et innovation
+
+**Défi type :** Construire un tableau de bord de la connaissance naturaliste par commune de l'Essonne : quelles communes ont un ABC, où sont les lacunes d'inventaire, et comment elles recoupent les trames vertes et la pression d'artificialisation.
+
+**Pourquoi c'est intéressant :** L'OFB est l'opérateur national de la biodiversité (environ 1 780 jeux publiés). Les ABC donnent une lecture communale de l'effort de connaissance, utile pour piloter les politiques locales de biodiversité.
+
+**Convergences :** PatriNat / Programme-R (forte convergence avec les référentiels INPN), IGN (forêt, LiDAR), CA Paris-Saclay ; se croise avec le SRCE, les ZNIEFF et la consommation d'ENAF déjà inventoriés
+
+| Jeu de données                                                                                                                                                                                                 | Maille                                                                                       | Couverture Paris-Saclay                                                    | Licence · mise à jour |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------- |
+| [Données des Atlas de la biodiversité communale en France métropolitaine et outre-mer](https://www.data.gouv.fr/datasets/donnees-des-atlas-de-la-biodiversite-communale-en-france-metropolitaine-et-outre-mer) | observations d'espèces et métadonnées d'inventaires, rattachées aux communes dotées d'un ABC | national (présence de communes de l'Essonne ou de Paris-Saclay à vérifier) | CC BY · 2026-10-25    |
+
+## DRIEAT Île-de-France (Direction régionale et interdépartementale de l'environnement, de l'aménagement et des transports)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/direction-regionale-et-interdepartementale-de-lenvironnement-de-lamenagement-et-des-transports-dile-de-france) · 360 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Calculer la population et les établissements sensibles exposés au-delà des seuils de bruit à Paris et dans le nord de l'Essonne, puis croiser avec les concentrations Airparif pour produire un indicateur de multi-exposition air-bruit par IRIS.
+
+**Pourquoi c'est intéressant :** Ce sont des cartes réglementaires (directive 2002/49/CE) récentes (2025), qui servent de base aux plans de prévention du bruit (PPBE). Elles permettent d'évaluer directement une politique de santé environnementale. Limite : aucune carte stratégique récente ne couvre le cœur de la CA Paris-Saclay sur data.gouv.fr.
+
+**Convergences :** Ville de Paris (bâti, espaces verts), DGALN-DHUP (logement), IGN (BD TOPO déjà inventoriée), Airparif (multi-exposition air-bruit)
+
+| Jeu de données                                                                                                                                                                                                                                                                        | Maille                                                   | Couverture Paris-Saclay                                                                                                                      | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Lot de données relatives aux cartes de bruit stratégiques dans les communes de la métropole du Grand Paris dans l'Essone](https://www.data.gouv.fr/datasets/lot-de-donnees-relatives-aux-cartes-de-bruit-strategiques-dans-les-communes-de-la-metropole-du-grand-paris-dans-lessone) | zones de bruit (Lden/Ln) ; téléchargement Atom, WMS, WFS | partielle : seulement les communes essonniennes de la Métropole du Grand Paris (nord du département), pas les communes de la CA Paris-Saclay | Licence Ouverte 2.0 · 2025-05-27 |
+| [Lot de données relatives aux cartes de bruit stratégiques pour Paris](https://www.data.gouv.fr/datasets/lot-de-donnees-relatives-aux-cartes-de-bruit-strategiques-pour-paris)                                                                                                        | zones de bruit (Lden/Ln) ; Atom, WMS, WFS                | Île-de-France (Paris uniquement)                                                                                                             | Licence Ouverte 2.0 · 2025-05-27 |
+
+## Direction Départementale des Territoires de l'Essonne
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/direction-departementale-des-territoires-de-lessonne) · 281 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Repérer les permis de construire et les projets d'aménagement du territoire Paris-Saclay qui recoupent des zones humides avérées ou probables, pour outiller le contrôle de la séquence « éviter-réduire-compenser ».
+
+**Pourquoi c'est intéressant :** Ce sont des données réglementaires propres à l'Essonne, à maille fine, récentes et rarement exploitées. Elles permettent de traiter la résilience hydrologique et la biodiversité sur le périmètre exact du hackathon.
+
+**Convergences :** CA Paris-Saclay (aménagement du plateau, rigoles et zones humides), DGALN-DHUP (urbanisme), PatriNat ; se croise avec les permis de construire et l'OCS GE déjà inventoriés
+
+| Jeu de données                                                                                             | Maille                                                         | Couverture Paris-Saclay                   | Licence · mise à jour            |
+| ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------- | -------------------------------- |
+| [Zones humides avérées en Essonne](https://www.data.gouv.fr/datasets/zones-humides-averees-en-essonne)     | polygone de zone humide                                        | oui (emprise départementale de l'Essonne) | Licence Ouverte 2.0 · 2024-01-30 |
+| [Zones humides probables en Essonne](https://www.data.gouv.fr/datasets/zones-humides-probables-en-essonne) | polygone (enveloppes de probabilité, couche ZH_probS_region11) | oui (emprise départementale de l'Essonne) | Licence Ouverte 2.0 · 2024-02-23 |
+
+<details>
+<summary>Propositions examinées et écartées</summary>
+
+- **Airparif – Exposition des populations et territoires aux polluants atmosphériques NO2 et PM10 pour la région Île-de-France (https://www.data.gouv.fr/datasets/exposition-des-populations-et-territoires-aux-polluants-atmospheriques-no2-et-pm10-pour-la-region-ile-de-france)** : Figé depuis 2017. La date 2026-10-26 ne correspond qu'au moissonnage. La seule ressource vivante est une couche WFS 2017 (exp_idf_zag_2017_pm10_35j_sup_50ug, limitée à 50 objets), et la fiche XML date de 2018. Sur le portail Airparif, les couches d'exposition sont elles aussi des millésimes 2017.
+- **Airparif – Indice de qualité de l'air (Atmo) (https://www.data.gouv.fr/datasets/indice-de-qualite-de-lair-atmo)** : Flux WFS figé : 413 valeurs quotidiennes du 31/12/2019 au 15/02/2021 seulement. La maille est l'« Unité urbaine de Paris » et non la commune, ce qui contredit la proposition. Pas de mise à jour réelle malgré la date de moissonnage de 2026.
+- **OFB – BNV-D Traçabilité (https://www.data.gouv.fr/datasets/bnv-d-tracabilite-donnees-sur-les-ventes-de-produits-phytopharmaceutiques)** : Licence « notspecified » d'après l'API, donc non ouverte. La fiche n'a aucune ressource : ce n'est qu'un renvoi vers l'outil de requête. Elle fait aussi doublon avec les jeux d'achats et de ventes par code postal et par département d'Eaufrance, qui sont sous Licence Ouverte.
+- **DDT de l'Essonne – Zones tampons des infrastructures des secteurs de bruits en Essonne (https://www.data.gouv.fr/datasets/zones-tampons-des-infrastructures-des-secteurs-de-bruits-en-essonne)** : Donnée figée depuis le 2016-10-26, soit 10 ans. Seules les ressources Atom, WMS et WFS ont été republiées en 2024, sans nouvelle donnée. Le classement sonore a pu être révisé depuis. Les autres jeux « bruit » de la DDT 91 (plan d'exposition au bruit des aéroports, 2016) et les courbes de bruit des routes nationales (2015) sont tout aussi anciens.
+
+</details>
+
+---
+
+Retour aux [priorités](/02-donnees/06-donnees-a-aller-chercher/00-priorites).

@@ -1,0 +1,82 @@
+---
+title: Conception d'évolution
+sidebar_label: Design Change
+description: Concevoir une évolution du site statique, comparer des options et consigner la décision.
+---
+
+Ce skill fournit la méthode pour concevoir une évolution du site du **hackathon Saclay × 42 Paris**, comparer des approches et consigner les décisions durables (_Architectural Decision Records_).
+
+---
+
+## 1. Quand l'utiliser
+
+- Nouvelle page ou nouvelle source de contenu.
+- Choix entre plusieurs approches qui mérite une comparaison argumentée.
+- Demande qui semble exiger un serveur, un compte ou une base de données.
+- _Ne pas utiliser pour :_ relire un diff existant ([Code Review](/03-technique/04-skills/code-review)).
+
+---
+
+## 2. Informations à lire
+
+- Le besoin exprimé et les contraintes de l'événement.
+- L'architecture existante : `AGENT.md` et [Vue d'ensemble](/03-technique/02-architecture/00-vue-ensemble).
+- Le partage des rôles avec Tally et le git partagé : [Formulaires et rendus](/03-technique/03-fonctionnalites/01-formulaires-et-rendus).
+
+---
+
+## 3. Procédure pas à pas
+
+### Étape 1 : cadrer le besoin et les invariants
+
+- Décrire le scénario : qui utilise la fonctionnalité, à quel moment de l'événement, pour faire quoi.
+- Rappeler les invariants : site statique sans serveur, aucune donnée personnelle collectée, Mantine uniquement, RGAA 4.1 niveau AA, contenu modifiable par un simple fichier.
+
+### Étape 2 : comparer au moins deux options
+
+- **Option A, sans code :** un formulaire Tally, un lien dans `links.ts` ou un fichier de contenu suffisent-ils ?
+- **Option B, évolution du site :** nouvelle page, nouveau champ d'en-tête dans `content/defis/`, nouveau module dans `src/lib/content/`.
+- Grille de comparaison : _effort de maintenance pour les organisateurs, compatibilité avec l'export statique, testabilité, dépendances ajoutées_.
+
+Une option qui réintroduit un serveur, un compte ou une base de données doit être justifiée explicitement et validée par les organisateurs.
+
+### Étape 3 : spécifier le contrat
+
+- Pour un contenu : les clés ajoutées à l'en-tête, leur caractère obligatoire, le comportement quand elles sont absentes.
+- Pour le code : les types TypeScript concernés.
+
+```typescript
+export type Challenge = {
+	id: string;
+	title: string;
+	problems: string[];
+	// nouveau champ, facultatif
+	teamCount?: number;
+};
+```
+
+### Étape 4 : consigner la décision
+
+- **`ADR-XXX` — Titre de la décision**
+- **Date et statut :** proposé, accepté, appliqué, remplacé
+- **Contexte et options évaluées**
+- **Choix retenu et justification**
+- **Conséquences sur le code, le contenu et les tests**
+
+---
+
+## 4. Livrable et vérification
+
+Une note de conception comprenant :
+
+1. La **recommandation** et sa justification.
+2. Le **contrat** (clés de contenu, types).
+3. Le **plan d'implémentation** par étapes autonomes.
+4. La **validation** : `pnpm check && pnpm test && pnpm build`.
+
+---
+
+## 5. Sources et références
+
+- **Méthodologie ADR :** [https://adr.github.io/](https://adr.github.io/)
+- **Règles du projet :** `AGENT.md` (racine du dépôt)

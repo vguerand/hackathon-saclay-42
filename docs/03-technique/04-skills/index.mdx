@@ -1,0 +1,31 @@
+---
+title: Skills et ingénierie
+sidebar_label: Vue d'ensemble
+description: Catalogue des procédures pour assister les développeurs et les agents IA sur le site statique du hackathon Saclay × 42 Paris.
+---
+
+Ce dossier regroupe les procédures qui permettent aux développeurs et aux assistants IA d'intervenir avec rigueur sur le site du **hackathon Saclay × 42 Paris** (Next.js 16 en export statique, React 19, Mantine v7, Zudoku).
+
+Chaque fiche est autonome et structurée en cinq sections :
+
+1. **Quand l'utiliser :** déclencheurs et frontières avec les autres skills.
+2. **Informations à lire :** fichiers et contexte à connaître avant d'agir.
+3. **Procédure :** étapes pas à pas.
+4. **Livrable et vérification :** format du résultat et critères de validation.
+5. **Sources et références.**
+
+## Catalogue
+
+| Skill                     | Rôle                                                                                         | Fiche                                                    | Exemple d'appel                                                                  |
+| :------------------------ | :------------------------------------------------------------------------------------------- | :------------------------------------------------------- | :------------------------------------------------------------------------------- |
+| **`rgaa-review`**         | Auditer l'accessibilité selon le RGAA 4.1 (AA) et Mantine v7.                                | [Revue RGAA](/03-technique/04-skills/rgaa-review)         | _« Applique le skill RGAA et vérifie l'accessibilité de la page /defis. »_        |
+| **`code-review`**         | Auditer un diff sur trois axes : régressions, contraintes du site statique, données exposées. | [Revue de code](/03-technique/04-skills/code-review)      | _« Applique le skill Code Review sur mes modifications en cours. »_               |
+| **`architecture-review`** | Vérifier la séparation pages / vues / contenu et la sobriété de l'ensemble.                  | [Revue d'architecture](/03-technique/04-skills/architecture-review) | _« Applique le skill Architecture Review sur src/lib/content. »_        |
+| **`docs-mdx`**            | Rédiger des fiches MDX, intégrer des diagrammes Mermaid, régénérer la navigation.            | [Rédaction MDX](/03-technique/04-skills/docs-mdx)         | _« Applique le skill Docs MDX et ajoute une fiche dans 02-architecture. »_        |
+| **`design-change`**       | Concevoir une évolution, comparer des options et consigner la décision.                      | [Conception d'évolution](/03-technique/04-skills/design-change) | _« Applique le skill Design Change pour afficher les rendus des équipes. »_ |
+
+## Invoquer un skill
+
+```text
+Lis la fiche docs/03-technique/04-skills/<nom-du-skill>.mdx et applique cette procédure à <ma tâche>.
+```

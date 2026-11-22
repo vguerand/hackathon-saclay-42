@@ -1,0 +1,115 @@
+---
+title: 'Économie, emploi, innovation et recherche territoriale : données à aller chercher'
+sidebar_label: 'Économie et recherche'
+description: 'Producteurs et jeux de données territoriaux ouverts sur le thème économie, emploi, innovation et recherche territoriale, absents du portefeuille actuel, avec un défi type et les convergences.'
+---
+
+| Producteur                                                                                                                                                                                                                      | Type                                                               | Pilier | Jeux vérifiés |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | :----: | ------------: |
+| [Unions de Recouvrement des cotisations de Sécurité Sociale et d'Allocations Familiales (URSSAF)](https://www.data.gouv.fr/organizations/unions-de-recouvrement-des-cotisations-de-securite-sociale-et-dallocations-familiales) | organisme de sécurité sociale (opérateur public)                   |   3    |             2 |
+| [France Travail](https://www.data.gouv.fr/organizations/france-travail)                                                                                                                                                         | opérateur de l'État (établissement public)                         |   3    |             1 |
+| [Ministère de l'Enseignement supérieur, de la Recherche et de l'Espace (MESR)](https://www.data.gouv.fr/organizations/ministere-de-lenseignement-superieur-de-la-recherche-et-de-lespace)                                       | administration centrale de l'État                                  |   2    |             2 |
+| [Agence nationale de la recherche (ANR)](https://www.data.gouv.fr/organizations/agence-nationale-de-la-recherche)                                                                                                               | établissement public, opérateur de l'État (dont PIA / France 2030) |   3    |             2 |
+| [Agence nationale de la cohésion des territoires (ANCT)](https://www.data.gouv.fr/organizations/agence-nationale-de-la-cohesion-des-territoires)                                                                                | établissement public de l'État                                     |   1    |             2 |
+| [Région Île-de-France](https://www.data.gouv.fr/organizations/region-ile-de-france)                                                                                                                                             | collectivité territoriale (région)                                 |   3    |             1 |
+
+## Unions de Recouvrement des cotisations de Sécurité Sociale et d'Allocations Familiales (URSSAF)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/unions-de-recouvrement-des-cotisations-de-securite-sociale-et-dallocations-familiales) · 124 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Mesurer en 48 h la transformation du tissu productif de l'agglomération Paris-Saclay depuis 2006 : quels secteurs (R&D, industrie, numérique) créent ou perdent des emplois salariés, commune par commune, et comment la zone d'emploi de Saclay se compare-t-elle aux autres pôles franciliens ?
+
+**Pourquoi c'est intéressant :** Seule source ouverte d'effectifs salariés privés à la commune avec 20 ans d'historique et le détail APE, en ODbL, déjà préfiltrable sur l'EPCI Paris-Saclay ; la série trimestrielle par zone d'emploi remonte à 1999.
+
+**Convergences :** Communauté d'agglomération Paris-Saclay (observatoire économique, l'EPCI est un champ natif du fichier) ; Station F x Ville de demain ; croisement avec SIRENE géolocalisé et les permis de construire déjà inventoriés.
+
+| Jeu de données                                                                                                                                                                                                                                                           | Maille                                                                                              | Couverture Paris-Saclay                                                                                                                 | Licence · mise à jour |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| [Nombre d'établissements employeurs et effectifs salariés du secteur privé, par commune x APE (au 31/12 depuis 2006)](https://www.data.gouv.fr/datasets/nombre-detablissements-employeurs-et-effectifs-salaries-du-secteur-prive-par-commune-x-ape-au-31-12-depuis-2006) | commune x code APE, annuel 2006 à aujourd'hui (champs département, zone d'emploi et EPCI inclus)    | oui : vérifié dans l'API open.urssaf.fr, ex. Orsay (91471) rattachée à l'EPCI Communauté Paris-Saclay et à la zone d'emploi 1113 Saclay | ODbL · 2026-05-29     |
+| [Effectifs salariés et masse salariale trimestriels du secteur privé, par zone d'emploi](https://www.data.gouv.fr/datasets/effectifs-salaries-et-masse-salariale-trimestriels-du-secteur-prive-par-zone-demploi)                                                         | zone d'emploi, trimestriel depuis 1999 (série labellisée par l'Autorité de la statistique publique) | oui : zone d'emploi 1113 Saclay présente (vérifié)                                                                                      | ODbL · 2026-09-18     |
+
+## France Travail
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/france-travail) · 14 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Construire un tableau de bord des tensions de recrutement du bassin Versailles Saclay : métiers difficiles à pourvoir (BMO) face aux formations proposées localement (effectifs étudiants MESR) et à l'insertion des diplômés (InserSup), pour proposer des passerelles formation-emploi.
+
+**Pourquoi c'est intéressant :** Lecture prospective des recrutements par bassin et par métier, complémentaire des effectifs constatés URSSAF ; France Travail serait un porteur naturel d'un défi adéquation formation-emploi.
+
+**Convergences :** Communauté d'agglomération Paris-Saclay (emploi local) ; Université Paris-Saclay (offre de formation) ; Cybermalveillance (métiers cyber) ; DGALN-DHUP (métiers du bâtiment et de la rénovation).
+
+| Jeu de données                                                                                                  | Maille                                                                            | Couverture Paris-Saclay                                                                            | Licence · mise à jour            |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Enquête Besoins en Main d'Oeuvre (BMO)](https://www.data.gouv.fr/datasets/enquete-besoins-en-main-doeuvre-bmo) | bassin d'emploi x métier (FAP2021) x département, annuel (millésimes 2015 à 2026) | oui : le fichier 2026 contient le département Essonne et le bassin « Versailles Saclay » (vérifié) | Licence Ouverte 1.0 · 2026-04-21 |
+
+## Ministère de l'Enseignement supérieur, de la Recherche et de l'Espace (MESR)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/ministere-de-lenseignement-superieur-de-la-recherche-et-de-lespace) · 274 jeux publiés · Pilier 2 : Recherche, deeptech et innovation
+
+**Défi type :** Évaluer l'impact territorial de l'enseignement supérieur du plateau de Saclay : quelles filières grossissent, où et à quel rythme s'insèrent leurs diplômés, et ces filières répondent-elles aux tensions de recrutement locales (BMO) ?
+
+**Pourquoi c'est intéressant :** Deux jeux à jour et géolocalisables qui décrivent l'offre de formation et le devenir des diplômés établissement par établissement : le volet capital humain du cluster Paris-Saclay.
+
+**Convergences :** Université Paris-Saclay ; France Travail (BMO) ; structures de recherche publiques actives déjà inventoriées ; CNRS - Campus Cyber (filières cyber).
+
+| Jeu de données                                                                                                                                                                                                                                                                                     | Maille                                                                                             | Couverture Paris-Saclay                                                                                                    | Licence · mise à jour            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Insertion professionnelle des diplômés des établissements d’enseignement supérieur – Dispositif InserSup](https://www.data.gouv.fr/datasets/insertion-professionnelle-des-diplomes-des-etablissements-denseignement-superieur-dispositif-insersup)                                                | établissement x type de diplôme x discipline, situation à 6, 12, 18, 24 et 30 mois (semestriel)    | oui : établissements de Paris-Saclay présents (ex. École normale supérieure Paris-Saclay, académie de Versailles), vérifié | Licence Ouverte 2.0 · 2026-07-29 |
+| [Effectifs d'étudiants inscrits dans les établissements et les formations de l'enseignement supérieur - détail par établissements](https://www.data.gouv.fr/datasets/effectifs-detudiants-inscrits-dans-les-etablissements-et-les-formations-de-lenseignement-superieur-detail-par-etablissements) | établissement x composante x commune d'implantation, annuel 2015-16 à 2025-26 (GeoJSON disponible) | oui : 237 enregistrements pour Orsay (vérifié)                                                                             | Licence Ouverte 2.0 · 2026-10-12 |
+
+## Agence nationale de la recherche (ANR)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/agence-nationale-de-la-recherche) · 2 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Suivre l'argent public de la recherche (PIA / France 2030 et appels génériques ANR) jusqu'au territoire : combien de financements arrivent sur les communes de Paris-Saclay, vers quels laboratoires (code RNSR), et avec quelle évolution depuis 2010 ?
+
+**Pourquoi c'est intéressant :** Données mensuelles en ODbL au niveau partenaire, avec montant d'aide et code RNSR côté DGDS : meilleur proxy ouvert de la dépense de recherche par territoire. Attention : les fichiers partenaires nomment des responsables scientifiques, à ne pas exploiter nominativement.
+
+**Convergences :** CNRS - Campus Cyber ; Université Paris-Saclay ; structures de recherche publiques actives déjà inventoriées (jointure par code RNSR) ; lauréats Démonstrateurs ville durable France 2030 déjà inventoriés ; LexImpact / Assemblée nationale (évaluation de la dépense publique).
+
+| Jeu de données                                                                                                                                                                   | Maille                                                                                                   | Couverture Paris-Saclay                                                                         | Licence · mise à jour |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------- |
+| [ANR_02 Projets ANR DGPIE: détail des projets et des partenaires](https://www.data.gouv.fr/datasets/anr-02-projets-anr-dgpie-detail-des-projets-et-des-partenaires)              | projet x partenaire, avec ville et région du partenaire (mensuel, depuis 2010)                           | oui : 1 087 lignes partenaires mentionnant Saclay, Gif-sur-Yvette, Orsay ou Palaiseau (vérifié) | ODbL · 2026-10-01     |
+| [ANR_01 Projets ANR DOS et DGDS : détail des projets et des partenaires](https://www.data.gouv.fr/datasets/anr-01-projets-anr-dos-et-dgds-detail-des-projets-et-des-partenaires) | projet x partenaire, avec ville, région, code RNSR et aide allouée par partenaire (mensuel, depuis 2005) | oui : 4 561 lignes partenaires mentionnant Saclay, Gif-sur-Yvette, Orsay ou Palaiseau (vérifié) | ODbL · 2026-10-08     |
+
+## Agence nationale de la cohésion des territoires (ANCT)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/agence-nationale-de-la-cohesion-des-territoires) · 51 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Évaluer la politique de réindustrialisation en Île-de-France : les sites clés en main (dont Massy) et les territoires d'industrie se trouvent-ils là où existent main-d'œuvre (BMO), foncier mobilisable (friches, ZAN) et dynamique d'emploi industriel (URSSAF) ?
+
+**Pourquoi c'est intéressant :** Relie les dispositifs nationaux de souveraineté industrielle à la maille communale, avec deux périmètres successifs pour comparer avant et après : confrontation directe entre politique industrielle et contraintes foncières.
+
+**Convergences :** DGALN-DHUP (sobriété foncière, ZAN) ; Cartofriches et consommation d'espaces déjà inventoriés ; Communauté d'agglomération Paris-Saclay (foncier économique) ; IGN (OCS GE).
+
+| Jeu de données                                                                                               | Maille                                                                      | Couverture Paris-Saclay                                                                                                        | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+| [Programme Territoires d'industrie](https://www.data.gouv.fr/datasets/programme-territoires-dindustrie)      | commune / EPCI / territoire d'industrie (périmètres 2018-2023 et 2023-2027) | oui : communes de l'Essonne couvertes, dont Bures-sur-Yvette et Bièvres dans « Versailles – Saclay – Saint Quentin » (vérifié) | Licence Ouverte 2.0 · 2026-08-26 |
+| [Les sites clés en main - France 2030](https://www.data.gouv.fr/datasets/les-sites-cles-en-main-france-2030) | site lauréat / commune (55 sites)                                           | oui : Massy, Évry-Courcouronnes et Ris-Orangis (Essonne), ainsi que Lieusaint, Réau et Cergy en Île-de-France (vérifié)        | Licence Ouverte 2.0 · 2025-09-24 |
+
+## Région Île-de-France
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/region-ile-de-france) · 1103 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Comparer les communes franciliennes couvertes par Territoires d'industrie aux autres sur l'emploi industriel salarié (URSSAF) et les besoins de recrutement (BMO), pour dire si le dispositif cible les bons territoires.
+
+**Pourquoi c'est intéressant :** Le jeu est un extrait francilien du fichier ANCT, enrichi des contours communaux, donc pratique pour cartographier mais sans information nouvelle. L'intérêt principal est la Région comme porteur : cheffe de file du développement économique et de la formation professionnelle, elle donnerait au défi un débouché opérationnel.
+
+**Convergences :** ANCT (programme national, même périmètre) ; URSSAF et France Travail ; Communauté d'agglomération Paris-Saclay ; Ville de Paris.
+
+| Jeu de données                                                                                                                                                              | Maille                                           | Couverture Paris-Saclay                                                               | Licence · mise à jour            |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- | -------------------------------- |
+| [Territoires d'industrie - Liste des communes franciliennes couvertes](https://www.data.gouv.fr/datasets/territoires-dindustrie-liste-des-communes-franciliennes-couvertes) | commune avec géométrie (CSV, GeoJSON, shapefile) | oui : Orsay rattachée au territoire « Versailles – Saclay – Saint Quentin » (vérifié) | Licence Ouverte 2.0 · 2026-06-04 |
+
+<details>
+<summary>Propositions examinées et écartées</summary>
+
+- **MESR - Export des productions scientifiques exposés dans scanR (publications, thèses et brevets) (https://www.data.gouv.fr/datasets/export-des-productions-scientifiques-exposes-dans-scanr-publications-theses-et-brevets)** : Ressources vides : l'export CSV ne contient que l'en-tête et le portail source annonce 0 enregistrement (has_records=false). Le lien vers le dump des publications cité dans la description renvoie une erreur 404. Des dumps scanR (brevets, organisations) existent sur le stockage du ministère, mais ils ne sont pas référencés par ce jeu, donc non retenus.
+- **France Travail - Demandeurs d'emploi inscrits à France Travail (https://www.data.gouv.fr/datasets/demandeurs-demploi-inscrits-a-france-travail)** : Maille trop agrégée : le fichier unique « Séries CVS-CJO » ne propose que des séries nationales et régionales. Rien n'est disponible à l'échelle de l'Essonne ou de Paris-Saclay.
+- **France Travail - Offres d'emploi diffusées à France Travail (https://www.data.gouv.fr/datasets/offres-demploi-diffusees-a-france-travail)** : Séries nationales seulement (onglets Total, Contrat, Métier) : aucune dimension territoriale, donc hors sujet pour la donnée territoriale.
+
+</details>
+
+---
+
+Retour aux [priorités](/02-donnees/06-donnees-a-aller-chercher/00-priorites).

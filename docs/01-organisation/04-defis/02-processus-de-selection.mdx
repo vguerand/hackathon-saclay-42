@@ -1,0 +1,101 @@
+---
+title: 'Processus de collecte et de sélection des défis'
+sidebar_label: 'Processus de sélection'
+description: 'Sous-processus de collecte et de sélection : du formulaire Tally au défi publié, statuts, grille de qualification et outillage du suivi.'
+---
+
+Cette page décrit **comment un sujet proposé par une entreprise devient un défi publié** pour le hackathon (18 et 19 mars 2027, Université Paris-Saclay × 42 Paris). Les décisions encore ouvertes sont listées dans la [vue d'ensemble](/01-organisation/00-vue-ensemble).
+
+> **Statut :** proposition de travail. Les responsables, délais et critères indiqués « à confirmer » sont à valider lors du call de cadrage avec 42 Paris. Le texte du formulaire est disponible sur la page [Formulaire de demande](/01-organisation/04-defis/01-formulaire-de-demande).
+
+---
+
+## Vue d'ensemble
+
+<Mermaid
+	title="Du formulaire au défi restitué"
+	chart={`flowchart TD
+    A[Diffusion de l'appel à sujets] --> B[Soumission Tally]
+    B --> C[Accusé de réception]
+    C --> D{Qualification}
+    D -- complet et faisable --> F[Sujet retenu]
+    D -- à préciser --> E[Échange de cadrage]
+    E --> D
+    D -- hors périmètre --> R[Refus motivé]
+    F --> G[Publication sur le site]
+    G --> H[Préparation données et accès]
+    H --> I[Challenge 48 h]
+    I --> J[Restitution et suivi]`}
+/>
+
+## Calendrier du sous-processus
+
+| Période                      | Étape                                                                  | État     |
+| ---------------------------- | ---------------------------------------------------------------------- | -------- |
+| Octobre à novembre 2026      | Prise de contact, proposition des défis, diffusion du formulaire       | En cours |
+| Novembre 2026 à janvier 2027 | Ouverture de la plateforme, réception et qualification au fil de l'eau | À venir  |
+| Janvier à février 2027       | Sélection des porteurs par le comité                                   | À venir  |
+| J-15 avant l'événement       | Clôture des dépôts : cahier des charges et jeu de données par défi     | À venir  |
+| 18 et 19 mars 2027           | Hackathon                                                              | À venir  |
+
+## Étapes détaillées
+
+|   # | Étape                              | Responsable proposé                 | Entrée                      | Sortie                                        | Délai cible                  |
+| --: | ---------------------------------- | ----------------------------------- | --------------------------- | --------------------------------------------- | ---------------------------- |
+|   1 | **Diffusion** de l'appel à sujets  | 42 Paris & Paris-Saclay             | Lien Tally, calendrier      | Campagne envoyée aux réseaux entreprises      | À confirmer                  |
+|   2 | **Soumission** du formulaire       | Entreprise                          | Formulaire Tally            | Réponse Tally horodatée                       | —                            |
+|   3 | **Accusé de réception**            | Automatique (Tally)                 | Réponse                     | Page de confirmation + e-mail                 | Immédiat                     |
+|   4 | **Report dans le suivi**           | Équipe organisation                 | Réponse Tally               | Ligne « Reçu » dans le tableau de suivi       | 2 jours ouvrés               |
+|   5 | **Qualification**                  | Binôme 42 + Paris-Saclay            | Grille ci-dessous           | Statut « Retenu », « À cadrer » ou « Refusé » | 5 jours ouvrés               |
+|   6 | **Échange de cadrage** (si besoin) | Référent sujet                      | Questions de qualification  | Sujet reformulé, données confirmées           | 10 jours ouvrés              |
+|   7 | **Décision**                       | Comité de sélection                 | Dossiers qualifiés          | Liste des sujets retenus                      | Date de clôture + 2 semaines |
+|   8 | **Publication**                    | Équipe technique                    | Sujet validé                | Défi visible sur le site                      | Après décision               |
+|   9 | **Préparation**                    | Entreprise + référent               | Données, accès, contraintes | Kit défi prêt (données, dépôt Git, contact)   | J-15                         |
+|  10 | **Challenge**                      | Étudiants + représentant entreprise | Kit défi                    | Prototype, présentation                       | 48 h                         |
+|  11 | **Restitution et suivi**           | Organisation                        | Pitchs                      | Retours aux entreprises, bilan                | J+15                         |
+
+## Statuts d'un sujet
+
+| Statut       | Signification                                                                            | Action suivante                        |
+| ------------ | ---------------------------------------------------------------------------------------- | -------------------------------------- |
+| **Reçu**     | Formulaire soumis, non encore relu                                                       | Qualifier                              |
+| **À cadrer** | Sujet intéressant mais incomplet (données « À définir », faisabilité « Je ne sais pas ») | Planifier un échange avec l'entreprise |
+| **Retenu**   | Sujet validé par le comité                                                               | Publier et préparer le kit défi        |
+| **Refusé**   | Hors périmètre, non faisable ou sans données                                             | Envoyer une réponse motivée            |
+| **Publié**   | Défi visible par les étudiants                                                           | Préparer données et accès              |
+| **Restitué** | Défi présenté en fin de challenge                                                        | Envoyer le bilan à l'entreprise        |
+
+## Grille de qualification
+
+Chaque sujet est évalué à partir des réponses du formulaire :
+
+| Critère                   | Question source | Feu vert                                             | À cadrer                                   | Bloquant                               |
+| ------------------------- | --------------- | ---------------------------------------------------- | ------------------------------------------ | -------------------------------------- |
+| **Faisabilité 48 h**      | 3.1             | « Oui »                                              | « À cadrer ensemble », « Je ne sais pas »  | Objectif irréaliste après échange      |
+| **Données disponibles**   | 2.5             | Données publiques, ouvertes, anonymisées ou API      | « À définir »                              | Aucune donnée exploitable à J-15       |
+| **Accompagnement**        | 3.2             | « Oui, sur place » ou « à distance »                 | « À confirmer »                            | « Non » sans référent de substitution  |
+| **Résultat attendu**      | 2.6             | Livrable concret (prototype, visualisation, analyse) | Livrable flou                              | —                                      |
+| **Alignement thématique** | 2.3 et 2.4      | Pilier identifié                                     | « Je ne sais pas encore »                  | Hors du thème data / données publiques |
+| **Contraintes**           | 3.3             | Aucune ou maîtrisées                                 | Confidentialité, NDA, outils propriétaires | Données personnelles non anonymisées   |
+
+> **Règle proposée :** un sujet n'est publié que si les critères _Faisabilité_, _Données_ et _Accompagnement_ sont au vert.
+
+---
+
+## Intégration avec le site
+
+Le site ne stocke aucune proposition : c'est une vitrine statique. Les réponses au formulaire restent dans Tally, où 42 Paris et l'équipe projet les suivent et les qualifient.
+
+Seuls les sujets **retenus** arrivent sur le site, sous la forme d'un fichier par porteur dans `content/defis/` (voir [Contenu du site](/03-technique/02-architecture/01-contenu-du-site)) :
+
+| Champ du formulaire            | Sur le site                                   | Remarque                                              |
+| ------------------------------ | --------------------------------------------- | ----------------------------------------------------- |
+| Entreprise ou structure        | `titre` du fichier du porteur                 | Le site présente des porteurs, pas des personnes      |
+| Titre du challenge             | Titre `###` d'une problématique               | Une problématique par titre                           |
+| Problématique, résultat attendu | Texte sous le titre de la problématique       | Une ou deux phrases                                   |
+| Thématique / pilier            | `themes`                                      | Facultatif                                            |
+| Données disponibles            | Texte de la problématique, liens data.gouv.fr | Voir [Open data par porteur](/02-donnees/05-donnees-par-defi/00-synthese) |
+| Contact, fonction              | Non publié                                    | Donnée personnelle : reste dans Tally                 |
+| Faisabilité 48 h, contraintes  | Non publié                                    | Information interne                                   |
+
+> **Règle :** aucune donnée personnelle du formulaire n'est recopiée dans le dépôt, qui est public.

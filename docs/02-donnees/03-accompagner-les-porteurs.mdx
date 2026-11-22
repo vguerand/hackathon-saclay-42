@@ -1,0 +1,92 @@
+---
+title: "Accompagner un porteur de défi vers l'open data"
+sidebar_label: 'Accompagner les porteurs'
+description: "Kit d'accompagnement : questionnaire de diagnostic, parcours selon la situation du porteur, argumentaire pour présenter l'open data et calendrier aligné sur l'événement."
+---
+
+Cette page sert de **kit d'accompagnement** : elle permet à l'équipe d'organisation de conduire un entretien avec un porteur, ou au porteur de s'auto-évaluer avant de proposer un défi via le [formulaire de demande](/01-organisation/04-defis/01-formulaire-de-demande).
+
+## Parcours d'accompagnement
+
+<Mermaid
+	title="Accompagnement d'un porteur"
+	chart={`flowchart TD
+    A[Défi proposé] --> B[Entretien de diagnostic]
+    B --> C{Situation des données}
+    C -- Cas 1 : à ouvrir --> D[Séance tutoriel de publication]
+    C -- Cas 2 : déjà ouvertes ailleurs --> E[Identifier et citer les jeux existants]
+    C -- Cas 3 : délai annoncé --> F[Jeu d'échantillon et calendrier écrit]
+    D --> G[Publication sur data.gouv.fr]
+    E --> H[Lien dans la fiche du porteur]
+    F --> H
+    G --> H
+    H --> I[Vérification à J-15]
+    I --> J[Réutilisations après l'événement]`}
+/>
+
+## Questionnaire de diagnostic
+
+À dérouler en 20 minutes lors du premier entretien. Les réponses alimentent la grille de qualification du [workflow de sélection](/01-organisation/04-defis/02-processus-de-selection).
+
+|   # | Question                                                                                   | Pourquoi                                                         |
+| --: | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+|   1 | Quelles données le défi mobilise-t-il ? Sous quelle forme existent-elles aujourd'hui ?     | Distinguer cas 1, 2 et 3                                         |
+|   2 | Qui détient ces données et qui peut décider de leur ouverture ?                            | Identifier le décideur (direction métier, DSI, référent données) |
+|   3 | Les données sont-elles déjà publiées, ici ou ailleurs ?                                    | Éviter une double publication                                    |
+|   4 | Contiennent-elles des données personnelles ou couvertes par un secret ?                    | Anonymisation, occultation ou agrégation nécessaire              |
+|   5 | Quelle est l'échelle géographique la plus fine ? Y a-t-il un code INSEE, des coordonnées ? | Croisement avec les référentiels territoriaux                    |
+|   6 | Quelle période couvrent-elles ? À quelle fréquence sont-elles mises à jour ?               | Métadonnées obligatoires                                         |
+|   7 | La structure dispose-t-elle d'une organisation sur data.gouv.fr ? D'un portail open data ? | Choix du mode de publication                                     |
+|   8 | Qui pourra répondre aux questions des étudiants pendant les 48 heures ?                    | Accompagnement pendant le challenge                              |
+|   9 | La structure accepte-t-elle que les prototypes soient publiés comme réutilisations ?       | Valorisation après l'événement                                   |
+
+## Selon la situation du porteur
+
+|                    | Cas 1 : données à ouvrir                                                          | Cas 2 : données déjà ouvertes                        | Cas 3 : délai annoncé                            |
+| ------------------ | --------------------------------------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------ |
+| **Objectif**       | Publication sur data.gouv.fr avant J-15                                           | Jeux existants identifiés et documentés pour le défi | Défi jouable malgré l'absence de publication     |
+| **Livrable**       | Jeu de données publié sous l'organisation du porteur                              | Liste des jeux avec URL et licence                   | Échantillon fourni, calendrier d'ouverture écrit |
+| **Accompagnement** | Séance [tutoriel](/02-donnees/02-tutoriel-publication), relecture des métadonnées | Recherche sur data.gouv.fr et portails tiers         | Validation juridique de l'échantillon            |
+| **Risque**         | Validation hiérarchique tardive                                                   | Données incomplètes ou obsolètes                     | Défi retiré si rien à J-15                       |
+
+## Présenter l'open data à un porteur
+
+Argumentaire en cinq points, à adapter à l'interlocuteur :
+
+1. **C'est souvent une obligation** pour les administrations de plus de 50 agents et les collectivités de plus de 3 500 habitants (article L. 312-1-1 du CRPA) : le défi aide à la remplir.
+2. **Le défi crée un premier usage concret** : des équipes travaillent 48 heures sur les données et livrent des prototypes réutilisables.
+3. **La publication est accompagnée** : l'organisation du Data Challenge fournit le tutoriel, relit les métadonnées et fait le lien avec l'équipe data.gouv.fr.
+4. **Le producteur garde la maîtrise** : choix des colonnes publiées, agrégation, licence ouverte qui impose la mention de la source.
+5. **La visibilité dure après l'événement** : les réutilisations sont rattachées au jeu de données sur data.gouv.fr.
+
+> **Objections fréquentes :** « nos données ne sont pas parfaites » → mieux vaut publier une version documentée avec ses limites qu'attendre une version idéale ; « il y a des données personnelles » → agréger à la commune ou à l'IRIS, ou retirer les colonnes ; « nous n'avons pas le temps » → l'organisation prépare le fichier avec le porteur, qui n'a qu'à valider et publier.
+
+## Calendrier
+
+Aligné sur un événement en mars 2027 et sur le dépôt des défis jusqu'à J-15 :
+
+| Période                      | Étape open data                                                                          |
+| ---------------------------- | ---------------------------------------------------------------------------------------- |
+| Novembre - décembre 2026     | Entretien de diagnostic avec chaque porteur ayant répondu                                |
+| Décembre 2026 - janvier 2027 | Séances tutoriel pour les porteurs en cas 1, inventaire des jeux existants pour le cas 2 |
+| Janvier - février 2027       | Publication sur data.gouv.fr, ajout des liens dans les fiches des porteurs (`content/defis/`)                |
+| J-15                         | Vérification de tous les liens ; défi sans données retiré ou basculé sur un échantillon  |
+| Mars 2027                    | Challenge : référent disponible pour les questions sur les données                       |
+| Après l'événement            | Publication des réutilisations, bilan transmis aux porteurs et à Etalab                  |
+
+## Fiche de suivi par porteur
+
+À dupliquer dans le tableau de suivi :
+
+```yaml
+porteur: '' # structure
+defi: '' # titre du défi
+cas_donnees: '' # 1 à ouvrir | 2 déjà ouvertes | 3 délai annoncé
+decideur_ouverture: '' # fonction, pas forcément le contact du défi
+donnees_personnelles: '' # aucune | à anonymiser | à agréger
+organisation_datagouv: '' # URL ou "à créer"
+jeux_de_donnees: [] # URL data.gouv.fr
+statut: '' # diagnostic | préparation | publié | vérifié J-15
+prochaine_action: ''
+echeance: ''
+```

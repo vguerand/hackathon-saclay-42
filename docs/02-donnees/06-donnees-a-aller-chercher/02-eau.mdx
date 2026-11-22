@@ -1,0 +1,119 @@
+---
+title: 'Eau : ressource, qualité, réseaux et sécheresse : données à aller chercher'
+sidebar_label: 'Eau'
+description: 'Producteurs et jeux de données territoriaux ouverts sur le thème eau : ressource, qualité, réseaux et sécheresse, absents du portefeuille actuel, avec un défi type et les convergences.'
+---
+
+| Producteur                                                                                                                                                                   | Type                                                              | Pilier | Jeux vérifiés |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | :----: | ------------: |
+| [Ministère des Solidarités et de la Santé (contrôle sanitaire des ARS)](https://www.data.gouv.fr/organizations/ministere-des-solidarites-et-de-la-sante)                     | administration centrale de l'État (données produites par les ARS) |   3    |             3 |
+| [Agence de l'eau Seine-Normandie](https://www.data.gouv.fr/organizations/agence-de-leau-seine-normandie-1)                                                                   | établissement public de l'État                                    |   1    |             3 |
+| [Office français de la biodiversité (OFB)](https://www.data.gouv.fr/organizations/office-francais-de-la-biodiversite)                                                        | établissement public de l'État                                    |   1    |             1 |
+| [Système d'Information sur l'Eau (Eaufrance, Hub'Eau)](https://www.data.gouv.fr/organizations/systeme-d-information-sur-l-eau)                                               | système d'information public sur l'eau (piloté par l'OFB)         |   2    |             2 |
+| [Ministère de la Transition écologique (VigiEau)](https://www.data.gouv.fr/organizations/ministere-de-la-transition-ecologique)                                              | administration centrale de l'État                                 |   3    |             1 |
+| [DRIEAT Île-de-France](https://www.data.gouv.fr/organizations/direction-regionale-et-interdepartementale-de-lenvironnement-de-lamenagement-et-des-transports-dile-de-france) | service déconcentré de l'État                                     |   3    |             3 |
+
+## Ministère des Solidarités et de la Santé (contrôle sanitaire des ARS)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/ministere-des-solidarites-et-de-la-sante) · 327 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Construire un « bulletin eau du robinet » par commune de l'agglomération Paris-Saclay (nitrates, pesticides et métabolites, PFAS) avec historique, alertes de non-conformité et carte des UDI, lisible par le grand public ; variante parisienne : suivi de la qualité des sites de baignade urbaine en Seine.
+
+**Pourquoi c'est intéressant :** Jeu le plus réutilisé du thème (41 réutilisations), mis à jour mensuellement, au point de prélèvement : permet de rendre compte aux habitants et de mesurer l'effet des politiques de protection de la ressource.
+
+**Convergences :** Communauté d'agglomération Paris-Saclay (information des habitants sur l'eau) ; Ville de Paris (piste eau, baignade en Seine) ; LexImpact (normes de potabilité)
+
+| Jeu de données                                                                                                                                                                                                                                                                                                       | Maille                                                                                                                       | Couverture Paris-Saclay                                                                                                                                                           | Licence · mise à jour            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Résultats du contrôle sanitaire de l'eau distribuée commune par commune](https://www.data.gouv.fr/datasets/resultats-du-controle-sanitaire-de-leau-distribuee-commune-par-commune)                                                                                                                                  | prélèvement / unité de distribution (UDI) / commune, mensuel (fichiers annuels et par département, rattrapage jusqu'en 2024) | national (zones country:fr, fichiers par département donc Essonne extractible)                                                                                                    | Licence Ouverte 2.0 · 2026-10-05 |
+| [Résultats du contrôle sanitaire de l'eau du robinet](https://www.data.gouv.fr/datasets/resultats-du-controle-sanitaire-de-leau-du-robinet)                                                                                                                                                                          | prélèvement / réseau de distribution / commune, fichiers mensuels (dernier : 2026-08)                                        | national (granularité commune, Essonne incluse)                                                                                                                                   | Licence Ouverte 2.0 · 2026-10-05 |
+| [Résultats du contrôle sanitaire des eaux de baignade naturelle vis-à-vis des paramètres relatifs aux cyanobactéries et aux cyanotoxines](https://www.data.gouv.fr/datasets/resultats-du-controle-sanitaire-des-eaux-de-baignade-naturelle-vis-a-vis-des-parametres-relatifs-aux-cyanobacteries-et-aux-cyanotoxines) | site de baignade d'eau douce (point en Lambert II), prélèvement, annuel 2021-2025                                            | Île-de-France oui (Paris, 77, 78, 94 : sites de baignade en Seine, canal Saint-Martin, bassin de la Villette, îles de loisirs) ; Essonne non (aucun site 91 dans le fichier 2025) | Licence Ouverte 2.0 · 2026-06-24 |
+
+## Agence de l'eau Seine-Normandie
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/agence-de-leau-seine-normandie-1) · 26 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Cartographier le rendement des réseaux d'eau potable des communes de l'Essonne, croisé avec les volumes prélevés, pour prioriser où investir afin d'économiser le plus d'eau par euro dépensé ; en option, relier les rejets des stations d'épuration à la qualité de l'Yvette et de l'Orge.
+
+**Pourquoi c'est intéressant :** Opérateur financeur de la politique de l'eau sur tout le bassin francilien : prélèvements, performances des réseaux et qualité des rejets à l'ouvrage, porteur de défi naturel sur la sobriété hydrique. Limite : les indicateurs de performance s'arrêtent à 2022.
+
+**Convergences :** Communauté d'agglomération Paris-Saclay (réseaux, assainissement) ; Ville de Paris (piste eau) ; IGN (BD TOPO hydrographie)
+
+| Jeu de données                                                                                                                                                                              | Maille                                                                                                                        | Couverture Paris-Saclay                            | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | -------------------------------- |
+| [Prélèvements en eau du bassin Seine-Normandie](https://www.data.gouv.fr/datasets/prelevements-en-eau-du-bassin-seine-normandie)                                                            | ouvrage de prélèvement, volumes annuels par usage (fichiers 1989-2007, puis renvoi vers la BNPE et l'API Hub'Eau depuis 2008) | oui (bassin Seine-Normandie, qui inclut l'Essonne) | Licence Ouverte 2.0 · 2026-08-17 |
+| [Réseaux de distribution en eau potable : performances](https://www.data.gouv.fr/datasets/reseaux-de-distribution-en-eau-potable-performances)                                              | service / collectivité gestionnaire, indicateurs 2014-2022 (publication ponctuelle)                                           | oui (bassin Seine-Normandie)                       | Licence Ouverte 2.0 · 2024-08-09 |
+| [Assainissement - Stations d'épuration : Suivi de la qualité des eaux traitées](https://www.data.gouv.fr/datasets/assainissement-stations-depuration-suivi-de-la-qualite-des-eaux-traitees) | station d'épuration, mesures d'autosurveillance en fichiers mensuels (jusqu'à 2024-12)                                        | oui (bassin Seine-Normandie)                       | Licence Ouverte 2.0 · 2026-07-24 |
+
+## Office français de la biodiversité (OFB)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/office-francais-de-la-biodiversite) · 1777 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Dresser le profil des prélèvements en eau par usage (eau potable, industrie, irrigation) des communes de l'agglo Paris-Saclay et le confronter aux restrictions sécheresse subies, pour repérer les communes les plus exposées.
+
+**Pourquoi c'est intéressant :** Indicateur communal prêt à l'emploi de la pression quantitative sur la ressource ; à compléter par l'API Hub'Eau prélèvements pour des années plus récentes (les données portent sur 2018).
+
+**Convergences :** PatriNat (l'OFB en est cotutelle : porte d'entrée naturelle) ; Communauté d'agglomération Paris-Saclay
+
+| Jeu de données                                                                                                                                                                              | Maille                                                                                                | Couverture Paris-Saclay                                                        | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------- |
+| [Synthèse des prélèvements en eau (commune) (source BNPE, traitement OFB 2020)](https://www.data.gouv.fr/datasets/synthese-des-prelevements-en-eau-commune-source-bnpe-traitement-ofb-2020) | commune, par usage ; couche issue d'un traitement 2020 portant sur l'année 2018 (nom de la ressource) | national (France métropolitaine et DROM selon la description, Essonne incluse) | Licence Ouverte 2.0 · 2026-10-24 |
+
+## Système d'Information sur l'Eau (Eaufrance, Hub'Eau)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/systeme-d-information-sur-l-eau) · 719 jeux publiés · Pilier 2 : Recherche, deeptech et innovation
+
+**Défi type :** Prévoir à 30 jours le risque d'étiage de l'Yvette, de l'Orge et de la Bièvre et le niveau des nappes sous le plateau de Saclay, à partir des débits, de la piézométrie et des données météo, avec un tableau de bord d'alerte pour les collectivités.
+
+**Pourquoi c'est intéressant :** Séries temporelles longues au point de mesure, exposées aussi via les API Hub'Eau : matière idéale pour des modèles de prévision. Attention : la fiche piézométrie n'est qu'un lien vers ADES, pas un fichier.
+
+**Convergences :** Communauté d'agglomération Paris-Saclay ; CNRS (laboratoires d'hydrologie du campus) ; IGN (hydrographie BD TOPO) ; jeux Météo-France et DRIAS déjà inventoriés
+
+| Jeu de données                                                                                               | Maille                                                                            | Couverture Paris-Saclay                                                                           | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Piézomètrie](https://www.data.gouv.fr/datasets/piezometrie)                                                 | piézomètre (point), chroniques ; ressource unique = lien d'accès à la banque ADES | national (France entière selon la description)                                                    | Licence Ouverte 2.0 · 2025-12-21 |
+| [Données aux stations hydrométriques](https://www.data.gouv.fr/datasets/donnees-aux-stations-hydrometriques) | station hydrométrique (point WGS84), archives trimestrielles + lien Hydroportail  | national (France y compris DROM ; cours d'eau de l'Essonne présents dans le référentiel national) | Licence Ouverte 2.0 · 2026-10-26 |
+
+## Ministère de la Transition écologique (VigiEau)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/ministere-de-la-transition-ecologique) · 149 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Évaluer si les arrêtés sécheresse en Essonne sont déclenchés au bon moment : confronter l'historique des restrictions aux niveaux réels des nappes et des débits (Hub'Eau) et mesurer le délai de réaction.
+
+**Pourquoi c'est intéressant :** Source consolidée et quotidienne des restrictions d'usage de l'eau (11 réutilisations), avec historique par commune : contrôle concret d'une politique publique très attendue.
+
+**Convergences :** DGALN-DHUP (même ministère) ; LexImpact (application des arrêtés-cadres) ; Communauté d'agglomération Paris-Saclay
+
+| Jeu de données                                                                             | Maille                                                                                                                       | Couverture Paris-Saclay    | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------------------- |
+| [Donnée Sécheresse - VigiEau](https://www.data.gouv.fr/datasets/donnee-secheresse-vigieau) | zone d'alerte (polygone), arrêté préfectoral, commune en restriction ; quotidien, avec historique communes et arrêtés-cadres | national (Essonne incluse) | Licence Ouverte 2.0 · 2026-10-24 |
+
+## DRIEAT Île-de-France
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/direction-regionale-et-interdepartementale-de-lenvironnement-de-lamenagement-et-des-transports-dile-de-france) · 360 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Repérer les zones humides du plateau de Saclay touchées par les projets d'urbanisme (permis, artificialisation) et vérifier si les compensations déclarées existent et sont proches des zones détruites.
+
+**Pourquoi c'est intéressant :** Couches régionales fines au croisement de l'eau, de l'urbanisme et de la biodiversité, faciles à croiser avec les jeux fonciers déjà inventoriés. Réserve : métadonnées de 2022 (plus de 4 ans), conservées car couches de référence servies par un flux WFS toujours en ligne ; le PGRI est un document, pas une donnée géographique.
+
+**Convergences :** PatriNat / Programme-R (biodiversité) ; DGALN-DHUP (urbanisme) ; IGN (OCS GE, LiDAR) ; Communauté d'agglomération Paris-Saclay (aménagement) ; Station F x Ville de demain
+
+| Jeu de données                                                                                                                                                                                            | Maille                                                                                                                                      | Couverture Paris-Saclay      | Licence · mise à jour            |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | -------------------------------- |
+| [Enveloppes d’alerte des zones humides d’Ile-de-France](https://www.data.gouv.fr/datasets/enveloppes-dalerte-des-zones-humides-dile-de-france-1)                                                          | polygone infra-communal (classes de probabilité de présence de zones humides) ; flux WFS actif vérifié (couche L_ENVELOPPE_ALERTE_ZH_S_R11) | oui (Île-de-France)          | Licence Ouverte 2.0 · 2022-02-17 |
+| [Plan de gestion des risques d’inondation (PGRI) du bassin Seine Normandie 2022-2027](https://www.data.gouv.fr/datasets/plan-de-gestion-des-risques-dinondation-pgri-du-bassin-seine-normandie-2022-2027) | document de plan à l'échelle du bassin (une ressource : le PGRI approuvé)                                                                   | oui (bassin Seine-Normandie) | Licence Ouverte 2.0 · 2024-12-12 |
+| [Mesures compensatoires zones humides en Ile-de-France](https://www.data.gouv.fr/datasets/mesures-compensatoires-zones-humides-en-ile-de-france)                                                          | site de compensation (polygone) ; flux WFS actif vérifié (couche L_MC_EAU_S_R11)                                                            | oui (Île-de-France)          | Licence Ouverte 2.0 · 2022-03-02 |
+
+<details>
+<summary>Propositions examinées et écartées</summary>
+
+- **Dernier prix des services de l'eau (OFB) - https://www.data.gouv.fr/datasets/dernier-prix-des-services-de-leau** : La description indique un périmètre limité au bassin Artois-Picardie : ne couvre ni l'Essonne ni l'Île-de-France. L'angle de défi tarification qui en dépendait a été retiré.
+- **Donnée Sécheresse - Propluvia - https://www.data.gouv.fr/datasets/donnee-secheresse-propluvia** : Jeu déclaré « hors d'usage » (Propluvia décommissionné), figé au 2024-05-13 ; remplacé par VigiEau, qui fournit aussi un historique par commune.
+- **Piézomètrie France entière (ADES) (Ministère de la Transition écologique) - https://www.data.gouv.fr/datasets/piezometrie-france-entiere-ades-30382022** : Doublon de la fiche « Piézomètrie » du Système d'Information sur l'Eau (même source ADES) ; licence fr-lo et métadonnées de 2015.
+- **Services publics d'eau potable - jeux de données exploités pour les rapports nationaux SISPEA - https://www.data.gouv.fr/datasets/services-publics-deau-potable-jeux-de-donnees-exploites-pour-les-rapports-nationaux-sispea-1** : Figé depuis le 2022-04-19 (plus de 4 ans), extractions 2015-2019 seulement ; l'observatoire SISPEA en ligne n'a pas été vérifié ici.
+
+</details>
+
+---
+
+Retour aux [priorités](/02-donnees/06-donnees-a-aller-chercher/00-priorites).

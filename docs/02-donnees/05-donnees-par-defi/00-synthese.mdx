@@ -1,0 +1,87 @@
+---
+title: 'Open data mobilisable par défi : synthèse'
+sidebar_label: 'Synthèse'
+description: 'Situation de chaque porteur sur data.gouv.fr, cas de figure des 21 défis du deck et référentiels territoriaux communs à fournir dans un kit unique.'
+---
+
+Pour chaque défi présenté dans le [deck](/01-organisation/04-defis/00-deck-et-defis), ce dossier recense **les jeux de données déjà ouverts sur data.gouv.fr** qui permettent de le traiter, **ce que le porteur devrait ouvrir lui-même** et **les points de vigilance**, avec une page par porteur. Il sert de base aux [entretiens de diagnostic](/02-donnees/03-accompagner-les-porteurs).
+
+> **Méthode :** recherche par l'API publique de data.gouv.fr le 26/10/2026, puis contre-vérification de chaque jeu (existence, producteur, licence, pertinence). Les 79 jeux cités existent, ne sont ni archivés ni supprimés, et leurs titres, producteurs, licences et dates de mise à jour proviennent de l'API. Les usages proposés sont des pistes à valider avec chaque porteur.
+
+## Situation des porteurs
+
+| Porteur                                                                                                   | Présence sur data.gouv.fr                                                                                                                                                                                                                                                                     | Défi 1 | Défi 2 | Défi 3 | Jeux recensés |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | :----: | :----: | ------------: |
+| **[Cybermalveillance.gouv.fr (GIP ACYMA)](/02-donnees/05-donnees-par-defi/01-cybermalveillance)**         | Aucune organisation sur data.gouv.fr : à créer avant toute publication.                                                                                                                                                                                                                       | Cas 1  | Cas 3  | Cas 2  |            13 |
+| **[Assemblée nationale (LexImpact)](/02-donnees/05-donnees-par-defi/02-assemblee-nationale)**             | [Assemblée nationale](https://www.data.gouv.fr/organizations/assemblee-nationale) (11 jeux, aucun mis à jour depuis 2022), [LexImpact](https://www.data.gouv.fr/organizations/leximpact) (2 jeux), [OpenFisca](https://www.data.gouv.fr/organizations/openfisca) (1 jeu).                     | Cas 2  | Cas 3  | Cas 1  |            17 |
+| **[DGALN – DHUP](/02-donnees/05-donnees-par-defi/03-dgaln-dhup)**                                         | [Ministère de la Cohésion des territoires](https://www.data.gouv.fr/organizations/ministere-de-l-egalite-des-territoires-et-du-logement) (22 jeux) et [Ministère de la Transition écologique](https://www.data.gouv.fr/organizations/ministere-de-la-transition-ecologique) (149 jeux).       | Cas 2  | Cas 3  | Cas 2  |            16 |
+| **[PatriNat (Programme-R)](/02-donnees/05-donnees-par-defi/04-patrinat-programme-r)**                     | Pas d'organisation PatriNat ni Programme-R. Les données de biodiversité sont publiées par le [MNHN](https://www.data.gouv.fr/organizations/museum-national-dhistoire-naturelle) (10 jeux) et l'[OFB](https://www.data.gouv.fr/organizations/office-francais-de-la-biodiversite) (1 777 jeux). | Cas 2  | Cas 2  | Cas 3  |            17 |
+| **[Station F × Ville de demain](/02-donnees/05-donnees-par-defi/05-station-f-ville-de-demain)**           | Aucune organisation Station F ou Ville de demain. [LexImpact](https://www.data.gouv.fr/organizations/leximpact) publie 2 jeux ; **DataCirco n'est pas publié**.                                                                                                                               | Cas 3  | Cas 2  | Cas 2  |            17 |
+| **[Communauté d'agglomération Paris-Saclay](/02-donnees/05-donnees-par-defi/06-communaute-paris-saclay)** | [Communauté Paris-Saclay](https://www.data.gouv.fr/organizations/communaute-paris-saclay) : organisation certifiée « collectivité », mais **aucun jeu publié**.                                                                                                                               | Cas 2  | Cas 2  | Cas 1  |            17 |
+| **[CNRS – Campus Cyber](/02-donnees/05-donnees-par-defi/07-cnrs-campus-cyber)**                           | [CNRS](https://www.data.gouv.fr/organizations/centre-national-de-la-recherche-scientifique) : 1 jeu, sans rapport avec le sujet. Aucune organisation Campus Cyber, VIGINUM ou SGDSN.                                                                                                          | Cas 1  | Cas 3  | Cas 2  |            12 |
+
+_Cas 1 : le porteur doit ouvrir ses propres données · Cas 2 : des données ouvertes existent déjà · Cas 3 : données à obtenir, sous délai ou inexistantes en open data._
+
+<Mermaid
+	title="Nombre de défis par porteur et par cas de figure"
+	chart={`flowchart LR
+    subgraph G0["Cas 2 : déjà ouvertes · 11 défis"]
+        direction TB
+        G0N0["Cybermalveillance · 1"]
+        G0N1["Assemblée nationale · 1"]
+        G0N2["DGALN – DHUP · 2"]
+        G0N3["PatriNat – Programme-R · 2"]
+        G0N4["Station F – Ville de demain · 2"]
+        G0N5["CA Paris-Saclay · 2"]
+        G0N6["CNRS – Campus Cyber · 1"]
+        G0N0 ~~~ G0N1 ~~~ G0N2 ~~~ G0N3 ~~~ G0N4 ~~~ G0N5 ~~~ G0N6
+    end
+    subgraph G1["Cas 1 : à ouvrir par le porteur · 4 défis"]
+        direction TB
+        G1N0["Cybermalveillance · 1"]
+        G1N1["Assemblée nationale · 1"]
+        G1N2["CA Paris-Saclay · 1"]
+        G1N3["CNRS – Campus Cyber · 1"]
+        G1N0 ~~~ G1N1 ~~~ G1N2 ~~~ G1N3
+    end
+    subgraph G2["Cas 3 : à obtenir · 6 défis"]
+        direction TB
+        G2N0["Cybermalveillance · 1"]
+        G2N1["Assemblée nationale · 1"]
+        G2N2["DGALN – DHUP · 1"]
+        G2N3["PatriNat – Programme-R · 1"]
+        G2N4["Station F – Ville de demain · 1"]
+        G2N5["CNRS – Campus Cyber · 1"]
+        G2N0 ~~~ G2N1 ~~~ G2N2 ~~~ G2N3 ~~~ G2N4 ~~~ G2N5
+    end
+    G0 ~~~ G1 ~~~ G2`}
+/>
+
+<Mermaid
+	title="Répartition des 21 défis par cas de figure"
+	chart={`pie showData
+    "Cas 2 : données déjà ouvertes" : 11
+    "Cas 1 : à ouvrir par le porteur" : 4
+    "Cas 3 : à obtenir ou inexistantes" : 6`}
+/>
+
+## Référentiels communs à plusieurs défis
+
+Ces jeux servent de **pivots de croisement** (code INSEE, contours, adresses, bâti) et sont utiles à presque tous les défis territoriaux. Ils peuvent être fournis une seule fois, dans un **kit commun** remis à toutes les équipes.
+
+| Référentiel                                                                                                                                                                                                                                                                    | Producteur                                                            | Licence             | Usage                                                                                                                                                                                                                                                                                                                                                                                                         | Défis concernés |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------: |
+| [Code officiel géographique](https://www.data.gouv.fr/datasets/code-officiel-geographique-1)                                                                                                                                                                                   | Institut national de la statistique et des études économiques (Insee) | Licence Ouverte 1.0 | C'est le pivot de jointure universel : codes et libellés des communes, EPCI, départements et régions, avec l'historique des fusions et changements de code. Il sert à rapprocher tous les jeux indexés par code INSEE (délinquance, fiscalité locale, DPE, consommations d'énergie, élections, Fonds Vert) et à neutraliser les fusions de communes entre deux millésimes.                                    |               8 |
+| [ADMIN EXPRESS, ADMIN EXPRESS COG, ADMIN EXPRESS COG CARTO, ADMIN EXPRESS COG CARTO PE, ADMIN EXPRESS COG CARTO PLUS PE](https://www.data.gouv.fr/datasets/admin-express-admin-express-cog-admin-express-cog-carto-admin-express-cog-carto-pe-admin-express-cog-carto-plus-pe) | Institut national de l'information géographique et forestière         | Licence Ouverte 2.0 | Ce sont les contours géographiques officiels des communes, EPCI, départements et régions, alignés sur le COG. Ils servent de fond de carte commun pour cartographier tous les indicateurs communaux et pour agréger à l'échelle de la commune des données ponctuelles (Sirene, adresses, bâtiments) ou surfaciques (OCS GE, LCZ, ZNIEFF).                                                                     |               9 |
+| [Contours... IRIS®](https://www.data.gouv.fr/datasets/contours-iris-r-2)                                                                                                                                                                                                       | Institut national de l'information géographique et forestière         | Licence Ouverte 2.0 | Ce sont les contours infra-communaux (quartiers IRIS) qui portent les statistiques fines du recensement. Ils permettent de descendre sous la commune pour croiser les îlots de chaleur, la précarité et le bâti, et de construire des indicateurs de quartier. Ils figurent déjà dans PatriNat défi 2, mais servent à bien d'autres défis.                                                                    |               6 |
+| [Populations de référence](https://www.data.gouv.fr/datasets/populations-de-reference)                                                                                                                                                                                         | Institut national de la statistique et des études économiques (Insee) | Licence Ouverte 2.0 | Ce sont les populations légales (municipale et totale) par commune. Elles sont le dénominateur indispensable pour calculer des taux par habitant (cyberattaques, délinquance, consommation d'énergie, accidents, dotations) et pour pondérer une exposition à la chaleur ou un impact par la population concernée. Aucun défi ne les liste aujourd'hui.                                                       |               8 |
+| [Revenus, pauvreté et niveau de vie - Données carroyées](https://www.data.gouv.fr/datasets/revenus-pauvrete-et-niveau-de-vie-donnees-carroyees)                                                                                                                                | Institut national de la statistique et des études économiques (Insee) | Licence Ouverte 2.0 | Ce jeu donne la population, les ménages, les revenus et la pauvreté sur des carreaux de 200 m. C'est le pivot démographique et social le plus fin, pour croiser la vulnérabilité sociale avec les îlots de chaleur, l'occupation du sol et le bâti, indépendamment des limites administratives. C'est la fiche INSEE à jour, plus récente que la version 2019/2021 citée dans PatriNat défi 2.                |               7 |
+| [Base Adresse Nationale](https://www.data.gouv.fr/datasets/base-adresse-nationale)                                                                                                                                                                                             | Base Adresse Nationale                                                | Licence Ouverte 2.0 | C'est le référentiel officiel des adresses géolocalisées, avec code INSEE. Il sert à géocoder les jeux qui ne contiennent qu'une adresse (permis de construire, lieux de médiation numérique, tiers-lieux, structures de recherche, établissements, actes locaux) et à les rattacher à un bâtiment, un IRIS ou un carreau. Il ne figure aujourd'hui que dans Station F défi 1.                                |               6 |
+| [Base de données nationale des bâtiments](https://www.data.gouv.fr/datasets/base-de-donnees-nationale-des-batiments)                                                                                                                                                           | Centre Scientifique et Technique du Batiment                          | Licence Ouverte 2.0 | C'est le pivot à la maille du bâtiment : identifiant unique (RNB/BDNB), lien avec les adresses BAN et les parcelles, DPE, date de construction, matériaux, hauteur et usage. Il permet de joindre bâti, énergie et climat. Déjà présent dans DGALN défi 1, PatriNat défi 1 et Station F défi 1, il manque à d'autres défis où il serait utile.                                                                |               6 |
+| [OCS GE](https://www.data.gouv.fr/datasets/ocs-ge)                                                                                                                                                                                                                             | Institut national de l'information géographique et forestière         | Licence Ouverte 2.0 | C'est l'occupation du sol à grande échelle (couverture et usage), le référentiel national de l'artificialisation. Il sert à mesurer la végétation, l'imperméabilisation et la consommation d'espaces, et à comparer des scénarios d'aménagement. Déjà présent chez PatriNat et Station F, il manque à DGALN et à la CA Paris-Saclay.                                                                          |               6 |
+| [Données sur la localisation et l’accès de la population aux équipements](https://www.data.gouv.fr/datasets/donnees-sur-la-localisation-et-lacces-de-la-population-aux-equipements)                                                                                            | Institut national de la statistique et des études économiques (Insee) | Licence Ouverte 2.0 | Ce jeu, tiré de la Base permanente des équipements (BPE), localise les équipements et services (santé, enseignement, commerces, services publics, sport) et donne les temps d'accès de la population. C'est un référentiel transverse pour mesurer l'accessibilité, la couverture de services de proximité (médiation, prévention) et l'impact social de projets urbains. Aucun défi ne le liste aujourd'hui. |               6 |
+| [Géolocalisation des établissements du répertoire SIRENE-pour les études statistiques](https://www.data.gouv.fr/datasets/geolocalisation-des-etablissements-du-repertoire-sirene-pour-les-etudes-statistiques)                                                                 | Institut national de la statistique et des études économiques (Insee) | Licence Ouverte 2.0 | Ce jeu ajoute les coordonnées géographiques des établissements Sirene (jointure par SIRET). La base Sirene, citée dans 4 défis, ne contient que des adresses ; ce complément permet de cartographier directement le tissu économique (entreprises cibles de cyberattaques, offre cyber, startups deeptech, filières locales) et de le croiser avec le bâti, l'occupation du sol ou les IRIS.                  |               5 |
+
+## Et ensuite
+
+Les données territoriales qui manquent au portefeuille, et les producteurs qu'il serait intéressant d'aller chercher, sont recensés dans [Données à aller chercher](/02-donnees/06-donnees-a-aller-chercher/00-priorites).

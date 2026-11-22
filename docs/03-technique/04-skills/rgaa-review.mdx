@@ -1,0 +1,79 @@
+---
+title: Revue RGAA
+sidebar_label: RGAA Review
+description: Auditer, valider et corriger l'accessibilité numérique selon les 13 thématiques du RGAA v4.1 (WCAG 2.1 AA) et le design system Mantine v7.
+---
+
+Ce skill fournit la grille d'évaluation et la méthode pour auditer et garantir l'accessibilité numérique d'un composant ou d'une page du site du hackathon Saclay × 42 Paris.
+
+---
+
+## 1. Quand l'utiliser
+
+- Audit d'une page avant mise en production (`/`, `/defis`, `/defis/[id]`, `/galerie-photos`, etc.).
+- Vérification de la navigabilité intégrale au clavier (`Tab`, `Shift+Tab`, `Enter`, `Space`, `Escape`).
+- Contrôle des ratios de contrastes graphiques et textuels avec les palettes du thème Mantine (`src/theme/index.ts`).
+- Vérification du menu mobile, des cartes de porteurs et des animations (bandeau d'alerte défilant).
+
+---
+
+## 2. Informations à lire
+
+- Le composant ou la page ciblée (dans `src/features/<domaine>/` ou `src/components/`).
+- La configuration du thème : `src/theme/index.ts` et `src/app/globals.css`.
+- La fiche de référence : [Conventions](/03-technique/00-prise-en-main/02-conventions).
+
+---
+
+## 3. Procédure Pas à Pas
+
+### Étape 1 : Contrôler la navigation au clavier (Thématiques 7 & 12)
+
+- [ ] Tout élément interactif (lien `Link`, bouton `Button`, entrée `TextInput`, onglet) est atteignable via la touche `Tab`.
+- [ ] L'ordre de tabulation respecte l'ordre visuel et logique de lecture.
+- [ ] L'indicateur de focus est toujours visible et distinct (pas de `outline: none` non compensé).
+- [ ] Les modales (`Modal` Mantine) et tiroirs (`Drawer` Mantine) capturent le focus (_Focus Trap_) et la touche `Échap` referme le dialogue en restituant le focus à l'élément déclencheur.
+
+### Étape 2 : Vérifier les contrastes de couleurs (Thématiques 3 & 10)
+
+- [ ] **Texte normal :** Ratio de contraste $\ge$ 4.5:1 par rapport à l'arrière-plan.
+  - La couleur primaire `saclay-plum` (`#63003C`) sur fond blanc atteint un ratio d'environ **13:1** (conforme AA et AAA).
+  - L'accent `saclay-magenta` (`#CA007A`) sur fond blanc atteint un ratio d'environ **5,5:1** (conforme AA).
+- [ ] **Grands titres (Lora Serif $\ge$ 18.5 px) :** Ratio $\ge$ 3.0:1.
+- [ ] **Éléments graphiques et bordures d'inputs :** Ratio $\ge$ 3.0:1.
+- [ ] L'information n'est jamais transmise _uniquement_ par la couleur : toujours associer une icône explicite ou un libellé textuel (ex : badges de statut).
+
+### Étape 3 : Structurer les formulaires Mantine (Thématique 11)
+
+Le site n'a aucun formulaire : les saisies passent par Tally. Cette étape ne s'applique que si un champ est ajouté (recherche, filtre).
+
+- [ ] Chaque `<TextInput>`, `<Textarea>`, `<Radio.Group>` ou `<Checkbox>` dispose d'un `label` explicite ou d'un attribut `aria-label`.
+- [ ] Les messages d'aide ou d'erreur sont restitués par les lecteurs d'écran.
+- [ ] Les champs obligatoires sont annoncés (`required={true}` et indicateur visuel).
+
+### Étape 4 : Valider la sémantique HTML & Hiérarchie de Titres (Thématiques 8 & 9)
+
+- [ ] Un seul `<h1>` (`<Title order={1}>`) par page.
+- [ ] Pas de saut dans les niveaux de titres (`order={2}` puis `order={3}`).
+- [ ] Les images porteuses de sens possèdent un attribut `alt="Description claire"`.
+- [ ] Les séparateurs décoratifs (`SeparateurDrapeauFr`) et icônes d'habillage portent `aria-hidden="true"`.
+- [ ] Le bandeau d'alerte défilant (`registration-alert-track`) s'arrête au survol et respecte `@media (prefers-reduced-motion: reduce)`.
+
+---
+
+## 4. Livrable & Vérification
+
+Rédiger une synthèse d'évaluation structurée :
+
+1. **Page ou composant audité :** Chemin du fichier source.
+2. **Tableau des constats :**
+   | Critère RGAA | Sévérité (Bloquant / Majeur / Mineur) | Problème observé | Correction préconisée |
+   |---|---|---|---|
+3. **Statut global :** Conforme / Non conforme avec modifications appliquées.
+
+---
+
+## 5. Sources & Références
+
+- **Guide RGAA v4.1 :** [https://accessibilite.numerique.gouv.fr/](https://accessibilite.numerique.gouv.fr/)
+- **Documentation Accessibilité Mantine :** [https://mantine.dev/guides/accessibility/](https://mantine.dev/guides/accessibility/)

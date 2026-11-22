@@ -1,0 +1,73 @@
+---
+title: 'Organisation du hackathon Saclay × 42'
+sidebar_label: "Vue d'ensemble"
+description: "Positionnement, gouvernance, carte des sous-processus et état d'avancement de l'organisation du hackathon Université Paris-Saclay × 42 Paris de mars 2027."
+---
+
+Le **Hackathon Saclay × 42 — Innovation & Data Publique** est co-porté par l'Université Paris-Saclay et l'École 42. Il réunit les **18 et 19 mars 2027**, au campus 42 Paris, pendant 48 heures, chercheurs, étudiants et experts des administrations autour de **défis proposés par des organisations publiques**, avec un fil conducteur : **la donnée territoriale**.
+
+> **En une phrase :** créer des outils d'analyse à partir de données ouvertes, au service de l'innovation publique, et faire de chaque défi un levier de publication durable sur data.gouv.fr.
+
+## Les sous-processus
+
+L'organisation est découpée en quatre sous-processus. Les données et la plateforme ont chacune leur dossier principal ([Données et open data](/02-donnees/00-vue-ensemble), [Documentation technique](/03-technique/index)).
+
+<Mermaid
+	title="Chaîne d'organisation"
+	chart={`flowchart LR
+    D[Collecte et sélection des défis] --> O[Données et open data]
+    O --> E[Événement]
+    D -. défis retenus .-> E
+    E --> S[Suite : réutilisations, bilan]
+    T[Site et formulaires Tally] -. porteurs de défis, inscriptions .-> E`}
+/>
+
+| Sous-processus                      | Objectif                                                          | État au 26/10/2026                                                                | Prochain jalon                                           | Pages                                                                                                                                                                                    |
+| ----------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Collecte et sélection des défis** | Transformer une piste en défi qualifié, publié et outillé         | Deck diffusé, formulaire Tally en ligne, processus à valider                      | Call 42 Paris, 27/10/2026                                | [Deck](/01-organisation/04-defis/00-deck-et-defis) · [Formulaire](/01-organisation/04-defis/01-formulaire-de-demande) · [Sélection](/01-organisation/04-defis/02-processus-de-selection) |
+| **Données et open data**            | Garantir des données ouvertes exploitables pour chaque défi       | Inventaire de 21 défis réalisé                                                    | Entretiens de diagnostic, novembre 2026                  | [Open data](/02-donnees/00-vue-ensemble) · [Par défi](/02-donnees/05-donnees-par-defi/00-synthese)                                                                                       |
+| **Événement**                       | Programme, comité scientifique, déroulé des 48 heures             | Deux conférences proposées, comité à constituer                                   | Comité scientifique, début novembre 2026                 | [Programme et format](/01-organisation/05-evenement/00-programme-et-format)                                                                                                              |
+| **Plateforme technique**            | Site vitrine statique, formulaires Tally, git partagé des rendus | Site statique en ligne ; liens Tally et git partagé à fournir par 42 Paris | Ouverture de la plateforme, novembre 2026 à janvier 2027 | [Documentation technique](/03-technique/index)                                                                                                                                           |
+
+## Gouvernance
+
+<Mermaid
+	title="Qui décide, qui contribue"
+	chart={`flowchart TD
+    CP[Co-portage Université Paris-Saclay et 42 Paris] --> EP[Équipe projet]
+    CP --> CS[Comité scientifique]
+    EP --> PR[Porteurs de défis]
+    CS --> PR
+    CS --> EX[Experts référents]
+    EP --> PF[Plateforme et données]
+    PR --> EQ[Équipes]
+    EX --> EQ
+    PF --> EQ`}
+/>
+
+| Instance                | Composition                                                                                  | Rôle                                                                    |
+| ----------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Co-portage**          | Université Paris-Saclay (cabinet de la présidence, vice-présidence) et direction de 42 Paris | Arbitrages, calendrier, communication                                   |
+| **Équipe projet**       | Chargé de projet Université Paris-Saclay, ambassadeur École 42                               | Suivi des porteurs, plateforme, documentation                           |
+| **Comité scientifique** | À constituer parmi les répondants (début novembre 2026)                                      | Arrêter les piliers, sélectionner les défis, programmer les conférences |
+| **Porteurs de défis**   | Organisations publiques (administrations d'État, collectivités, établissements de recherche) | Formuler le défi, fournir les données, accompagner les équipes          |
+| **Experts référents**   | Un par pilier, dont des administrateurs publics                                              | Accompagner les équipes pendant les bureaux ouverts et l'événement      |
+
+## Les trois piliers
+
+| Pilier                                              | Périmètre                                                                   | Défis du deck |
+| --------------------------------------------------- | --------------------------------------------------------------------------- | ------------: |
+| **Souveraineté, résilience et adaptation**          | Sécurité et résilience territoriale, intelligence économique, cybersécurité |             9 |
+| **Recherche, deeptech et innovation**               | Innovation scientifique et technologique, valorisation de la recherche      |             4 |
+| **Contrôle et évaluation des politiques publiques** | Mesurer, analyser, piloter et évaluer l'action publique                     |             7 |
+
+_Rattachement pressenti, à valider par le comité scientifique. Un élément du deck est une conférence et non un défi._
+
+## Décisions en attente
+
+| Décision                                                          | Instance                   | Échéance            | Page                                                                          |
+| ----------------------------------------------------------------- | -------------------------- | ------------------- | ----------------------------------------------------------------------------- |
+| Public cible et nom de l'événement (deck et formulaire divergent) | Co-portage                 | Call du 27/10/2026  | [Deck et défis](/01-organisation/04-defis/00-deck-et-defis)                   |
+| Outil de suivi des propositions (option A, B ou C)                | Co-portage                 | Call du 27/10/2026  | [Processus de sélection](/01-organisation/04-defis/02-processus-de-selection) |
+| Composition du comité scientifique                                | Vice-présidence innovation | Début novembre 2026 | [Programme et format](/01-organisation/05-evenement/00-programme-et-format)   |
+| Répartition des défis par pilier                                  | Comité scientifique        | Mi-novembre 2026    | [Deck et défis](/01-organisation/04-defis/00-deck-et-defis)                   |

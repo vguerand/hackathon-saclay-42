@@ -1,0 +1,101 @@
+---
+title: 'Feuille de route et jalons'
+sidebar_label: 'Feuille de route'
+description: "Rétroplanning du hackathon Saclay × 42 jusqu'à mars 2027 : jalons datés par sous-processus, prochaines étapes à 30 jours, chantier plateforme et risques de calendrier."
+---
+
+Le rétroplanning est construit **en remontant depuis l'événement, les 18 et 19 mars 2027**. Il reprend le calendrier présenté dans le [deck](/01-organisation/04-defis/00-deck-et-defis).
+
+> **Dates.** L'événement a lieu les 18 et 19 mars 2027 au campus 42 Paris. Les jalons « J-15 » tombent le 3 mars 2027.
+
+## Vue chronologique
+
+<Mermaid
+	title="Rétroplanning par sous-processus"
+	chart={`gantt
+    dateFormat YYYY-MM-DD
+    axisFormat %d/%m
+    section Montage
+    Montage du projet               :done,   m1, 2026-08-01, 2026-09-30
+    section Défis
+    Prise de contact et défis       :active, p1, 2026-10-01, 2026-11-30
+    Réunion de cadrage 42 Paris     :milestone, c1, 2026-10-27, 0d
+    Cahiers des charges             :d1, 2026-10-26, 2026-11-06
+    Ouverture de la plateforme      :d2, 2026-11-16, 2027-01-31
+    Sélection des porteurs          :d3, 2027-01-04, 2027-02-15
+    Clôture des dépôts J-15         :milestone, d4, 2027-03-03, 0d
+    section Gouvernance
+    Constitution du comité          :g1, 2026-11-02, 2026-11-13
+    Première session du comité      :milestone, g2, 2026-11-16, 0d
+    Confirmation des parrainages    :g3, 2026-12-01, 2026-12-18
+    section Données
+    Entretiens de diagnostic        :o1, 2026-11-02, 2026-12-18
+    Publication sur data.gouv.fr    :o2, 2026-12-01, 2027-03-02
+    Vérification des données J-15   :milestone, o3, 2027-03-03, 0d
+    section Événement
+    Communication et inscriptions   :e1, 2027-01-04, 2027-03-12
+    Bureaux ouverts                 :e2, 2027-01-11, 2027-02-26
+    Hackathon                       :crit, e3, 2027-03-18, 2d
+    Restitution et bilan            :e4, 2027-03-22, 2027-04-16
+    section Plateforme
+    Passage en site statique        :t1, 2026-11-02, 2026-11-27`}
+/>
+
+## Jalons
+
+| Période                      | Jalon                                                     | Livrable attendu                                                                              | Sous-processus   | État                            |
+| ---------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------- | ------------------------------- |
+| Août à septembre 2026        | Montage du projet                                         | Co-portage Université Paris-Saclay × 42, deck                                                 | Gouvernance      | ✅ Fait                         |
+| 09/10/2026                   | Revoyure                                                  | Date de l'événement, intégration de DATAIA, contact des établissements de Paris-Saclay        | Gouvernance      | ✅ Tenue, décisions à consigner |
+| Octobre à novembre 2026      | Prise de contact et proposition des défis                 | Situation des données renseignée pour chaque porteur                                          | Défis            | 🔄 En cours                     |
+| 27/10/2026                   | Call de cadrage avec 42 Paris                             | Calendrier, formulaire, processus de sélection et outillage validés                           | Défis            | ✅ Tenu                         |
+| Fin octobre 2026             | Formalisation des défis                                   | Un cahier des charges par défi : problématique, jeu de données, référent                      | Défis            | 🔄 En cours                     |
+| Début novembre 2026          | Constitution du comité scientifique                       | Composition validée par la vice-présidence innovation                                         | Gouvernance      | ⏳ À venir                      |
+| Mi-novembre 2026             | Première session du comité scientifique                   | Piliers arrêtés, répartition des défis                                                        | Gouvernance      | ⏳ À venir                      |
+| Novembre 2026 à janvier 2027 | Ouverture de la plateforme                                | Site statique en ligne, porteurs publiés au fil de l'eau                                               | Plateforme       | ⏳ À venir                      |
+| Novembre à décembre 2026     | Experts référents et diagnostics données                  | Un référent par pilier, un diagnostic open data par porteur                                   | Données          | ⏳ À venir                      |
+| Décembre 2026                | Confirmation des parrainages institutionnels              | Engagements écrits, créneaux bloqués                                                          | Gouvernance      | ⏳ À venir                      |
+| Janvier 2027                 | Ouverture au public et communication                      | Inscriptions ouvertes, piliers publiés                                                        | Événement        | ⏳ À venir                      |
+| Janvier à février 2027       | Sélection des porteurs et bureaux ouverts                 | Liste des défis retenus, sessions d'accompagnement                                            | Défis, Événement | ⏳ À venir                      |
+| J-15 (3 mars 2027)           | Clôture des dépôts                                        | Cahier des charges et jeu de données téléchargeable pour chaque défi                          | Défis, Données   | ⏳ À venir                      |
+| 18 et 19 mars 2027           | **Hackathon**                                             | 48 heures, deux conférences au programme                                                      | Événement        | ⏳ À venir                      |
+| Mars à avril 2027            | Restitution et suite                                      | Réutilisations publiées sur data.gouv.fr, bilan aux porteurs                                  | Données          | ⏳ À venir                      |
+| Septembre 2027               | Débouché des défis cyber et manipulation de l'information | Prototypes versés aux travaux du Campus Cyber (cycle LMI 2)                                   | Suite            | ⏳ À venir                      |
+
+## Prochaines étapes (30 jours)
+
+| Échéance      | Action                                                                                                               | Sous-processus         |
+| ------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| 27/10/2026    | Organiser l'échange croisé sur la vigilance épistémique (Institut Jean Nicod, CNRS, Campus Cyber, Cybermalveillance) | Événement              |
+| 29/10/2026    | Rédiger les cahiers des charges des défis Cybermalveillance et du défi émoji                                         | Défis                  |
+| 29/10/2026    | Caler la rencontre avec l'IGN (défi forêt, Panoramax)                                                                | Données                |
+| 30/10/2026    | Faire formuler le défi crowdsourcing du Campus Cyber                                                                 | Défis                  |
+| Novembre 2026 | Lancer les entretiens de diagnostic open data                                                                        | Données                |
+| Novembre 2026 | Renseigner sur le site les liens Tally et le git partagé fournis par 42 Paris | Plateforme |
+
+## Chantier plateforme
+
+Le site est un **site vitrine statique**, sans serveur ni base de données. Les inscriptions et les propositions passent par des formulaires Tally gérés par 42 Paris, qui assure aussi l'hébergement.
+
+| Élément                          | Emplacement                                                              | État                                       | À faire                                       |
+| -------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------ | --------------------------------------------- |
+| Dates et lieu de l'événement     | `src/lib/config/hackathon.ts`                                            | 18 et 19 mars 2027, campus 42 Paris        | Fait                                          |
+| Porteurs de défis                | `content/defis/`                                                         | 7 porteurs publiés, 3 problématiques chacun | Faire valider les noms et les logos           |
+| Formulaire d'inscription         | `registration` dans `src/lib/config/links.ts`                            | Non renseigné                              | Lien Tally à fournir par 42 Paris             |
+| Formulaire « proposer un défi »  | `submitChallenge` dans `src/lib/config/links.ts`                         | Non renseigné                              | Lien Tally à fournir par 42 Paris             |
+| Git partagé des rendus           | `sharedRepository` dans `src/lib/config/links.ts`                        | Non renseigné                              | Dépôt à créer par 42 Paris                    |
+| Hébergement                      | Serveur de 42 Paris                                                      | À mettre en place                          | Publier le dossier `out/`                     |
+| Programme des conférences        | `src/lib/content/conferences.ts`                                         | Vide                                       | Compléter quand le programme est arrêté       |
+| Minutage des présentations       | `/timer`                                                                 | Minuteur seul                              | Confirmer les durées 2027                     |
+
+Le détail est dans la [documentation technique](/03-technique/index).
+
+## Risques de calendrier
+
+| Risque                                                                                              | Effet                                                         | Parade                                                                   |
+| --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **Parrainages institutionnels** : une seule sollicitation engagée sur dix                           | Engagements écrits attendus en décembre non obtenus           | Lancer les sollicitations dès novembre, par la voie la plus directe      |
+| **Défis sous arbitrage externe** : 5 défis sur 13 attendent une validation hiérarchique             | Défis ni annonçables ni utilisables pour recruter des équipes | Ne pas les diffuser avant accord ; préparer des défis de substitution    |
+| **Données non ouvertes à J-15** : 10 défis sur 21 dépendent d'une ouverture ou de données à obtenir | Défi injouable le jour J                                      | Entretiens de diagnostic dès novembre ; jeu d'échantillon en repli       |
+| **Données personnelles** (droit local, cybermalveillance)                                           | Publication impossible en l'état                              | Politique d'occultation et d'agrégation tranchée avant d'ouvrir le sujet |
+| **Concentration sur un pilier** : la cartographie territoriale porte près de la moitié des pistes   | Déséquilibre entre piliers                                    | Arbitrage du comité scientifique mi-novembre                             |

@@ -1,0 +1,68 @@
+---
+title: Revue d'architecture
+sidebar_label: Architecture Review
+description: Vérifier la séparation entre pages, vues, contenu et configuration du site statique, et la sobriété de l'ensemble.
+---
+
+Ce skill fournit la méthode pour évaluer l'organisation du code du site du **hackathon Saclay × 42 Paris** : un site statique dont tout le contenu est dans le dépôt.
+
+---
+
+## 1. Quand l'utiliser
+
+- Avant d'ajouter une page, une source de contenu ou une dépendance.
+- Quand un dossier grossit ou que des responsabilités se mélangent.
+- Quand une évolution semble demander un serveur, une base de données ou un compte utilisateur.
+- _Ne pas utiliser pour :_ relire un diff ([Code Review](/03-technique/04-skills/code-review)).
+
+---
+
+## 2. Informations à lire
+
+- [Vue d'ensemble de l'architecture](/03-technique/02-architecture/00-vue-ensemble) et [Contenu du site](/03-technique/02-architecture/01-contenu-du-site).
+- `next.config.ts`, `src/lib/content/`, `src/lib/config/`.
+- `AGENT.md`.
+
+---
+
+## 3. Procédure pas à pas
+
+### Étape 1 : vérifier la séparation des couches
+
+- [ ] **Pages (`src/app/`) :** de simples façades qui chargent les données et rendent une vue.
+- [ ] **Vues (`src/features/`) :** une vue par page, avec ses sous-composants ; pas de lecture de fichier.
+- [ ] **Composants partagés (`src/components/`) :** indépendants du contenu (en-tête, pied de page).
+- [ ] **Contenu (`src/lib/content/`) :** seul endroit qui lit le disque, uniquement au build.
+- [ ] **Configuration (`src/lib/config/`) :** dates, lieu et liens, sans logique.
+
+### Étape 2 : vérifier que le site reste statique
+
+- [ ] `next.config.ts` garde `output: 'export'`.
+- [ ] Aucune route API, aucun middleware, aucune dépendance à un service au moment de l'affichage, hors icônes.
+- [ ] Toute nouvelle saisie utilisateur passe par un formulaire Tally, pas par du code.
+- [ ] Tout nouveau contenu a sa place dans un fichier du dépôt.
+
+### Étape 3 : chercher la solution la plus sobre
+
+- Préférer un fichier de contenu à un nouveau mécanisme.
+- Refuser une dépendance si quelques lignes suffisent.
+- Supprimer le code devenu inutile plutôt que de le désactiver.
+
+---
+
+## 4. Livrable et vérification
+
+Un rapport comportant :
+
+1. **Périmètre** et schéma Mermaid de l'état analysé.
+2. **Tableau des constats :**
+   | Brique concernée | Friction ou risque | Impact | Recommandation minimale |
+   |---|---|---|---|
+3. **Plan de transition** par étapes réversibles.
+
+---
+
+## 5. Sources et références
+
+- **Règles du projet :** `AGENT.md` (racine du dépôt)
+- **Export statique Next.js :** [https://nextjs.org/docs/app/guides/static-exports](https://nextjs.org/docs/app/guides/static-exports)

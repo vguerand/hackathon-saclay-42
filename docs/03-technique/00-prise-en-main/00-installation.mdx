@@ -1,0 +1,55 @@
+---
+title: 'Installer et lancer le projet'
+sidebar_label: 'Installation'
+description: 'Installer les dépendances et lancer le site et la documentation en local.'
+---
+
+Le site est une application **Next.js 16 (App Router)** construite en **export statique**, avec **React 19** et **Mantine v7**. Il n'y a aucune variable d'environnement à configurer et aucun service à démarrer.
+
+## Prérequis
+
+- **Node.js 24** (version fixée dans `.nvmrc` : `nvm use`).
+- **pnpm**. Le dépôt n'utilise ni npm ni yarn.
+
+## Démarrage
+
+```bash
+pnpm install     # installe aussi les hooks git (lefthook)
+pnpm dev         # site sur http://localhost:3000
+pnpm docs:dev    # documentation sur http://localhost:3001
+```
+
+## Commandes
+
+| Commande                           | Rôle                                                              |
+| ---------------------------------- | ----------------------------------------------------------------- |
+| `pnpm dev`                         | Serveur de développement Next.js (port 3000)                      |
+| `pnpm build`                       | Génère le site statique dans `out/`                               |
+| `pnpm preview`                     | Sert `out/` en local pour vérifier le résultat du build           |
+| `pnpm docs:dev` / `pnpm docs:build` | Documentation Zudoku (port 3001) ; régénère la navigation         |
+| `pnpm test`                        | Tests unitaires Vitest (`tests/lib/**/*.test.ts`)                 |
+| `pnpm check`                       | Lint (Biome), formatage (oxfmt) et types (TypeScript)             |
+| `pnpm fix`                         | Corrige automatiquement ce qui peut l'être (lint et formatage)    |
+
+## Hooks git
+
+`pnpm install` installe les hooks décrits dans `lefthook.yml` :
+
+| Moment     | Action                                                |
+| ---------- | ----------------------------------------------------- |
+| Au commit  | Lint et formatage des fichiers indexés                |
+| Au push    | `pnpm check` complet                                  |
+
+## Tests
+
+| Fichier                             | Ce qu'il vérifie                                             |
+| ----------------------------------- | ------------------------------------------------------------ |
+| `tests/lib/challenges.test.ts`      | Lecture des fichiers de `content/defis/` (en-tête, problématiques) |
+| `tests/lib/hackathon-config.test.ts` | Dates et libellés de l'événement                             |
+| `tests/lib/markdown.test.ts`        | Rendu Markdown et échappement du HTML                        |
+
+Il n'y a pas de tests de bout en bout : le rendu se vérifie avec `pnpm build` puis `pnpm preview`.
+
+## Secrets
+
+Le site n'utilise **aucun secret**. Les fichiers `.env*` sont ignorés par git : ne pas en créer pour ce projet. Tout ce qui est écrit dans `src/` se retrouve dans le navigateur des visiteurs.

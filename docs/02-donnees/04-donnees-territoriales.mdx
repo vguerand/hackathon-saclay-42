@@ -1,0 +1,59 @@
+---
+title: 'Données territoriales'
+sidebar_label: 'Données territoriales'
+description: 'Référentiels, sources et schémas utiles pour la thématique « Données territoriales » du Data Challenge 2027, et règles pour rendre un jeu de données croisable.'
+---
+
+La thématique du Data Challenge 2027 est **« Données territoriales »**. Un bon jeu de données territorial se **localise** (commune, maille, adresse, coordonnées) et se **croise** avec les autres grâce à des référentiels publics communs.
+
+## Référentiels à utiliser comme pivots
+
+| Référentiel                          | Usage                                              | Lien                                                                                                                                    |
+| ------------------------------------ | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Code officiel géographique (COG)** | Codes INSEE des communes, départements, régions    | [INSEE](https://www.insee.fr/fr/information/2560452) · [data.gouv.fr](https://www.data.gouv.fr/datasets/code-officiel-geographique-cog) |
+| **API Découpage administratif**      | Retrouver codes et contours des communes           | [geo.api.gouv.fr](https://geo.api.gouv.fr/)                                                                                             |
+| **ADMIN EXPRESS (IGN)**              | Contours administratifs                            | [data.gouv.fr](https://www.data.gouv.fr/datasets/admin-express)                                                                         |
+| **Base Adresse Nationale**           | Adresses géolocalisées, géocodage                  | [data.gouv.fr](https://www.data.gouv.fr/datasets/base-adresse-nationale)                                                                |
+| **Cadastre**                         | Parcelles et bâtiments                             | [cadastre.data.gouv.fr](https://cadastre.data.gouv.fr/)                                                                                 |
+| **Géoplateforme IGN**                | Fonds de carte, données géographiques de référence | [cartes.gouv.fr](https://cartes.gouv.fr/)                                                                                               |
+| **Panoramax**                        | Photos de rue géolocalisées, commun numérique      | [panoramax.fr](https://panoramax.fr/)                                                                                                   |
+| **Base Sirene**                      | Établissements par SIRET, géolocalisés             | [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/)                |
+
+## Sources thématiques
+
+| Source                        | Contenu                                                                 | Lien                                                                                                                                 |
+| ----------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| ecologie.data.gouv.fr         | Données environnementales, indicateurs, collections thématiques         | [ecologie.data.gouv.fr](https://ecologie.data.gouv.fr/)                                                                              |
+| IGN sur data.gouv.fr          | Jeux de l'Institut national de l'information géographique et forestière | [Organisation IGN](https://www.data.gouv.fr/organizations/institut-national-de-linformation-geographique-et-forestiere)              |
+| Fabrique des géocommuns (IGN) | Communs géographiques, dont Panoramax                                   | [ign.fr/fabrique](https://www.ign.fr/institut/la-fabrique-des-geocommuns)                                                            |
+| Ville de Paris                | Portail open data municipal                                             | [opendata.paris.fr](https://opendata.paris.fr/) · [organisation data.gouv.fr](https://www.data.gouv.fr/organizations/ville-de-paris) |
+| Communauté Paris-Saclay       | Organisation de l'agglomération sur data.gouv.fr                        | [Organisation](https://www.data.gouv.fr/organizations/communaute-paris-saclay)                                                       |
+| Région Île-de-France          | Portail open data régional                                              | [data.iledefrance.fr](https://data.iledefrance.fr/)                                                                                  |
+| Demandes de valeurs foncières | Transactions immobilières                                               | [data.gouv.fr](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres)                                                      |
+
+## Schémas pour les collectivités
+
+Le Socle commun des données locales (SCDL) et les schémas Etalab sont publiés sur [schema.data.gouv.fr](https://schema.data.gouv.fr/). Exemples utiles pour un défi territorial :
+
+| Schéma                 | Lien                                                                                                      |
+| ---------------------- | --------------------------------------------------------------------------------------------------------- |
+| Équipements publics    | [scdl/equipements](https://schema.data.gouv.fr/scdl/equipements/)                                         |
+| Subventions            | [scdl/subventions](https://schema.data.gouv.fr/scdl/subventions/)                                         |
+| Aménagements cyclables | [etalab/schema-amenagements-cyclables](https://schema.data.gouv.fr/etalab/schema-amenagements-cyclables/) |
+
+## Rendre un jeu de données croisable
+
+- Ajouter le **code INSEE** de la commune (et non seulement son nom, ambigu et variable).
+- Fournir des coordonnées en **WGS 84** (`latitude`, `longitude`) ou un format géographique ouvert (GeoJSON, GeoPackage).
+- Indiquer le **millésime** du découpage géographique utilisé (les communes fusionnent).
+- Agréger à une maille qui protège les personnes lorsque la donnée fine décrit des particuliers.
+- Renseigner la **couverture spatiale** et la **granularité** sur data.gouv.fr.
+
+## Guides pour les étudiants
+
+- [Introduction à l'open data](https://guides.data.gouv.fr/guides/reutiliser-des-donnees/introduction-a-lopen-data)
+- [Guide API géographiques](https://guides.data.gouv.fr/guides/reutiliser-des-donnees/utiliser-les-api-geographiques)
+- [Cartographier des données](https://guides.data.gouv.fr/guides/reutiliser-des-donnees/guide-traitement-et-analyse-de-donnees/cartographier-des-donnees)
+- [Géocoder des adresses](https://guides.data.gouv.fr/guides/reutiliser-des-donnees/guide-traitement-et-analyse-de-donnees/manipuler-des-donnees/geocoder-des-adresses)
+- [Explorer un jeu de données en ligne](https://explore.data.gouv.fr/)
+- [Serveur MCP de data.gouv.fr](https://guides.data.gouv.fr/intelligence-artificielle/le-serveur-mcp-de-data.gouv.fr) pour interroger le catalogue depuis un assistant IA

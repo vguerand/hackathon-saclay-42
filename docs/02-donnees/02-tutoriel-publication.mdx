@@ -1,0 +1,122 @@
+---
+title: 'Tutoriel : publier un jeu de données sur data.gouv.fr'
+sidebar_label: 'Tutoriel de publication'
+description: 'Prise en main pas à pas, du fichier interne au jeu de données publié et relié à un défi : préparation, schéma, documentation, publication manuelle ou par API, suivi de la qualité.'
+---
+
+Ce tutoriel suit les guides officiels de [guides.data.gouv.fr](https://guides.data.gouv.fr/). Il peut être transmis tel quel à un porteur de défi ou servir de trame à une séance d'accompagnement d'environ une heure.
+
+> **Avant de commencer :** vérifier que le [cadre juridique](/02-donnees/01-cadre-et-sources) permet la publication (données personnelles, secrets, licence).
+
+## Étape 1 : inventorier ce qui existe
+
+1. Rechercher si les données sont **déjà publiées** sur [data.gouv.fr](https://www.data.gouv.fr/) ou sur un portail local (par exemple [opendata.paris.fr](https://opendata.paris.fr/), [data.iledefrance.fr](https://data.iledefrance.fr/)).
+2. Lister les sources internes : export d'application métier, tableur, base SIG.
+3. Pour chaque source, noter : propriétaire, fréquence de mise à jour, présence de données personnelles, format actuel.
+
+> **Astuce :** la DINUM propose un modèle Grist pour [cataloguer les données détenues](https://guides.data.gouv.fr/autres/catalogage-de-donnees-grist) avant de choisir celles à ouvrir.
+
+## Étape 2 : préparer le fichier
+
+D'après le guide [Structurer un jeu de données](https://guides.data.gouv.fr/guides/guide-qualite/preparer-un-jeu-de-donnees-de-qualite/structurer-un-jeu-de-donnees) :
+
+| Règle                                                         | Bon exemple                                           | À éviter                              |
+| ------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------- |
+| Format ouvert et exploitable par une machine                  | CSV, JSON, GeoJSON, GeoPackage                        | PDF, XLSX avec cellules fusionnées    |
+| Encodage UTF-8                                                | `UTF-8`                                               | `Windows-1252`                        |
+| Noms de colonnes explicites, sans majuscule, accent ni espace | `code_commune_insee`                                  | `Code Commune (INSEE)`                |
+| Valeur absente laissée vide                                   | _(cellule vide)_                                      | `0`, `N/A`, `-`                       |
+| Variables pivots pour croiser les jeux                        | `code_commune_insee`, `siret`, `latitude`/`longitude` | Nom de commune seul                   |
+| Occultation préalable                                         | Colonnes personnelles retirées ou agrégées            | Nom, adresse précise d'un particulier |
+| Nom de fichier précis et court                                | `consommation-eau-arrondissements-2025.csv`           | `export_final_v3.csv`                 |
+
+Pour les données territoriales, toujours ajouter le **code officiel géographique** (code INSEE de la commune) à côté du nom : c'est lui qui permet aux étudiants de croiser les sources (voir [Lier des données à un référentiel](https://guides.data.gouv.fr/guides/guide-qualite/preparer-un-jeu-de-donnees-de-qualite/lier-des-donnees-a-un-referentiel)).
+
+## Étape 3 : vérifier s'il existe un schéma
+
+1. Chercher un schéma correspondant sur [schema.data.gouv.fr](https://schema.data.gouv.fr/) (par exemple [équipements publics](https://schema.data.gouv.fr/scdl/equipements/), [subventions](https://schema.data.gouv.fr/scdl/subventions/), [aménagements cyclables](https://schema.data.gouv.fr/etalab/schema-amenagements-cyclables/)).
+2. Si un schéma existe, produire le fichier en respectant ses colonnes et le valider avec [Validata](https://validata.fr/).
+3. Lors de la publication, **déclarer le schéma** sur la ressource : data.gouv.fr vérifie alors la conformité.
+
+## Étape 4 : documenter
+
+Le score de qualité des métadonnées de data.gouv.fr ([détail des critères](https://guides.data.gouv.fr/guides/guide-qualite/ameliorer-la-qualite-dun-jeu-de-donnees-en-continu/ameliorer-le-score-de-qualite-des-metadonnees)) vérifie notamment :
+
+| Critère                | Ce qu'il faut renseigner                                                             |
+| ---------------------- | ------------------------------------------------------------------------------------ |
+| Description            | Texte suffisamment long : contexte, contenu, méthode de production, limites          |
+| Ressources documentées | Un fichier de documentation (dictionnaire des colonnes) ou une description détaillée |
+| Mise à jour            | Fréquence déclarée **et respectée**                                                  |
+| Licence                | Une licence ouverte                                                                  |
+| Format                 | Au moins une ressource dans un format ouvert                                         |
+| Couverture spatiale    | Zone **et** granularité (commune, IRIS, parcelle…)                                   |
+| Couverture temporelle  | Période couverte par les données                                                     |
+
+Modèle de dictionnaire de données à joindre en ressource :
+
+```csv
+colonne,type,description,exemple,unite
+code_commune_insee,string,Code officiel géographique de la commune,91477,
+annee,integer,Année de la mesure,2025,
+surface_vegetalisee,number,Surface végétalisée de la maille,1250.5,m²
+```
+
+Voir aussi [Bien documenter un jeu de données](https://guides.data.gouv.fr/guides/guide-qualite/documenter-des-donnees/bien-documenter-un-jeu-de-donnees).
+
+## Étape 5 : créer ou rejoindre l'organisation
+
+1. Créer un compte sur [data.gouv.fr](https://www.data.gouv.fr/).
+2. **Vérifier que l'organisation n'existe pas déjà**, puis la rejoindre ou la [créer](https://guides.data.gouv.fr/organisations/creer-une-organisation) (nom, description, **SIRET** à 14 chiffres, logo).
+3. Pour une structure de service public, demander la [certification](https://guides.data.gouv.fr/organisations/obtenir-une-certification) (badge « Service public certifié », réponse sous quelques jours).
+
+> Publier sous l'organisation plutôt qu'à titre personnel : le jeu de données survit au départ de l'agent qui l'a publié.
+
+## Étape 6 : publier
+
+Trois modes sont possibles ([Publier un jeu de données](https://guides.data.gouv.fr/jeux-de-donnees/publier-un-jeu-de-donnees)) :
+
+| Mode               | Quand l'utiliser                                          | Prérequis                                                                                                                 |
+| ------------------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Formulaire web** | Publication ponctuelle, cas le plus fréquent pour un défi | Compte membre de l'organisation                                                                                           |
+| **API**            | Mises à jour régulières, automatisation                   | Clé d'API (paramètres du profil), capacité de développement                                                               |
+| **Moissonnage**    | Le porteur a déjà un portail (ODS, CKAN, DCAT)            | Moissonneur validé par l'équipe data.gouv.fr ([guide](https://guides.data.gouv.fr/moissonnage/comprendre-le-moissonnage)) |
+
+**Par le formulaire web :** renseigner titre, description, licence, fréquence de mise à jour, mots-clés, couverture temporelle et granularité spatiale ; activer le **mode brouillon** pour relire avant mise en ligne ; ajouter les fichiers (téléversés ou liens distants).
+
+**Par l'API** ([guide officiel](https://guides.data.gouv.fr/api-de-data.gouv.fr/prise-en-main/gerer-un-jeu-de-donnees-par-lapi)) :
+
+```bash
+export API='https://www.data.gouv.fr/api/1'
+export API_KEY='<clé API du compte>'
+export ORG='<identifiant-organisation>'
+
+curl -H "Content-Type: application/json" \
+     -H "X-Api-Key: $API_KEY" \
+     --data "{\"title\": \"Mon titre\", \"description\": \"Ma description\", \"organization\": \"$ORG\"}" \
+     -X POST "$API/datasets/"
+```
+
+Le client Python officiel [datagouv-client](https://github.com/datagouv/datagouv-client) simplifie ces appels. Faire un essai sur [demo.data.gouv.fr](https://demo.data.gouv.fr/) avant la production.
+
+## Étape 7 : relier le jeu de données au défi
+
+1. Ouvrir le fichier du porteur dans `content/defis/` (voir [Contenu du site](/03-technique/02-architecture/01-contenu-du-site)).
+2. Dans le texte de la problématique concernée, ajouter le lien vers la page data.gouv.fr du jeu de données, avec sa licence et son format. Il apparaît alors sur la page du porteur.
+3. Vérifier à **J-15** que le lien fonctionne et que les données sont téléchargeables sans compte.
+
+## Étape 8 : suivre et valoriser
+
+- Après l'événement, les équipes publient leurs prototypes comme **réutilisations** du jeu de données ([guide](https://guides.data.gouv.fr/reutilisations/publier-une-reutilisation)) : c'est la preuve d'usage la plus visible pour le producteur.
+- Un tiers (par exemple une équipe étudiante) peut proposer une **ressource communautaire** (données enrichies, nettoyées) sur un jeu existant ([guide](https://guides.data.gouv.fr/jeux-de-donnees/ressource-communautaire)).
+- Le producteur suit le **score de qualité** et les discussions sur la page du jeu de données, et respecte la fréquence de mise à jour annoncée.
+
+## Check-list de publication
+
+- [ ] Cadre juridique vérifié (données personnelles, secrets)
+- [ ] Fichier en format ouvert, UTF-8, colonnes normalisées
+- [ ] Code INSEE ou autre identifiant pivot présent
+- [ ] Schéma déclaré si existant, fichier validé
+- [ ] Description, licence, fréquence, couverture spatiale et temporelle renseignées
+- [ ] Dictionnaire des colonnes joint
+- [ ] Publié sous l'organisation, organisation certifiée si service public
+- [ ] Lien ajouté à la fiche du défi et vérifié à J-15

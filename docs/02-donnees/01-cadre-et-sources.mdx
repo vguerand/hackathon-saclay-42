@@ -1,0 +1,82 @@
+---
+title: 'Cadre juridique et sources officielles'
+sidebar_label: 'Cadre et sources'
+description: "Obligations d'ouverture, données personnelles, licences autorisées et liste des liens officiels (data.gouv.fr, Etalab, DINUM, CNIL, Légifrance) à transmettre aux porteurs de défis."
+---
+
+Cette page résume le cadre applicable à partir du [guide juridique de data.gouv.fr](https://guides.data.gouv.fr/guides/guide-juridique). Elle ne remplace pas l'avis du juriste ou du délégué à la protection des données du porteur.
+
+## Qui doit ouvrir ses données ?
+
+D'après le [guide juridique](https://guides.data.gouv.fr/guides/guide-juridique/producteurs-de-donnees/qui-est-concerne), sont soumis à l'obligation de diffusion :
+
+- les **administrations centrales de plus de 50 agents** ;
+- les **personnes morales de droit privé chargées d'une mission de service public** employant plus de 50 agents à temps plein ;
+- les **collectivités territoriales de plus de 3 500 habitants et de plus de 50 agents**.
+
+Une structure non concernée (entreprise, association, petite commune) **peut** publier volontairement ; le même tutoriel s'applique.
+
+## Que faut-il publier ?
+
+Selon l'[article L. 312-1-1 du CRPA](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033205512), les acteurs concernés diffusent en ligne :
+
+- les documents administratifs communiqués à un demandeur ;
+- l'inventaire des documents administratifs qu'ils produisent ;
+- **les bases de données produites ou reçues** dans le cadre de leurs missions, mises à jour régulièrement ;
+- **les données dont la publication présente un intérêt économique, social, sanitaire ou environnemental**.
+
+Les données doivent être publiées dans un format **ouvert**, **aisément réutilisable** et **exploitable par un système de traitement automatisé**. Un accès limité à des filtres (liste déroulante, sélection sur une carte) ne constitue pas une diffusion publique ([guide juridique, obligations](https://guides.data.gouv.fr/guides/guide-juridique/producteurs-de-donnees/quelles-sont-les-obligations)).
+
+## Données personnelles et secrets
+
+| Situation                                                                               | Règle                                                                                                                                                                                     | Source                                                                                                                    |
+| --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Secret légal (défense, délibérations du Gouvernement, secret des affaires, vie privée…) | Occulter par un traitement d'usage courant, ou ne pas publier si le document est dénaturé                                                                                                 | Articles L. 311-5 et L. 311-6 du CRPA                                                                                     |
+| Données à caractère personnel                                                           | **Anonymiser** (suppression irréversible de tout lien avec la personne)                                                                                                                   | [Guide juridique](https://guides.data.gouv.fr/guides/guide-juridique/producteurs-de-donnees/quelles-sont-les-obligations) |
+| Exceptions à l'anonymisation                                                            | Disposition législative spécifique, accord des personnes, ou document listé par le [décret n° 2018-1117 du 10 décembre 2018](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037797147) | Guide juridique                                                                                                           |
+| Doute sur un cas précis                                                                 | Consulter le guide CNIL-CADA                                                                                                                                                              | [CNIL : ouverture et réutilisation des données](https://www.cnil.fr/fr/ouverture-reutilisation-donnees)                   |
+
+> **Point de vigilance pour les défis :** les données géolocalisées à une échelle fine (adresse, parcelle, bâtiment) peuvent permettre de réidentifier des personnes. Agréger (à l'IRIS, à la commune, à la maille) ou retirer les colonnes concernées avant publication.
+
+## Quelle licence ?
+
+- La réutilisation doit être **libre et gratuite** ; une licence est conseillée lorsque les données sont gratuites.
+- Les administrations choisissent parmi les licences **fixées par décret** ([décret n° 2017-638](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000034502557)) ; toute autre licence doit être homologuée par la DINUM.
+- **Recommandation par défaut : [Licence Ouverte 2.0 (Licence Etalab)](https://github.com/etalab/licence-ouverte/blob/master/LO.md)**, qui impose seulement la mention de la source. L'**ODbL** est l'alternative « partage à l'identique ».
+- Liste complète : [licences sur data.gouv.fr](https://www.data.gouv.fr/pages/legal/licences). Aide au choix : [fiche OpenDataFrance](https://opendatafrance.gitbook.io/odl-ressources/fiches-pratiques/aspects-juridiques/choix-des-licences-open-data).
+
+## Liens officiels à transmettre
+
+### Etalab, DINUM et data.gouv.fr
+
+| Ressource                                                             | Lien                                                                                                                                                           |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Portail national des données publiques                                | [data.gouv.fr](https://www.data.gouv.fr/)                                                                                                                      |
+| Organisation Etalab et ses jeux de données                            | [data.gouv.fr/organizations/etalab](https://www.data.gouv.fr/organizations/etalab/datasets)                                                                    |
+| Feuilles de route ministérielles (donnée, algorithmes, codes sources) | [Jeu de données Etalab](https://www.data.gouv.fr/datasets/feuilles-de-route-ministerielles-sur-la-politique-de-la-donnee-des-algorithmes-et-des-codes-sources) |
+| Actions des feuilles de route                                         | [Jeu de données Etalab](https://www.data.gouv.fr/datasets/liste-des-actions-prises-par-les-ministeres-dans-le-cadre-des-feuilles-de-routes-ministerielles)     |
+| Référents données en préfecture de région                             | [Jeu de données Etalab](https://www.data.gouv.fr/datasets/liste-des-referents-donnees-algorithmes-et-codes-sources-en-prefecture-de-region)                    |
+| Documentation complète des producteurs                                | [guides.data.gouv.fr](https://guides.data.gouv.fr/)                                                                                                            |
+| Guide juridique                                                       | [Guide juridique](https://guides.data.gouv.fr/guides/guide-juridique)                                                                                          |
+| Guide qualité                                                         | [Guide qualité](https://guides.data.gouv.fr/guides/guide-qualite)                                                                                              |
+| Schémas de données                                                    | [schema.data.gouv.fr](https://schema.data.gouv.fr/)                                                                                                            |
+| Validation d'un fichier contre un schéma                              | [Validata](https://validata.fr/)                                                                                                                               |
+| Catalogue des API publiques                                           | [data.gouv.fr/dataservices](https://www.data.gouv.fr/dataservices)                                                                                             |
+| Codes sources du secteur public                                       | [code.gouv.fr](https://code.gouv.fr/)                                                                                                                          |
+| Cataloguer ses données avec Grist (outil DINUM)                       | [Guide catalogage Grist](https://guides.data.gouv.fr/autres/catalogage-de-donnees-grist)                                                                       |
+| Support et certification                                              | [Support data.gouv.fr](https://www.data.gouv.fr/support)                                                                                                       |
+| Environnement de test                                                 | [demo.data.gouv.fr](https://demo.data.gouv.fr/)                                                                                                                |
+| DINUM                                                                 | [numerique.gouv.fr](https://www.numerique.gouv.fr/)                                                                                                            |
+
+> Le site historique `etalab.gouv.fr` redirige désormais vers data.gouv.fr : utiliser les liens ci-dessus plutôt que d'anciennes adresses Etalab.
+
+### Textes de référence
+
+| Texte                                                                                                                                     | Objet                                                                                                                                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Loi n° 2016-1321 pour une République numérique](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000033202746)                             | Ouverture des données publiques par défaut                                                                                                                                                                 |
+| [Code des relations entre le public et l'administration, livre III](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033205512) | Accès, diffusion et réutilisation des documents administratifs                                                                                                                                             |
+| [Décret n° 2017-638](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000034502557)                                                         | Licences de réutilisation autorisées                                                                                                                                                                       |
+| [Décret n° 2018-1117](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037797147)                                                        | Documents publiables sans anonymisation                                                                                                                                                                    |
+| [Circulaire du 27 avril 2021](https://www.legifrance.gouv.fr/download/pdf/circ?id=45162)                                                  | Politique publique de la donnée, des algorithmes et des codes sources                                                                                                                                      |
+| [Règlement d'exécution (UE) 2023/138](https://eur-lex.europa.eu/eli/reg_impl/2023/138/oj)                                                 | Données de forte valeur, dont les données géospatiales ([guide data.gouv.fr](https://guides.data.gouv.fr/donnees-specifiques/donnees-de-forte-valeur-metadonnees-obligatoires-et-modalites-de-rapportage)) |

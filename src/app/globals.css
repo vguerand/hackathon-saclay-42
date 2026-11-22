@@ -1,0 +1,125 @@
+@import '@mantine/core/styles.css';
+@import '@fontsource/lato/100.css';
+@import '@fontsource/lato/300.css';
+@import '@fontsource/lato/400.css';
+@import '@fontsource/lato/700.css';
+@import '@fontsource/lato/900.css';
+@import '@fontsource/lora/400.css';
+@import '@fontsource/lora/500.css';
+@import '@fontsource/lora/600.css';
+@import '@fontsource/lora/700.css';
+
+:root {
+	/* Design Tokens Officiels — Université Paris-Saclay */
+	--saclay-primary: #63003c; /* Pantone 229 C - Prune emblématique */
+	--saclay-primary-hover: #520032;
+	--saclay-primary-light: #fdf2f7;
+	--saclay-secondary: #313e48; /* PMS 432 C - Ardoise foncé */
+
+	--saclay-accent-01: #ca007a; /* Magenta innovation */
+	--saclay-accent-02: #202955; /* Bleu nuit recherche */
+	--saclay-accent-03: #532654; /* Aubergine */
+	--saclay-cyan: #00babc; /* Cyan 42 / Tech */
+
+	--background-primary: #ffffff;
+	--background-secondary: #f8fafc;
+	--background-subtle: #f1f5f9;
+	--background-accent: #fdf2f7;
+
+	--text-primary: #1e293b;
+	--text-secondary: #475569;
+	--text-muted: #64748b;
+	--text-brand: #63003c;
+
+	--border-default: #e2e8f0;
+	--border-strong: #313e48;
+	--border-brand: #63003c;
+
+	/* Rétrocompatibilité progressive */
+	--an-blue: #63003c;
+	--an-red: #ca007a;
+	--an-navy: #202955;
+	--an-emerald: #00babc;
+	--an-emerald-dark: #007a7b;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family:
+		'Lato', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	background-color: var(--background-primary);
+	color: var(--text-primary);
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Grille & séparateurs éditoriaux style Design Spot */
+.editorial-grid {
+	display: grid;
+	border: 1px solid var(--border-default);
+}
+
+.editorial-divider {
+	height: 1px;
+	background-color: var(--border-default);
+	width: 100%;
+}
+
+.editorial-divider-brand {
+	height: 2px;
+	background-color: var(--saclay-primary);
+	width: 100%;
+}
+
+/* Numérotation éditoriale de section */
+.editorial-number {
+	font-family: 'Lato', monospace, sans-serif;
+	font-size: 0.85rem;
+	font-weight: 800;
+	letter-spacing: 0.15em;
+	color: var(--saclay-primary);
+	text-transform: uppercase;
+}
+
+/* Bandeau d'alerte défilant accessible */
+.registration-alert-track {
+	display: flex;
+	width: max-content;
+	white-space: nowrap;
+	animation: registration-alert-scroll 22s linear infinite;
+}
+
+.registration-alert-track:hover,
+.registration-alert-track:focus-visible {
+	animation-play-state: paused;
+}
+
+@keyframes registration-alert-scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.registration-alert-track {
+		animation: none;
+		white-space: normal;
+	}
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}

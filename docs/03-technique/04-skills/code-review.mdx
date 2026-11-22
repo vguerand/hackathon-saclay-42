@@ -1,0 +1,83 @@
+---
+title: Revue de code
+sidebar_label: Code Review
+description: Auditer un diff Git ou une Pull Request sur trois axes (régressions, contraintes du site statique, données exposées).
+---
+
+Ce skill définit la procédure pour auditer un diff Git, repérer les régressions et vérifier le respect des règles du site du **hackathon Saclay × 42 Paris**.
+
+---
+
+## 1. Quand l'utiliser
+
+- Revue demandée : _« Revois mes changements »_, _« Audite ce commit »_, _« Cherche des régressions »_.
+- Contrôle avant fusion sur `main`.
+- Vérification après un refactoring.
+- _Ne pas utiliser pour :_ concevoir une évolution ([Design Change](/03-technique/04-skills/design-change)) ou auditer l'organisation d'ensemble ([Architecture Review](/03-technique/04-skills/architecture-review)).
+
+---
+
+## 2. Informations à lire
+
+- Le diff complet (`git diff`, `git status`).
+- Les règles du projet : `AGENT.md`, [Conventions](/03-technique/00-prise-en-main/02-conventions), `biome.jsonc`.
+- Les tests associés (`tests/lib/**/*.test.ts`).
+
+---
+
+## 3. Procédure pas à pas
+
+### Axe 1 : bugs et régressions
+
+- [ ] **`'use client'` :** les composants qui utilisent des hooks React portent la directive en tête de fichier.
+- [ ] **Lecture de fichiers :** les modules de `src/lib/content/` qui lisent le disque ne sont importés que depuis `src/app/`, jamais depuis un composant client.
+- [ ] **Cas limites :** dossier `content/defis/` vide, porteur sans image, sans problématique, lien vide dans `links.ts`, galerie sans photo.
+- [ ] **Typage strict :** pas de `any` injustifié ; les types viennent de `src/lib/types/`.
+
+### Axe 2 : contraintes du site statique
+
+- [ ] **Aucun code serveur :** pas de route API, de Server Action, de middleware, de `cookies()` ni de `headers()`.
+- [ ] **Pages générées au build :** toute route dynamique a un `generateStaticParams` et `dynamicParams = false`.
+- [ ] **Pages minces :** `src/app/**/page.tsx` charge les données et rend une vue de `src/features/`.
+- [ ] **Mantine uniquement :** pas de Tailwind, de `clsx` ni de bibliothèque de primitives tierce.
+- [ ] **Liens externes centralisés :** aucune adresse Tally ou de dépôt en dur hors de `src/lib/config/links.ts`.
+
+### Axe 3 : données exposées
+
+- [ ] **Aucun secret :** tout le code de `src/` finit dans le navigateur. Aucune clé, aucun jeton, aucun fichier `.env`.
+- [ ] **Aucune donnée personnelle :** pas de nom, d'adresse ou de téléphone de contact dans `content/`, `public/` ou `docs/`.
+- [ ] **HTML échappé :** le contenu Markdown passe par `renderMarkdown`, qui échappe le HTML.
+- [ ] **Textes français :** les libellés portent tous leurs accents.
+
+---
+
+## 4. Livrable et vérification
+
+Compte rendu ordonné par sévérité :
+
+1. 🔴 **Bloquant :** build cassé, test en échec, secret ou donnée personnelle exposés, code serveur introduit.
+2. 🟡 **Majeur :** règle d'architecture non respectée, problème d'accessibilité, cas limite non géré.
+3. 🟢 **Mineur :** simplification, typage affiné, cosmétique.
+
+**Format d'un constat :**
+
+```text
+[Sévérité] Emplacement (fichier:ligne)
+- Problème : comportement inattendu ou risque.
+- Scénario : comment le reproduire.
+- Correction recommandée : extrait de code.
+```
+
+Valider la revue avec :
+
+```bash
+pnpm check && pnpm test && pnpm build
+```
+
+---
+
+## 5. Sources et références
+
+- **Règles du projet :** `AGENT.md` (racine du dépôt)
+- **Export statique Next.js :** [https://nextjs.org/docs/app/guides/static-exports](https://nextjs.org/docs/app/guides/static-exports)
+- **Mantine v7 :** [https://mantine.dev/](https://mantine.dev/)

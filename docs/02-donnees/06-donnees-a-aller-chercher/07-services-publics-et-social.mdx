@@ -1,0 +1,120 @@
+---
+title: 'Services publics, santé, éducation et cohésion sociale : données à aller chercher'
+sidebar_label: 'Services publics et social'
+description: 'Producteurs et jeux de données territoriaux ouverts sur le thème services publics, santé, éducation et cohésion sociale, absents du portefeuille actuel, avec un défi type et les convergences.'
+---
+
+| Producteur                                                                                                                                       | Type                                                           | Pilier | Jeux vérifiés |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- | :----: | ------------: |
+| [Agence nationale de la cohésion des territoires (ANCT)](https://www.data.gouv.fr/organizations/agence-nationale-de-la-cohesion-des-territoires) | opérateur État (établissement public)                          |   3    |             3 |
+| [Caisse nationale des allocations familiales (CNAF)](https://www.data.gouv.fr/organizations/allocations-familiales)                              | opérateur de sécurité sociale (établissement public)           |   3    |             3 |
+| [Ministères de l'Éducation nationale (DEPP)](https://www.data.gouv.fr/organizations/ministeres-de-leducation-nationale)                          | administration centrale (ministère, service statistique)       |   3    |             3 |
+| [Ministère des Solidarités et de la Santé (DREES, FINESS)](https://www.data.gouv.fr/organizations/ministere-des-solidarites-et-de-la-sante)      | administration centrale (ministère, service statistique DREES) |   3    |             3 |
+| [Caisse nationale de l'Assurance Maladie (CNAM)](https://www.data.gouv.fr/organizations/caisse-nationale-de-lassurance-maladie)                  | opérateur de sécurité sociale (établissement public)           |   3    |             3 |
+| [Acceslibre (plateforme publique de l'accessibilité des ERP)](https://www.data.gouv.fr/organizations/acceslibre)                                 | service public numérique (startup d'État)                      |   1    |             1 |
+
+## Agence nationale de la cohésion des territoires (ANCT)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/agence-nationale-de-la-cohesion-des-territoires) · 51 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Mesurer, depuis chaque QPV et chaque carreau habité de l'Essonne, le temps d'accès réel (transports en commun, marche) à la France services la plus proche, puis repérer les zones blanches où ouvrir un point d'accueil ou faire passer un bus itinérant.
+
+**Pourquoi c'est intéressant :** L'ANCT tient à jour, avec des données géolocalisées, les principaux zonages de cohésion : QPV, Petites villes de demain et France services. Le fichier France services contient les coordonnées et les horaires de chaque structure, ce qui permet de calculer tout de suite des isochrones. L'ANCT n'est pas encore engagée et serait le porteur naturel d'un défi sur l'égalité d'accès aux services publics.
+
+**Convergences :** CA Paris-Saclay (maillage des services sur l'agglomération), Station F x Ville de demain (cohésion urbaine), DGALN-DHUP (QPV et renouvellement urbain), lieux de médiation numérique et revenus carroyés Filosofi déjà inventoriés
+
+| Jeu de données                                                                                                                                       | Maille                                                                        | Couverture Paris-Saclay                                                                                                                                                | Licence · mise à jour            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Liste des structures labellisées France services](https://www.data.gouv.fr/datasets/liste-des-structures-labellisees-france-services)               | point (structure avec adresse, latitude/longitude, horaires)                  | oui (national ; 28 structures France services en Essonne, insee_dep = 91, vérifié par l'API tabulaire)                                                                 | Licence Ouverte 2.0 · 2026-10-25 |
+| [Quartiers prioritaires de la politique de la ville (QPV)](https://www.data.gouv.fr/datasets/quartiers-prioritaires-de-la-politique-de-la-ville-qpv) | périmètre infra-communal (polygones QPV 2024, GeoJSON/GPKG/SHP, et liste CSV) | oui (national ; 47 QPV en Essonne, dont Les Ulis, Massy, Chilly-Mazarin et Longjumeau sur l'agglomération Paris-Saclay ; Palaiseau n'en a pas dans la géographie 2024) | Licence Ouverte 1.0 · 2026-10-06 |
+| [Programme Petites villes de demain](https://www.data.gouv.fr/datasets/programme-petites-villes-de-demain)                                           | commune                                                                       | oui (national ; 9 communes de l'Essonne, dont Limours, Briis-sous-Forges et Dourdan, en lisière de l'agglomération et hors de son périmètre)                           | Licence Ouverte 2.0 · 2026-08-19 |
+
+## Caisse nationale des allocations familiales (CNAF)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/allocations-familiales) · 210 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Construire à l'IRIS un indicateur de fragilité sociale sur le territoire Paris-Saclay (part de RSA, de prime d'activité, de bas quotient familial), puis simuler quartier par quartier l'effet territorial d'une réforme des prestations.
+
+**Pourquoi c'est intéressant :** C'est une série de données sociales administratives à la maille IRIS, ce qui est rare, et elle se joint directement aux contours IRIS et à Filosofi. La profondeur est encore courte (depuis 2024) et le secret statistique peut masquer des cellules dans les petits IRIS. Le couplage avec LexImpact donne un défi concret d'évaluation de politique publique.
+
+**Convergences :** Assemblée nationale / LexImpact (simulation de réformes socio-fiscales, barèmes IPP déjà inventoriés), CA Paris-Saclay (analyse des besoins sociaux), contours IRIS et revenus Filosofi déjà inventoriés
+
+| Jeu de données                                                                                                                                                                                                                             | Maille                                     | Couverture Paris-Saclay                                                                  | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------ | ---------------------------------------------------------------------------------------- | -------------------------------- |
+| [Toutes prestations - Répartition des allocataires selon la prestation et le quotient familial [IRIS]](https://www.data.gouv.fr/datasets/toutes-prestations-repartition-des-allocataires-selon-la-prestation-et-le-quotient-familial-iris) | IRIS (données au 31 décembre, depuis 2024) | oui (national ; IRIS de Palaiseau présents, vérifié par l'API tabulaire)                 | Licence Ouverte 2.0 · 2026-06-15 |
+| [RSA et PA - Répartition des allocataires [IRIS]](https://www.data.gouv.fr/datasets/rsa-et-pa-repartition-des-allocataires-iris)                                                                                                           | IRIS (depuis 2024)                         | oui (national ; IRIS de Palaiseau, par exemple Palaiseau Nord et Palaiseau Est, vérifié) | Licence Ouverte 2.0 · 2026-06-15 |
+| [CMG - Répartition des allocataires selon le type de CMG et la situation familiale [IRIS]](https://www.data.gouv.fr/datasets/cmg-repartition-des-allocataires-selon-le-type-de-cmg-et-la-situation-familiale-iris)                         | IRIS (depuis 2024)                         | oui (national ; IRIS de Palaiseau présents, vérifié)                                     | Licence Ouverte 2.0 · 2026-06-15 |
+
+## Ministères de l'Éducation nationale (DEPP)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/ministeres-de-leducation-nationale) · 301 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Cartographier la ségrégation scolaire sur le plateau de Saclay et ses vallées : comparer l'IPS de chaque école et de chaque collège au revenu de son voisinage (Filosofi carroyé) et repérer les établissements dont le recrutement social s'écarte le plus de leur quartier.
+
+**Pourquoi c'est intéressant :** L'IPS par établissement, joint par l'UAI à l'annuaire géolocalisé, se croise immédiatement avec les carreaux Filosofi et les QPV. Mise en garde : la série la plus récente des collèges (IPS à partir de 2023) a une licence « non spécifiée » sur data.gouv.fr. On la laisse de côté jusqu'à clarification par le ministère ; on retient la série 2016-2021, sous Licence Ouverte. Il faudrait demander au producteur de régulariser la licence.
+
+**Convergences :** CA Paris-Saclay (croissance démographique du plateau), DGALN-DHUP (permis de construire et logements neufs pour anticiper les besoins scolaires), revenus carroyés et QPV, ANCT
+
+| Jeu de données                                                                                                                                                           | Maille                                                     | Couverture Paris-Saclay                                                                                  | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Annuaire de l'éducation](https://www.data.gouv.fr/datasets/annuaire-de-leducation)                                                                                      | point (établissement géolocalisé, mise à jour quotidienne) | oui (national ; 31 établissements à Palaiseau, vérifié)                                                  | Licence Ouverte 2.0 · 2026-10-24 |
+| [Indices de position sociale des écoles (à partir de 2022)](https://www.data.gouv.fr/datasets/indices-de-position-sociale-dans-les-ecoles-a-partir-de-2022)              | point (école, UAI)                                         | oui (national ; 30 écoles à Palaiseau, vérifié). La description indique que le jeu n'est plus actualisé. | Licence Ouverte 2.0 · 2026-08-07 |
+| [Indices de position sociale des collèges (2016-2021)](https://www.data.gouv.fr/datasets/indices-de-position-sociale-dans-les-colleges-de-france-metropolitaine-et-drom) | point (collège, UAI)                                       | national (France métropolitaine et DROM, donc l'Essonne)                                                 | Licence Ouverte 2.0 · 2026-07-24 |
+
+## Ministère des Solidarités et de la Santé (DREES, FINESS)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/ministere-des-solidarites-et-de-la-sante) · 327 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Diagnostiquer le désert médical relatif du territoire Paris-Saclay : croiser l'APL aux généralistes par commune, la localisation FINESS des centres et maisons de santé et les projections de population, puis proposer l'emplacement le plus pertinent pour un futur centre de santé.
+
+**Pourquoi c'est intéressant :** L'APL est l'indicateur officiel de l'accès aux soins à la commune. FINESS est le référentiel de tous les établissements. Comme l'extraction historique est figée depuis mai 2026, il faudra prévoir son successeur, FINESS - Structures (Agence du Numérique en Santé, lov2, mise à jour quotidienne, https://www.data.gouv.fr/datasets/finess-structures-1). L'Agence du Numérique en Santé est donc un autre producteur à solliciter.
+
+**Convergences :** CA Paris-Saclay (contrat local de santé), DRIAS et LCZ déjà inventoriés (vulnérabilité des EHPAD aux fortes chaleurs), CNRS - Campus Cyber (sécurité des établissements de santé), CNAM (annuaire Ameli)
+
+| Jeu de données                                                                                                                                                                 | Maille                                                                                              | Couverture Paris-Saclay                                                               | Licence · mise à jour            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------- |
+| [Accessibilité potentielle localisée (APL) aux professionnels de santé](https://www.data.gouv.fr/datasets/accessibilite-potentielle-localisee-apl-aux-professionnels-de-sante) | commune (fichiers par profession : généralistes, infirmières, sages-femmes, chirurgiens-dentistes…) | national (toutes les communes, donc l'Essonne)                                        | Licence Ouverte 2.0 · 2026-07-22 |
+| [FINESS Extraction du Fichier des établissements](https://www.data.gouv.fr/datasets/finess-extraction-du-fichier-des-etablissements)                                           | point (établissement sanitaire et médico-social géolocalisé)                                        | national (inclut l'Essonne). Flux arrêté au 4 mai 2026 après la bascule vers FINESS+. | Licence Ouverte 1.0 · 2026-05-12 |
+| [La démographie des professionnels de santé depuis 2012](https://www.data.gouv.fr/datasets/la-demographie-des-professionnels-de-sante-depuis-2012)                             | département (colonnes région / département, vérifiées)                                              | national (ligne Essonne au département)                                               | Licence Ouverte 2.0 · 2026-07-02 |
+
+## Caisse nationale de l'Assurance Maladie (CNAM)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/caisse-nationale-de-lassurance-maladie) · 45 jeux publiés · Pilier 3 : Contrôle et évaluation des politiques publiques
+
+**Défi type :** Géocoder l'annuaire Ameli pour mesurer, depuis chaque IRIS de l'agglomération Paris-Saclay, le temps d'accès à un généraliste en secteur 1 et à un pédiatre, puis situer l'Essonne dans la dynamique d'installation en zone sous-dotée.
+
+**Pourquoi c'est intéressant :** L'annuaire Ameli, mis à jour chaque semaine, donne pour chaque cabinet l'adresse, la spécialité et le secteur conventionnel. C'est la maille la plus fine disponible sur l'offre de soins de ville, mais il contient des noms de professionnels : il faut l'anonymiser dans les restitutions. Les deux jeux sur l'accès aux soins sont sous ODbL, une licence ouverte avec partage à l'identique, et restent au département.
+
+**Convergences :** CA Paris-Saclay (attractivité médicale), DREES (APL), Base Adresse Nationale déjà inventoriée (géocodage), CNAF (populations fragiles à l'IRIS)
+
+| Jeu de données                                                                                                                                                                                                                                                                                                    | Maille                                                                      | Couverture Paris-Saclay                                                        | Licence · mise à jour            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------- |
+| [Annuaire santé Ameli](https://www.data.gouv.fr/datasets/annuaire-sante-ameli)                                                                                                                                                                                                                                    | adresse (professionnels et centres de santé, sans coordonnées : à géocoder) | oui (national ; 191 professionnels au code postal 91120 de Palaiseau, vérifié) | Licence Ouverte 2.0 · 2026-10-19 |
+| [Accès aux soins : installations de médecins généralistes dans les zones sous-dotées par territoire (département, région) - ANNÉE EN COURS](https://www.data.gouv.fr/datasets/acces-aux-soins-installations-de-medecins-generalistes-dans-les-zones-sous-dotees-par-territoire-departement-region-annee-en-cours) | département / région                                                        | oui (ligne Essonne présente, vérifiée)                                         | ODbL · 2025-01-28                |
+| [Accès aux soins : patientèle "médecin traitant" moyenne des médecins généralistes par territoire (département, région) - PAR ANNÉE](https://www.data.gouv.fr/datasets/acces-aux-soins-patientele-medecin-traitant-moyenne-des-medecins-generalistes-par-territoire-departement-region-par-annee)                 | département / région                                                        | national (maille départementale)                                               | ODbL · 2025-01-28                |
+
+## Acceslibre (plateforme publique de l'accessibilité des ERP)
+
+[Organisation sur data.gouv.fr](https://www.data.gouv.fr/organizations/acceslibre) · 1 jeux publiés · Pilier 1 : Souveraineté, résilience et adaptation
+
+**Défi type :** Compléter et fiabiliser l'accessibilité des ERP publics de l'agglomération Paris-Saclay (mairies, France services, cabinets médicaux) à l'aide d'images de rue, puis calculer des itinéraires réellement praticables en fauteuil.
+
+**Pourquoi c'est intéressant :** C'est le référentiel national ouvert de l'accessibilité physique des lieux. Il est mis à jour chaque jour et alimenté par des contributions. Sa couverture locale est réelle mais incomplète, ce qui en fait un bon terrain pour un défi contributif et mesurable en 48 h, en lien avec Panoramax.
+
+**Convergences :** IGN (Panoramax : imagerie de rue pour vérifier entrées et rampes), CA Paris-Saclay, ANCT (accessibilité des France services), Ville de Paris (bâti et espaces publics)
+
+| Jeu de données                                                                                                                                                                                                                                 | Maille                                                                                     | Couverture Paris-Saclay                                                                                    | Licence · mise à jour            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Accessibilité des établissements recevant du public (ERP) pour les personnes en situation de handicap](https://www.data.gouv.fr/datasets/accessibilite-des-etablissements-recevant-du-public-erp-pour-les-personnes-en-situation-de-handicap) | point (ERP géolocalisé, avec des critères détaillés : stationnement, cheminement, entrée…) | oui (national ; 186 ERP au code postal 91120 de Palaiseau et 94 à Orsay, vérifié ; exhaustivité partielle) | Licence Ouverte 2.0 · 2026-10-26 |
+
+<details>
+<summary>Propositions examinées et écartées</summary>
+
+- **Indices de position sociale des collèges (à partir de 2023), https://www.data.gouv.fr/datasets/ips-colleges-a-partir-de-2023** : La licence est déclarée « notspecified » dans l'API data.gouv.fr. Ce n'est pas une licence ouverte explicite, même si le jeu est à jour (2026-09-01) et couvre l'Essonne (359 lignes). Il a été remplacé dans la proposition par la série 2016-2021 sous Licence Ouverte. La série « IPS des lycées (à partir de 2023) » a le même défaut de licence.
+- **Mention de Palaiseau comme commune comptant un QPV** : Corrigé d'après la liste QPV 2024 de l'ANCT : Palaiseau n'y figure pas. Sur l'agglomération Paris-Saclay, les communes concernées sont Les Ulis, Massy, Chilly-Mazarin et Longjumeau.
+
+</details>
+
+---
+
+Retour aux [priorités](/02-donnees/06-donnees-a-aller-chercher/00-priorites).

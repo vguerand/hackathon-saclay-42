@@ -1,0 +1,87 @@
+/* Les couleurs (palette Paris-Saclay) sont définies dans zudoku.config.tsx > theme */
+
+/* Typographie éditoriale compacte */
+.typography {
+	font-size: 0.96rem;
+	line-height: 1.65;
+}
+
+.typography h1 {
+	max-width: 32ch;
+	margin-bottom: 1.25rem;
+	font-size: clamp(1.75rem, 2.4vw, 2rem) !important;
+	line-height: 1.15 !important;
+	letter-spacing: -0.025em;
+}
+
+.typography h2 {
+	margin-top: 2.25rem;
+	margin-bottom: 0.85rem;
+	font-size: 1.35rem !important;
+	line-height: 1.25 !important;
+	letter-spacing: -0.015em;
+}
+
+.typography h3 {
+	margin-top: 1.75rem;
+	margin-bottom: 0.65rem;
+	font-size: 1.08rem !important;
+	line-height: 1.35 !important;
+}
+
+.typography p,
+.typography li {
+	max-width: 76ch;
+}
+
+.typography p,
+.typography ul,
+.typography ol,
+.typography blockquote {
+	margin-top: 0.75rem;
+	margin-bottom: 0.75rem;
+}
+
+.typography table {
+	font-size: 0.9rem;
+	line-height: 1.45;
+}
+
+.typography th,
+.typography td {
+	padding: 0.55rem 0.65rem;
+	vertical-align: top;
+}
+
+.typography blockquote {
+	padding-block: 0.15rem;
+	font-size: 0.94rem;
+}
+
+.typography details {
+	margin-block: 1rem;
+	padding: 0.8rem 1rem;
+	border: 1px solid var(--border);
+	border-radius: 0.65rem;
+	background: color-mix(in srgb, var(--muted) 28%, transparent);
+}
+
+.typography details > summary {
+	cursor: pointer;
+	font-size: 0.92rem;
+	color: var(--primary);
+}
+
+.typography details[open] > summary {
+	margin-bottom: 0.85rem;
+}
+
+@media (max-width: 640px) {
+	.typography h1 {
+		font-size: 1.65rem !important;
+	}
+
+	.typography h2 {
+		font-size: 1.25rem !important;
+	}
+}

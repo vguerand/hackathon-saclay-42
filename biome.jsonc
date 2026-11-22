@@ -1,0 +1,94 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": true,
+		"includes": [
+			"**/*.{ts,tsx,js,jsx,mjs,json,jsonc,css}",
+			"!out",
+			"!.next",
+			"!docs",
+			"!next-env.d.ts"
+		]
+	},
+	// Le formatage est fait par oxfmt (.oxfmtrc.json) : Biome ne fait que le lint.
+	"formatter": {
+		"enabled": false
+	},
+	"assist": { "enabled": false },
+	"linter": {
+		"enabled": true,
+		"domains": {
+			"react": "recommended",
+			"next": "recommended"
+		},
+		"rules": {
+			"preset": "recommended",
+			"suspicious": {
+				"noConsole": "error",
+				// postcss-preset-mantine fournit `@mixin` ; tout autre at-rule inconnu
+				// (`@apply`, `@theme`… de Tailwind) est une erreur.
+				"noUnknownAtRules": { "level": "error", "options": { "ignore": ["mixin"] } }
+			},
+			"performance": {
+				// Export statique sans optimisation d'images : next/image n'apporte rien ici.
+				"noImgElement": "off"
+			},
+			"correctness": {
+				"noUnusedImports": { "level": "error", "fix": "safe" },
+				"noUnusedVariables": "error"
+			},
+			"style": {
+				"useNodejsImportProtocol": { "level": "error", "fix": "safe" },
+				"useImportType": { "level": "error", "fix": "safe", "options": { "style": "auto" } },
+				"useConsistentTypeDefinitions": {
+					"level": "error",
+					"fix": "safe",
+					"options": { "style": "type" }
+				},
+				// Loi de style : l'interface est en Mantine, sans Tailwind ni primitives tierces.
+				"noRestrictedImports": {
+					"level": "error",
+					"options": {
+						"paths": {
+							"clsx": "Pas de chaînes de classes à assembler : utiliser les props et styles Mantine.",
+							"tailwind-merge": "Le projet est en Mantine, sans Tailwind.",
+							"class-variance-authority": "Le projet est en Mantine : les variantes passent par les props des composants.",
+							"lucide-react": "Les icônes sont celles de Remix via <iconify-icon icon=\"ri:…\">.",
+							"@remixicon/react": "Les icônes sont celles de Remix via <iconify-icon icon=\"ri:…\">.",
+							"next/headers": "Le site est exporté en statique : pas de cookies ni d'en-têtes côté serveur.",
+							"next/server": "Le site est exporté en statique : pas de route API ni de middleware."
+						},
+						"patterns": [
+							{
+								"group": ["@radix-ui/*", "@base-ui/*", "@headlessui/*"],
+								"message": "Les primitives d'interface sont celles de @mantine/core."
+							}
+						]
+					}
+				}
+			}
+		}
+	},
+	"overrides": [
+		{
+			// Les fichiers de déclaration étendent des interfaces existantes (JSX.IntrinsicElements) :
+			// seule une `interface` fusionne avec la déclaration d'origine.
+			"includes": ["**/*.d.ts"],
+			"linter": {
+				"rules": {
+					"style": { "useConsistentTypeDefinitions": "off" }
+				}
+			}
+		}
+	],
+	"css": {
+		"parser": {
+			"cssModules": true
+		}
+	}
+}

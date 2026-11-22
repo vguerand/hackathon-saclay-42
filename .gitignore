@@ -1,0 +1,39 @@
+node_modules
+
+# Output
+.output
+.next
+dist
+/dist
+/out
+*.tsbuildinfo
+.vercel
+.netlify
+.wrangler
+/build
+/playwright-report
+/test-results
+/exports
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+*.env
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Fichiers locaux
+/*.pdf
+# Généré par Next.js à chaque lancement
+/AGENTS.md
+
+# Portail de documentation (Zudoku)
+docs/dist
+docs/.output
+docs/.vite

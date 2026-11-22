@@ -1,0 +1,21 @@
+# Hooks git, installés par `pnpm install` (script `prepare`).
+# Ils restent courts : le lint et le formatage des fichiers indexés au commit,
+# la vérification complète (`pnpm check`) au push.
+# Passer un hook : `LEFTHOOK=0 git commit …` ou `git push --no-verify`.
+
+pre-commit:
+  parallel: true
+  commands:
+    biome:
+      glob: '**/*.{ts,tsx,js,jsx,mjs,json,jsonc,css}'
+      run: pnpm biome lint --write --no-errors-on-unmatched {staged_files}
+      stage_fixed: true
+    oxfmt:
+      glob: '**/*.{ts,tsx,js,jsx,mjs,json,jsonc,css,md,yml,yaml}'
+      run: pnpm oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+
+pre-push:
+  commands:
+    check:
+      run: pnpm check
